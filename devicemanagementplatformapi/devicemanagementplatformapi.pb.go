@@ -8,6 +8,7 @@ package devicemanagementplatformapi
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -530,7 +531,7 @@ var File_devicemanagementplatformapi_devicemanagementplatformapi_proto protorefl
 
 const file_devicemanagementplatformapi_devicemanagementplatformapi_proto_rawDesc = "" +
 	"\n" +
-	"=devicemanagementplatformapi/devicemanagementplatformapi.proto\x12\x1bdevicemanagementplatformapi\x1a\x1bbuf/validate/validate.proto\"k\n" +
+	"=devicemanagementplatformapi/devicemanagementplatformapi.proto\x12\x1bdevicemanagementplatformapi\x1a\x1bbuf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\"k\n" +
 	"\n" +
 	"DeviceInfo\x12\x1b\n" +
 	"\tdevice_id\x18\x01 \x01(\x03R\bdeviceId\x12\x1b\n" +
@@ -562,11 +563,11 @@ const file_devicemanagementplatformapi_devicemanagementplatformapi_proto_rawDesc
 	"\x16RegisterDeviceResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12K\n" +
-	"\x04data\x18\x03 \x01(\v27.devicemanagementplatformapi.RegisterDeviceResponseDataR\x04data2\x94\x03\n" +
-	"\x1bDeviceManagementPlatformAPI\x12|\n" +
-	"\x0fQueryDeviceByNo\x123.devicemanagementplatformapi.QueryDeviceByNoRequest\x1a4.devicemanagementplatformapi.QueryDeviceByNoResponse\x12|\n" +
-	"\x0fQueryDeviceById\x123.devicemanagementplatformapi.QueryDeviceByIdRequest\x1a4.devicemanagementplatformapi.QueryDeviceByIdResponse\x12y\n" +
-	"\x0eRegisterDevice\x122.devicemanagementplatformapi.RegisterDeviceRequest\x1a3.devicemanagementplatformapi.RegisterDeviceResponseB Z\x1e./;devicemanagementplatformapib\x06proto3"
+	"\x04data\x18\x03 \x01(\v27.devicemanagementplatformapi.RegisterDeviceResponseDataR\x04data2\xf5\x03\n" +
+	"\x1bDeviceManagementPlatformAPI\x12\x9c\x01\n" +
+	"\x0fQueryDeviceByNo\x123.devicemanagementplatformapi.QueryDeviceByNoRequest\x1a4.devicemanagementplatformapi.QueryDeviceByNoResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/devices/getDeviceByNo\x12\x9c\x01\n" +
+	"\x0fQueryDeviceById\x123.devicemanagementplatformapi.QueryDeviceByIdRequest\x1a4.devicemanagementplatformapi.QueryDeviceByIdResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/devices/getDeviceById\x12\x97\x01\n" +
+	"\x0eRegisterDevice\x122.devicemanagementplatformapi.RegisterDeviceRequest\x1a3.devicemanagementplatformapi.RegisterDeviceResponse\"\x1c\x82\xd3\xe4\x93\x02\x16:\x01*\"\x11/devices/registerB Z\x1e./;devicemanagementplatformapib\x06proto3"
 
 var (
 	file_devicemanagementplatformapi_devicemanagementplatformapi_proto_rawDescOnce sync.Once

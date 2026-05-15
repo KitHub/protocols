@@ -3,6 +3,7 @@ syntax = "proto3";
 package devicemanagementplatformapi;
 
 import "buf/validate/validate.proto";
+import "google/api/annotations.proto";
 
 option go_package = "./;devicemanagementplatformapi";
 
@@ -13,9 +14,22 @@ message DeviceInfo {
 }
 
 service DeviceManagementPlatformAPI {
-    rpc QueryDeviceByNo(QueryDeviceByNoRequest) returns (QueryDeviceByNoResponse);
-    rpc QueryDeviceById(QueryDeviceByIdRequest) returns (QueryDeviceByIdResponse);
-    rpc RegisterDevice(RegisterDeviceRequest) returns (RegisterDeviceResponse);
+    rpc QueryDeviceByNo(QueryDeviceByNoRequest) returns (QueryDeviceByNoResponse) {
+        option (google.api.http) = {
+            get: "/devices/getDeviceByNo"
+        };
+    };
+    rpc QueryDeviceById(QueryDeviceByIdRequest) returns (QueryDeviceByIdResponse) {
+        option (google.api.http) = {
+            get: "/devices/getDeviceById"
+        };
+    };
+    rpc RegisterDevice(RegisterDeviceRequest) returns (RegisterDeviceResponse) {
+        option (google.api.http) = {
+            post: "/devices/register"
+            body: "*"
+        };
+    };
 }
 
 message QueryDeviceByNoRequest {
