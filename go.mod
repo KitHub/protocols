@@ -1,4 +1,4 @@
-module protocols
+module github.com/KitHub/protocols
 
 go 1.26.2
 
