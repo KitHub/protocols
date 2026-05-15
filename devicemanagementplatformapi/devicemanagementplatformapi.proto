@@ -22,22 +22,41 @@ message QueryDeviceByNoRequest {
     string device_no = 1 [(buf.validate.field).string.min_len = 1, (buf.validate.field).string.max_len = 100];
 }
 
-message QueryDeviceByNoResponse {
+message QueryDeviceByNoResponseData {
     DeviceInfo device_info = 1;
+}
+
+message QueryDeviceByNoResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    QueryDeviceByNoResponseData data = 3;
 }
 
 message QueryDeviceByIdRequest {
     int64 device_id = 1 [(buf.validate.field).int64.gte = 0];
 }
 
-message QueryDeviceByIdResponse {
+message QueryDeviceByIdResponseData {
     DeviceInfo device_info = 1;
 }
+
+message QueryDeviceByIdResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    QueryDeviceByIdResponseData data = 3;
+}
+
 message RegisterDeviceRequest {
     string device_no = 1 [(buf.validate.field).string.min_len = 1, (buf.validate.field).string.max_len = 100];
 }
 
-message RegisterDeviceResponse {
+message RegisterDeviceResponseData {
     DeviceInfo device_info = 1;
+}
+
+message RegisterDeviceResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    RegisterDeviceResponseData data = 3;
 }
 
