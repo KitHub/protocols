@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package devicemanagementplatformapi;
 
-import "buf/validate/validate.proto";
+import "mwitkow/go-proto-validators/validator.proto";
 import "google/api/annotations.proto";
 
 option go_package = "./;devicemanagementplatformapi";
@@ -33,7 +33,7 @@ service DeviceManagementPlatformAPI {
 }
 
 message QueryDeviceByNoRequest {
-    string device_no = 1 [(buf.validate.field).string.min_len = 1, (buf.validate.field).string.max_len = 100];
+    string device_no = 1 [(validator.field) = {length_gt: 0, length_lt: 100}];
 }
 
 message QueryDeviceByNoResponseData {
@@ -47,7 +47,7 @@ message QueryDeviceByNoResponse {
 }
 
 message QueryDeviceByIdRequest {
-    int64 device_id = 1 [(buf.validate.field).int64.gte = 0];
+    int64 device_id = 1 [(validator.field) = {int_gt: -1}];
 }
 
 message QueryDeviceByIdResponseData {
@@ -61,7 +61,7 @@ message QueryDeviceByIdResponse {
 }
 
 message RegisterDeviceRequest {
-    string device_no = 1 [(buf.validate.field).string.min_len = 1, (buf.validate.field).string.max_len = 100];
+    string device_no = 1 [(validator.field) = {length_gt: 0, length_lt: 100}];
 }
 
 message RegisterDeviceResponseData {

@@ -7,7 +7,7 @@
 package devicemanagementplatformapi
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -531,32 +531,32 @@ var File_devicemanagementplatformapi_devicemanagementplatformapi_proto protorefl
 
 const file_devicemanagementplatformapi_devicemanagementplatformapi_proto_rawDesc = "" +
 	"\n" +
-	"=devicemanagementplatformapi/devicemanagementplatformapi.proto\x12\x1bdevicemanagementplatformapi\x1a\x1bbuf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\"k\n" +
+	"=devicemanagementplatformapi/devicemanagementplatformapi.proto\x12\x1bdevicemanagementplatformapi\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"k\n" +
 	"\n" +
 	"DeviceInfo\x12\x1b\n" +
 	"\tdevice_id\x18\x01 \x01(\x03R\bdeviceId\x12\x1b\n" +
 	"\tdevice_no\x18\x02 \x01(\tR\bdeviceNo\x12#\n" +
-	"\rregister_time\x18\x03 \x01(\x03R\fregisterTime\"@\n" +
-	"\x16QueryDeviceByNoRequest\x12&\n" +
-	"\tdevice_no\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\bdeviceNo\"g\n" +
+	"\rregister_time\x18\x03 \x01(\x03R\fregisterTime\"?\n" +
+	"\x16QueryDeviceByNoRequest\x12%\n" +
+	"\tdevice_no\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00xdR\bdeviceNo\"g\n" +
 	"\x1bQueryDeviceByNoResponseData\x12H\n" +
 	"\vdevice_info\x18\x01 \x01(\v2'.devicemanagementplatformapi.DeviceInfoR\n" +
 	"deviceInfo\"\x9b\x01\n" +
 	"\x17QueryDeviceByNoResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12L\n" +
-	"\x04data\x18\x03 \x01(\v28.devicemanagementplatformapi.QueryDeviceByNoResponseDataR\x04data\">\n" +
-	"\x16QueryDeviceByIdRequest\x12$\n" +
-	"\tdevice_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02(\x00R\bdeviceId\"g\n" +
+	"\x04data\x18\x03 \x01(\v28.devicemanagementplatformapi.QueryDeviceByNoResponseDataR\x04data\"F\n" +
+	"\x16QueryDeviceByIdRequest\x12,\n" +
+	"\tdevice_id\x18\x01 \x01(\x03B\x0f\xe2\xdf\x1f\v\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\bdeviceId\"g\n" +
 	"\x1bQueryDeviceByIdResponseData\x12H\n" +
 	"\vdevice_info\x18\x01 \x01(\v2'.devicemanagementplatformapi.DeviceInfoR\n" +
 	"deviceInfo\"\x9b\x01\n" +
 	"\x17QueryDeviceByIdResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12L\n" +
-	"\x04data\x18\x03 \x01(\v28.devicemanagementplatformapi.QueryDeviceByIdResponseDataR\x04data\"?\n" +
-	"\x15RegisterDeviceRequest\x12&\n" +
-	"\tdevice_no\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\bdeviceNo\"f\n" +
+	"\x04data\x18\x03 \x01(\v28.devicemanagementplatformapi.QueryDeviceByIdResponseDataR\x04data\">\n" +
+	"\x15RegisterDeviceRequest\x12%\n" +
+	"\tdevice_no\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00xdR\bdeviceNo\"f\n" +
 	"\x1aRegisterDeviceResponseData\x12H\n" +
 	"\vdevice_info\x18\x01 \x01(\v2'.devicemanagementplatformapi.DeviceInfoR\n" +
 	"deviceInfo\"\x99\x01\n" +
