@@ -1,6 +1,14 @@
 # protocols
 protocols and implementations for kithub services
 
+## 编译方式
+
+以*projectgeneratorapi*项目为例
+
+```
+protoc --go_out=./projectgeneratorapi --go-grpc_out=./projectgeneratorapi --grpc-gateway_out=./projectgeneratorapi --govalidators_out="./projectgeneratorapi" ./projectgeneratorapi/projectgeneratorapi.proto`
+```
+
 ## 依赖库
 
 ### mwitkow/go-proto-validators
