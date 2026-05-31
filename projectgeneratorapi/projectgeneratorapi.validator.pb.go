@@ -18,6 +18,21 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *GenerateProjectRequestComponent) Validate() error {
+	if !(len(this.Name) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
+	}
+	if !(len(this.Name) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.Name))
+	}
+	if !(len(this.Version) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Version))
+	}
+	if !(len(this.Version) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Version))
+	}
+	return nil
+}
 func (this *GenerateProjectRequestDependency) Validate() error {
 	if !(len(this.Name) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
@@ -35,7 +50,7 @@ func (this *GenerateProjectRequestDependency) Validate() error {
 }
 
 var _regex_GenerateProjectRequest_ProjectAppName = regexp.MustCompile(`^[a-zA-Z][a-zA-Z0-9_]*$`)
-var _regex_GenerateProjectRequest_ProjectServiceName = regexp.MustCompile(`^[a-zA-Z][a-zA-Z0-9_]*$`)
+var _regex_GenerateProjectRequest_ProjectServerName = regexp.MustCompile(`^[a-zA-Z][a-zA-Z0-9_]*$`)
 
 func (this *GenerateProjectRequest) Validate() error {
 	if !(len(this.ProjectName) > 0) {
@@ -59,32 +74,44 @@ func (this *GenerateProjectRequest) Validate() error {
 	if !(len(this.ProjectAppName) < 31) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ProjectAppName", fmt.Errorf(`value '%v' must have a length smaller than '31'`, this.ProjectAppName))
 	}
-	if !_regex_GenerateProjectRequest_ProjectServiceName.MatchString(this.ProjectServiceName) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ProjectServiceName", fmt.Errorf(`value '%v' must be a string conforming to regex "^[a-zA-Z][a-zA-Z0-9_]*$"`, this.ProjectServiceName))
+	if !_regex_GenerateProjectRequest_ProjectServerName.MatchString(this.ProjectServerName) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectServerName", fmt.Errorf(`value '%v' must be a string conforming to regex "^[a-zA-Z][a-zA-Z0-9_]*$"`, this.ProjectServerName))
 	}
-	if !(len(this.ProjectServiceName) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ProjectServiceName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectServiceName))
+	if !(len(this.ProjectServerName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectServerName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectServerName))
 	}
-	if !(len(this.ProjectServiceName) < 31) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ProjectServiceName", fmt.Errorf(`value '%v' must have a length smaller than '31'`, this.ProjectServiceName))
+	if !(len(this.ProjectServerName) < 31) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectServerName", fmt.Errorf(`value '%v' must have a length smaller than '31'`, this.ProjectServerName))
+	}
+	if !(len(this.ProjectLanguage) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguage", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectLanguage))
+	}
+	if !(len(this.ProjectLanguage) < 31) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguage", fmt.Errorf(`value '%v' must have a length smaller than '31'`, this.ProjectLanguage))
+	}
+	if !(len(this.ProjectLanguageVersion) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguageVersion", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectLanguageVersion))
+	}
+	if !(len(this.ProjectLanguageVersion) < 31) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguageVersion", fmt.Errorf(`value '%v' must have a length smaller than '31'`, this.ProjectLanguageVersion))
 	}
 	for _, item := range this.ProjectDependencies {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
 				return github_com_mwitkow_go_proto_validators.FieldError("ProjectDependencies", err)
+			}
+		}
+	}
+	for _, item := range this.ProjectComponents {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ProjectComponents", err)
 			}
 		}
 	}
 	return nil
 }
-func (this *GenerateProjectRequestData) Validate() error {
-	for _, item := range this.ProjectDependencies {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("ProjectDependencies", err)
-			}
-		}
-	}
+func (this *GenerateProjectResponseData) Validate() error {
 	return nil
 }
 func (this *GenerateProjectResponse) Validate() error {
