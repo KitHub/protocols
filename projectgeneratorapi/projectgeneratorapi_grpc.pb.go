@@ -19,7 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ProjectGeneratorAPI_GenerateProject_FullMethodName = "/projectgeneratorapi.ProjectGeneratorAPI/GenerateProject"
+	ProjectGeneratorAPI_GenerateProject_FullMethodName          = "/projectgeneratorapi.ProjectGeneratorAPI/GenerateProject"
+	ProjectGeneratorAPI_DownloadGeneratedProject_FullMethodName = "/projectgeneratorapi.ProjectGeneratorAPI/DownloadGeneratedProject"
 )
 
 // ProjectGeneratorAPIClient is the client API for ProjectGeneratorAPI service.
@@ -27,6 +28,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProjectGeneratorAPIClient interface {
 	GenerateProject(ctx context.Context, in *GenerateProjectRequest, opts ...grpc.CallOption) (*GenerateProjectResponse, error)
+	DownloadGeneratedProject(ctx context.Context, in *DownloadGeneratedProjectRequest, opts ...grpc.CallOption) (*DownloadGeneratedProjectResponse, error)
 }
 
 type projectGeneratorAPIClient struct {
@@ -47,11 +49,22 @@ func (c *projectGeneratorAPIClient) GenerateProject(ctx context.Context, in *Gen
 	return out, nil
 }
 
+func (c *projectGeneratorAPIClient) DownloadGeneratedProject(ctx context.Context, in *DownloadGeneratedProjectRequest, opts ...grpc.CallOption) (*DownloadGeneratedProjectResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DownloadGeneratedProjectResponse)
+	err := c.cc.Invoke(ctx, ProjectGeneratorAPI_DownloadGeneratedProject_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProjectGeneratorAPIServer is the server API for ProjectGeneratorAPI service.
 // All implementations must embed UnimplementedProjectGeneratorAPIServer
 // for forward compatibility.
 type ProjectGeneratorAPIServer interface {
 	GenerateProject(context.Context, *GenerateProjectRequest) (*GenerateProjectResponse, error)
+	DownloadGeneratedProject(context.Context, *DownloadGeneratedProjectRequest) (*DownloadGeneratedProjectResponse, error)
 	mustEmbedUnimplementedProjectGeneratorAPIServer()
 }
 
@@ -64,6 +77,9 @@ type UnimplementedProjectGeneratorAPIServer struct{}
 
 func (UnimplementedProjectGeneratorAPIServer) GenerateProject(context.Context, *GenerateProjectRequest) (*GenerateProjectResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GenerateProject not implemented")
+}
+func (UnimplementedProjectGeneratorAPIServer) DownloadGeneratedProject(context.Context, *DownloadGeneratedProjectRequest) (*DownloadGeneratedProjectResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DownloadGeneratedProject not implemented")
 }
 func (UnimplementedProjectGeneratorAPIServer) mustEmbedUnimplementedProjectGeneratorAPIServer() {}
 func (UnimplementedProjectGeneratorAPIServer) testEmbeddedByValue()                             {}
@@ -104,6 +120,24 @@ func _ProjectGeneratorAPI_GenerateProject_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProjectGeneratorAPI_DownloadGeneratedProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DownloadGeneratedProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectGeneratorAPIServer).DownloadGeneratedProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProjectGeneratorAPI_DownloadGeneratedProject_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectGeneratorAPIServer).DownloadGeneratedProject(ctx, req.(*DownloadGeneratedProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProjectGeneratorAPI_ServiceDesc is the grpc.ServiceDesc for ProjectGeneratorAPI service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -114,6 +148,10 @@ var ProjectGeneratorAPI_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateProject",
 			Handler:    _ProjectGeneratorAPI_GenerateProject_Handler,
+		},
+		{
+			MethodName: "DownloadGeneratedProject",
+			Handler:    _ProjectGeneratorAPI_DownloadGeneratedProject_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

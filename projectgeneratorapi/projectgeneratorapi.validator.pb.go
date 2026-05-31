@@ -18,6 +18,23 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *DownloadGeneratedProjectRequest) Validate() error {
+	if !(this.GenerateSeqId > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("GenerateSeqId", fmt.Errorf(`value '%v' must be greater than '-1'`, this.GenerateSeqId))
+	}
+	return nil
+}
+func (this *DownloadGeneratedProjectResponseData) Validate() error {
+	return nil
+}
+func (this *DownloadGeneratedProjectResponse) Validate() error {
+	if this.Data != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Data); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Data", err)
+		}
+	}
+	return nil
+}
 func (this *GenerateProjectRequestComponent) Validate() error {
 	if !(len(this.Name) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))

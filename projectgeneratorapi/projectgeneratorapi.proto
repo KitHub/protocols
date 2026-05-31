@@ -14,6 +14,26 @@ service ProjectGeneratorAPI {
             body: "*"
         };
     };
+    rpc DownloadGeneratedProject(DownloadGeneratedProjectRequest) returns (DownloadGeneratedProjectResponse) {
+        option (google.api.http) = {
+            post: "/projects/download"
+            body: "*"
+        };
+    };
+}
+
+message DownloadGeneratedProjectRequest {
+    int64 GenerateSeqId = 1 [(validator.field) = {int_gt: -1}];
+}
+
+message DownloadGeneratedProjectResponseData {
+    bytes project_zip_data = 1;
+}
+
+message DownloadGeneratedProjectResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    DownloadGeneratedProjectResponseData data = 3;
 }
 
 message GenerateProjectRequestComponent {
@@ -38,7 +58,7 @@ message GenerateProjectRequest {
 }
 
 message GenerateProjectResponseData {
-
+    int64 GenerateSeqId = 1;
 }
 
 message GenerateProjectResponse {
