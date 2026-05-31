@@ -25,7 +25,7 @@ const (
 
 type DownloadGeneratedProjectRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	GenerateSeqId int64                  `protobuf:"varint,1,opt,name=GenerateSeqId,proto3" json:"GenerateSeqId,omitempty"`
+	Seq           string                 `protobuf:"bytes,1,opt,name=seq,proto3" json:"seq,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -60,11 +60,11 @@ func (*DownloadGeneratedProjectRequest) Descriptor() ([]byte, []int) {
 	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *DownloadGeneratedProjectRequest) GetGenerateSeqId() int64 {
+func (x *DownloadGeneratedProjectRequest) GetSeq() string {
 	if x != nil {
-		return x.GenerateSeqId
+		return x.Seq
 	}
-	return 0
+	return ""
 }
 
 type DownloadGeneratedProjectResponseData struct {
@@ -377,7 +377,7 @@ func (x *GenerateProjectRequest) GetProjectComponents() []*GenerateProjectReques
 
 type GenerateProjectResponseData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	GenerateSeqId int64                  `protobuf:"varint,1,opt,name=GenerateSeqId,proto3" json:"GenerateSeqId,omitempty"`
+	Seq           string                 `protobuf:"bytes,1,opt,name=seq,proto3" json:"seq,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -412,11 +412,11 @@ func (*GenerateProjectResponseData) Descriptor() ([]byte, []int) {
 	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GenerateProjectResponseData) GetGenerateSeqId() int64 {
+func (x *GenerateProjectResponseData) GetSeq() string {
 	if x != nil {
-		return x.GenerateSeqId
+		return x.Seq
 	}
-	return 0
+	return ""
 }
 
 type GenerateProjectResponse struct {
@@ -483,9 +483,10 @@ var File_projectgeneratorapi_projectgeneratorapi_proto protoreflect.FileDescript
 
 const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\n" +
-	"-projectgeneratorapi/projectgeneratorapi.proto\x12\x13projectgeneratorapi\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"X\n" +
-	"\x1fDownloadGeneratedProjectRequest\x125\n" +
-	"\rGenerateSeqId\x18\x01 \x01(\x03B\x0f\xe2\xdf\x1f\v\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\rGenerateSeqId\"P\n" +
+	"-projectgeneratorapi/projectgeneratorapi.proto\x12\x13projectgeneratorapi\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"V\n" +
+	"\x1fDownloadGeneratedProjectRequest\x123\n" +
+	"\x03seq\x18\x01 \x01(\tB!\xe2\xdf\x1f\x1d\n" +
+	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x3R\x03seq\"P\n" +
 	"$DownloadGeneratedProjectResponseData\x12(\n" +
 	"\x10project_zip_data\x18\x01 \x01(\fR\x0eprojectZipData\"\xa5\x01\n" +
 	" DownloadGeneratedProjectResponse\x12\x19\n" +
@@ -508,9 +509,9 @@ const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\x10project_language\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\x0fprojectLanguage\x12B\n" +
 	"\x18project_language_version\x18\x06 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\x16projectLanguageVersion\x12h\n" +
 	"\x14project_dependencies\x18\a \x03(\v25.projectgeneratorapi.GenerateProjectRequestDependencyR\x13projectDependencies\x12c\n" +
-	"\x12project_components\x18\b \x03(\v24.projectgeneratorapi.GenerateProjectRequestComponentR\x11projectComponents\"C\n" +
-	"\x1bGenerateProjectResponseData\x12$\n" +
-	"\rGenerateSeqId\x18\x01 \x01(\x03R\rGenerateSeqId\"\x93\x01\n" +
+	"\x12project_components\x18\b \x03(\v24.projectgeneratorapi.GenerateProjectRequestComponentR\x11projectComponents\"/\n" +
+	"\x1bGenerateProjectResponseData\x12\x10\n" +
+	"\x03seq\x18\x01 \x01(\tR\x03seq\"\x93\x01\n" +
 	"\x17GenerateProjectResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12D\n" +
