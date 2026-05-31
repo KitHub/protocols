@@ -23,7 +23,7 @@ service ProjectGeneratorAPI {
 }
 
 message DownloadGeneratedProjectRequest {
-    string GeneratedSeq = 1 [(validator.field) = {length_gt: 0, length_lt: 51, regex: "^[a-zA-Z][a-zA-Z0-9_]*$"}];
+    string seq = 1 [(validator.field) = {length_gt: 0, length_lt: 51, regex: "^[a-zA-Z][a-zA-Z0-9_]*$"}];
 }
 
 message DownloadGeneratedProjectResponseData {
@@ -58,7 +58,7 @@ message GenerateProjectRequest {
 }
 
 message GenerateProjectResponseData {
-    int64 GenerateSeqId = 1;
+    string seq = 1;
 }
 
 message GenerateProjectResponse {
