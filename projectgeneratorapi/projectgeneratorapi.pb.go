@@ -285,6 +285,7 @@ type GenerateProjectRequest struct {
 	ProjectLanguageVersion string                              `protobuf:"bytes,6,opt,name=project_language_version,json=projectLanguageVersion,proto3" json:"project_language_version,omitempty"`
 	ProjectDependencies    []*GenerateProjectRequestDependency `protobuf:"bytes,7,rep,name=project_dependencies,json=projectDependencies,proto3" json:"project_dependencies,omitempty"`
 	ProjectComponents      []*GenerateProjectRequestComponent  `protobuf:"bytes,8,rep,name=project_components,json=projectComponents,proto3" json:"project_components,omitempty"`
+	ProjectCsvUrl          string                              `protobuf:"bytes,9,opt,name=project_csv_url,json=projectCsvUrl,proto3" json:"project_csv_url,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -373,6 +374,13 @@ func (x *GenerateProjectRequest) GetProjectComponents() []*GenerateProjectReques
 		return x.ProjectComponents
 	}
 	return nil
+}
+
+func (x *GenerateProjectRequest) GetProjectCsvUrl() string {
+	if x != nil {
+		return x.ProjectCsvUrl
+	}
+	return ""
 }
 
 type GenerateProjectResponseData struct {
@@ -498,7 +506,7 @@ const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"d\n" +
 	" GenerateProjectRequestDependency\x12\x1c\n" +
 	"\x04name\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x3R\x04name\x12\"\n" +
-	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"\xe9\x04\n" +
+	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"\x9c\x05\n" +
 	"\x16GenerateProjectRequest\x12+\n" +
 	"\fproject_name\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\vprojectName\x12:\n" +
 	"\x13project_description\x18\x02 \x01(\tB\t\xe2\xdf\x1f\x05p\x00x\xf5\x03R\x12projectDescription\x12K\n" +
@@ -509,7 +517,8 @@ const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\x10project_language\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\x0fprojectLanguage\x12B\n" +
 	"\x18project_language_version\x18\x06 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\x16projectLanguageVersion\x12h\n" +
 	"\x14project_dependencies\x18\a \x03(\v25.projectgeneratorapi.GenerateProjectRequestDependencyR\x13projectDependencies\x12c\n" +
-	"\x12project_components\x18\b \x03(\v24.projectgeneratorapi.GenerateProjectRequestComponentR\x11projectComponents\"/\n" +
+	"\x12project_components\x18\b \x03(\v24.projectgeneratorapi.GenerateProjectRequestComponentR\x11projectComponents\x121\n" +
+	"\x0fproject_csv_url\x18\t \x01(\tB\t\xe2\xdf\x1f\x05p\x00x\xc9\x01R\rprojectCsvUrl\"/\n" +
 	"\x1bGenerateProjectResponseData\x12\x10\n" +
 	"\x03seq\x18\x01 \x01(\tR\x03seq\"\x93\x01\n" +
 	"\x17GenerateProjectResponse\x12\x19\n" +
