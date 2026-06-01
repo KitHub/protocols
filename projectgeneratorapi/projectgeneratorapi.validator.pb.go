@@ -134,11 +134,11 @@ func (this *GenerateProjectRequest) Validate() error {
 			}
 		}
 	}
-	if !(len(this.ProjectCsvUrl) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ProjectCsvUrl", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectCsvUrl))
+	if !(len(this.ProjectCvsUrl) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectCvsUrl", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectCvsUrl))
 	}
-	if !(len(this.ProjectCsvUrl) < 201) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ProjectCsvUrl", fmt.Errorf(`value '%v' must have a length smaller than '201'`, this.ProjectCsvUrl))
+	if !(len(this.ProjectCvsUrl) < 201) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectCvsUrl", fmt.Errorf(`value '%v' must have a length smaller than '201'`, this.ProjectCvsUrl))
 	}
 	return nil
 }

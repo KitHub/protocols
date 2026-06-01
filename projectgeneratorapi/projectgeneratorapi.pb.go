@@ -285,7 +285,7 @@ type GenerateProjectRequest struct {
 	ProjectLanguageVersion string                              `protobuf:"bytes,6,opt,name=project_language_version,json=projectLanguageVersion,proto3" json:"project_language_version,omitempty"`
 	ProjectDependencies    []*GenerateProjectRequestDependency `protobuf:"bytes,7,rep,name=project_dependencies,json=projectDependencies,proto3" json:"project_dependencies,omitempty"`
 	ProjectComponents      []*GenerateProjectRequestComponent  `protobuf:"bytes,8,rep,name=project_components,json=projectComponents,proto3" json:"project_components,omitempty"`
-	ProjectCsvUrl          string                              `protobuf:"bytes,9,opt,name=project_csv_url,json=projectCsvUrl,proto3" json:"project_csv_url,omitempty"`
+	ProjectCvsUrl          string                              `protobuf:"bytes,9,opt,name=project_cvs_url,json=projectCvsUrl,proto3" json:"project_cvs_url,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -376,9 +376,9 @@ func (x *GenerateProjectRequest) GetProjectComponents() []*GenerateProjectReques
 	return nil
 }
 
-func (x *GenerateProjectRequest) GetProjectCsvUrl() string {
+func (x *GenerateProjectRequest) GetProjectCvsUrl() string {
 	if x != nil {
-		return x.ProjectCsvUrl
+		return x.ProjectCvsUrl
 	}
 	return ""
 }
@@ -518,7 +518,7 @@ const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\x18project_language_version\x18\x06 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\x16projectLanguageVersion\x12h\n" +
 	"\x14project_dependencies\x18\a \x03(\v25.projectgeneratorapi.GenerateProjectRequestDependencyR\x13projectDependencies\x12c\n" +
 	"\x12project_components\x18\b \x03(\v24.projectgeneratorapi.GenerateProjectRequestComponentR\x11projectComponents\x121\n" +
-	"\x0fproject_csv_url\x18\t \x01(\tB\t\xe2\xdf\x1f\x05p\x00x\xc9\x01R\rprojectCsvUrl\"/\n" +
+	"\x0fproject_cvs_url\x18\t \x01(\tB\t\xe2\xdf\x1f\x05p\x00x\xc9\x01R\rprojectCvsUrl\"/\n" +
 	"\x1bGenerateProjectResponseData\x12\x10\n" +
 	"\x03seq\x18\x01 \x01(\tR\x03seq\"\x93\x01\n" +
 	"\x17GenerateProjectResponse\x12\x19\n" +

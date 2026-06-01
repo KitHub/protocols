@@ -55,7 +55,7 @@ message GenerateProjectRequest {
     string project_language_version = 6 [(validator.field) = {length_gt: 0, length_lt: 31}];
     repeated GenerateProjectRequestDependency project_dependencies = 7;
     repeated GenerateProjectRequestComponent project_components = 8;
-    string project_csv_url = 9 [(validator.field) = {length_gt: 0, length_lt: 201}];
+    string project_cvs_url = 9 [(validator.field) = {length_gt: 0, length_lt: 201}];
 }
 
 message GenerateProjectResponseData {
