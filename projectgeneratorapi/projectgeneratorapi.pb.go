@@ -70,6 +70,7 @@ func (x *DownloadGeneratedProjectRequest) GetSeq() string {
 type DownloadGeneratedProjectResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	FileContent   []byte                 `protobuf:"bytes,1,opt,name=file_content,json=fileContent,proto3" json:"file_content,omitempty"`
+	ContentType   string                 `protobuf:"bytes,2,opt,name=content_type,json=contentType,proto3" json:"content_type,omitempty"` // MIME类型
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -109,6 +110,13 @@ func (x *DownloadGeneratedProjectResponse) GetFileContent() []byte {
 		return x.FileContent
 	}
 	return nil
+}
+
+func (x *DownloadGeneratedProjectResponse) GetContentType() string {
+	if x != nil {
+		return x.ContentType
+	}
+	return ""
 }
 
 type GenerateProjectRequestComponent struct {
@@ -434,9 +442,10 @@ const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"-projectgeneratorapi/projectgeneratorapi.proto\x12\x13projectgeneratorapi\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"V\n" +
 	"\x1fDownloadGeneratedProjectRequest\x123\n" +
 	"\x03seq\x18\x01 \x01(\tB!\xe2\xdf\x1f\x1d\n" +
-	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x3R\x03seq\"E\n" +
+	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x3R\x03seq\"h\n" +
 	" DownloadGeneratedProjectResponse\x12!\n" +
-	"\ffile_content\x18\x01 \x01(\fR\vfileContent\"c\n" +
+	"\ffile_content\x18\x01 \x01(\fR\vfileContent\x12!\n" +
+	"\fcontent_type\x18\x02 \x01(\tR\vcontentType\"c\n" +
 	"\x1fGenerateProjectRequestComponent\x12\x1c\n" +
 	"\x04name\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x3R\x04name\x12\"\n" +
 	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"d\n" +
