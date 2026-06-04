@@ -9,6 +9,7 @@ import (
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
+	_ "google.golang.org/genproto/googleapis/api/httpbody"
 	regexp "regexp"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 )
@@ -29,17 +30,6 @@ func (this *DownloadGeneratedProjectRequest) Validate() error {
 	}
 	if !(len(this.Seq) < 51) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Seq", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.Seq))
-	}
-	return nil
-}
-func (this *DownloadGeneratedProjectResponseData) Validate() error {
-	return nil
-}
-func (this *DownloadGeneratedProjectResponse) Validate() error {
-	if this.Data != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Data); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Data", err)
-		}
 	}
 	return nil
 }

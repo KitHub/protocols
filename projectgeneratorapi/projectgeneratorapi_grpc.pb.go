@@ -8,6 +8,7 @@ package projectgeneratorapi
 
 import (
 	context "context"
+	httpbody "google.golang.org/genproto/googleapis/api/httpbody"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -28,7 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProjectGeneratorAPIClient interface {
 	GenerateProject(ctx context.Context, in *GenerateProjectRequest, opts ...grpc.CallOption) (*GenerateProjectResponse, error)
-	DownloadGeneratedProject(ctx context.Context, in *DownloadGeneratedProjectRequest, opts ...grpc.CallOption) (*DownloadGeneratedProjectResponse, error)
+	DownloadGeneratedProject(ctx context.Context, in *DownloadGeneratedProjectRequest, opts ...grpc.CallOption) (*httpbody.HttpBody, error)
 }
 
 type projectGeneratorAPIClient struct {
@@ -49,9 +50,9 @@ func (c *projectGeneratorAPIClient) GenerateProject(ctx context.Context, in *Gen
 	return out, nil
 }
 
-func (c *projectGeneratorAPIClient) DownloadGeneratedProject(ctx context.Context, in *DownloadGeneratedProjectRequest, opts ...grpc.CallOption) (*DownloadGeneratedProjectResponse, error) {
+func (c *projectGeneratorAPIClient) DownloadGeneratedProject(ctx context.Context, in *DownloadGeneratedProjectRequest, opts ...grpc.CallOption) (*httpbody.HttpBody, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DownloadGeneratedProjectResponse)
+	out := new(httpbody.HttpBody)
 	err := c.cc.Invoke(ctx, ProjectGeneratorAPI_DownloadGeneratedProject_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -64,7 +65,7 @@ func (c *projectGeneratorAPIClient) DownloadGeneratedProject(ctx context.Context
 // for forward compatibility.
 type ProjectGeneratorAPIServer interface {
 	GenerateProject(context.Context, *GenerateProjectRequest) (*GenerateProjectResponse, error)
-	DownloadGeneratedProject(context.Context, *DownloadGeneratedProjectRequest) (*DownloadGeneratedProjectResponse, error)
+	DownloadGeneratedProject(context.Context, *DownloadGeneratedProjectRequest) (*httpbody.HttpBody, error)
 	mustEmbedUnimplementedProjectGeneratorAPIServer()
 }
 
@@ -78,7 +79,7 @@ type UnimplementedProjectGeneratorAPIServer struct{}
 func (UnimplementedProjectGeneratorAPIServer) GenerateProject(context.Context, *GenerateProjectRequest) (*GenerateProjectResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GenerateProject not implemented")
 }
-func (UnimplementedProjectGeneratorAPIServer) DownloadGeneratedProject(context.Context, *DownloadGeneratedProjectRequest) (*DownloadGeneratedProjectResponse, error) {
+func (UnimplementedProjectGeneratorAPIServer) DownloadGeneratedProject(context.Context, *DownloadGeneratedProjectRequest) (*httpbody.HttpBody, error) {
 	return nil, status.Error(codes.Unimplemented, "method DownloadGeneratedProject not implemented")
 }
 func (UnimplementedProjectGeneratorAPIServer) mustEmbedUnimplementedProjectGeneratorAPIServer() {}

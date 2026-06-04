@@ -9,6 +9,7 @@ package projectgeneratorapi
 import (
 	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
+	httpbody "google.golang.org/genproto/googleapis/api/httpbody"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -67,110 +68,6 @@ func (x *DownloadGeneratedProjectRequest) GetSeq() string {
 	return ""
 }
 
-type DownloadGeneratedProjectResponseData struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	ProjectZipData []byte                 `protobuf:"bytes,1,opt,name=project_zip_data,json=projectZipData,proto3" json:"project_zip_data,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
-}
-
-func (x *DownloadGeneratedProjectResponseData) Reset() {
-	*x = DownloadGeneratedProjectResponseData{}
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DownloadGeneratedProjectResponseData) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DownloadGeneratedProjectResponseData) ProtoMessage() {}
-
-func (x *DownloadGeneratedProjectResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DownloadGeneratedProjectResponseData.ProtoReflect.Descriptor instead.
-func (*DownloadGeneratedProjectResponseData) Descriptor() ([]byte, []int) {
-	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *DownloadGeneratedProjectResponseData) GetProjectZipData() []byte {
-	if x != nil {
-		return x.ProjectZipData
-	}
-	return nil
-}
-
-type DownloadGeneratedProjectResponse struct {
-	state         protoimpl.MessageState                `protogen:"open.v1"`
-	ErrCode       int32                                 `protobuf:"varint,1,opt,name=err_code,json=errCode,proto3" json:"err_code,omitempty"`
-	ErrMsg        string                                `protobuf:"bytes,2,opt,name=err_msg,json=errMsg,proto3" json:"err_msg,omitempty"`
-	Data          *DownloadGeneratedProjectResponseData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *DownloadGeneratedProjectResponse) Reset() {
-	*x = DownloadGeneratedProjectResponse{}
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DownloadGeneratedProjectResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DownloadGeneratedProjectResponse) ProtoMessage() {}
-
-func (x *DownloadGeneratedProjectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DownloadGeneratedProjectResponse.ProtoReflect.Descriptor instead.
-func (*DownloadGeneratedProjectResponse) Descriptor() ([]byte, []int) {
-	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *DownloadGeneratedProjectResponse) GetErrCode() int32 {
-	if x != nil {
-		return x.ErrCode
-	}
-	return 0
-}
-
-func (x *DownloadGeneratedProjectResponse) GetErrMsg() string {
-	if x != nil {
-		return x.ErrMsg
-	}
-	return ""
-}
-
-func (x *DownloadGeneratedProjectResponse) GetData() *DownloadGeneratedProjectResponseData {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
-
 type GenerateProjectRequestComponent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
@@ -181,7 +78,7 @@ type GenerateProjectRequestComponent struct {
 
 func (x *GenerateProjectRequestComponent) Reset() {
 	*x = GenerateProjectRequestComponent{}
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[3]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -193,7 +90,7 @@ func (x *GenerateProjectRequestComponent) String() string {
 func (*GenerateProjectRequestComponent) ProtoMessage() {}
 
 func (x *GenerateProjectRequestComponent) ProtoReflect() protoreflect.Message {
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[3]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -206,7 +103,7 @@ func (x *GenerateProjectRequestComponent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateProjectRequestComponent.ProtoReflect.Descriptor instead.
 func (*GenerateProjectRequestComponent) Descriptor() ([]byte, []int) {
-	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{3}
+	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GenerateProjectRequestComponent) GetName() string {
@@ -233,7 +130,7 @@ type GenerateProjectRequestDependency struct {
 
 func (x *GenerateProjectRequestDependency) Reset() {
 	*x = GenerateProjectRequestDependency{}
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[4]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -245,7 +142,7 @@ func (x *GenerateProjectRequestDependency) String() string {
 func (*GenerateProjectRequestDependency) ProtoMessage() {}
 
 func (x *GenerateProjectRequestDependency) ProtoReflect() protoreflect.Message {
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[4]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -258,7 +155,7 @@ func (x *GenerateProjectRequestDependency) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateProjectRequestDependency.ProtoReflect.Descriptor instead.
 func (*GenerateProjectRequestDependency) Descriptor() ([]byte, []int) {
-	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{4}
+	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GenerateProjectRequestDependency) GetName() string {
@@ -292,7 +189,7 @@ type GenerateProjectRequest struct {
 
 func (x *GenerateProjectRequest) Reset() {
 	*x = GenerateProjectRequest{}
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[5]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -304,7 +201,7 @@ func (x *GenerateProjectRequest) String() string {
 func (*GenerateProjectRequest) ProtoMessage() {}
 
 func (x *GenerateProjectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[5]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -317,7 +214,7 @@ func (x *GenerateProjectRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateProjectRequest.ProtoReflect.Descriptor instead.
 func (*GenerateProjectRequest) Descriptor() ([]byte, []int) {
-	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{5}
+	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GenerateProjectRequest) GetProjectName() string {
@@ -392,7 +289,7 @@ type GenerateProjectResponseData struct {
 
 func (x *GenerateProjectResponseData) Reset() {
 	*x = GenerateProjectResponseData{}
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[6]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -404,7 +301,7 @@ func (x *GenerateProjectResponseData) String() string {
 func (*GenerateProjectResponseData) ProtoMessage() {}
 
 func (x *GenerateProjectResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[6]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -417,7 +314,7 @@ func (x *GenerateProjectResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateProjectResponseData.ProtoReflect.Descriptor instead.
 func (*GenerateProjectResponseData) Descriptor() ([]byte, []int) {
-	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{6}
+	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GenerateProjectResponseData) GetSeq() string {
@@ -438,7 +335,7 @@ type GenerateProjectResponse struct {
 
 func (x *GenerateProjectResponse) Reset() {
 	*x = GenerateProjectResponse{}
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[7]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -450,7 +347,7 @@ func (x *GenerateProjectResponse) String() string {
 func (*GenerateProjectResponse) ProtoMessage() {}
 
 func (x *GenerateProjectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[7]
+	mi := &file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -463,7 +360,7 @@ func (x *GenerateProjectResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateProjectResponse.ProtoReflect.Descriptor instead.
 func (*GenerateProjectResponse) Descriptor() ([]byte, []int) {
-	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{7}
+	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GenerateProjectResponse) GetErrCode() int32 {
@@ -491,16 +388,10 @@ var File_projectgeneratorapi_projectgeneratorapi_proto protoreflect.FileDescript
 
 const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\n" +
-	"-projectgeneratorapi/projectgeneratorapi.proto\x12\x13projectgeneratorapi\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"V\n" +
+	"-projectgeneratorapi/projectgeneratorapi.proto\x12\x13projectgeneratorapi\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/httpbody.proto\"V\n" +
 	"\x1fDownloadGeneratedProjectRequest\x123\n" +
 	"\x03seq\x18\x01 \x01(\tB!\xe2\xdf\x1f\x1d\n" +
-	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x3R\x03seq\"P\n" +
-	"$DownloadGeneratedProjectResponseData\x12(\n" +
-	"\x10project_zip_data\x18\x01 \x01(\fR\x0eprojectZipData\"\xa5\x01\n" +
-	" DownloadGeneratedProjectResponse\x12\x19\n" +
-	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
-	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12M\n" +
-	"\x04data\x18\x03 \x01(\v29.projectgeneratorapi.DownloadGeneratedProjectResponseDataR\x04data\"c\n" +
+	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x3R\x03seq\"c\n" +
 	"\x1fGenerateProjectRequestComponent\x12\x1c\n" +
 	"\x04name\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x3R\x04name\x12\"\n" +
 	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"d\n" +
@@ -524,10 +415,10 @@ const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\x17GenerateProjectResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12D\n" +
-	"\x04data\x18\x03 \x01(\v20.projectgeneratorapi.GenerateProjectResponseDataR\x04data2\xcc\x02\n" +
+	"\x04data\x18\x03 \x01(\v20.projectgeneratorapi.GenerateProjectResponseDataR\x04data2\xab\x02\n" +
 	"\x13ProjectGeneratorAPI\x12\x8b\x01\n" +
-	"\x0fGenerateProject\x12+.projectgeneratorapi.GenerateProjectRequest\x1a,.projectgeneratorapi.GenerateProjectResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/projects/generate\x12\xa6\x01\n" +
-	"\x18DownloadGeneratedProject\x124.projectgeneratorapi.DownloadGeneratedProjectRequest\x1a5.projectgeneratorapi.DownloadGeneratedProjectResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/projects/downloadB\x18Z\x16./;projectgeneratorapib\x06proto3"
+	"\x0fGenerateProject\x12+.projectgeneratorapi.GenerateProjectRequest\x1a,.projectgeneratorapi.GenerateProjectResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/projects/generate\x12\x85\x01\n" +
+	"\x18DownloadGeneratedProject\x124.projectgeneratorapi.DownloadGeneratedProjectRequest\x1a\x14.google.api.HttpBody\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/projects/downloadB\x18Z\x16./;projectgeneratorapib\x06proto3"
 
 var (
 	file_projectgeneratorapi_projectgeneratorapi_proto_rawDescOnce sync.Once
@@ -541,31 +432,29 @@ func file_projectgeneratorapi_projectgeneratorapi_proto_rawDescGZIP() []byte {
 	return file_projectgeneratorapi_projectgeneratorapi_proto_rawDescData
 }
 
-var file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_projectgeneratorapi_projectgeneratorapi_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_projectgeneratorapi_projectgeneratorapi_proto_goTypes = []any{
-	(*DownloadGeneratedProjectRequest)(nil),      // 0: projectgeneratorapi.DownloadGeneratedProjectRequest
-	(*DownloadGeneratedProjectResponseData)(nil), // 1: projectgeneratorapi.DownloadGeneratedProjectResponseData
-	(*DownloadGeneratedProjectResponse)(nil),     // 2: projectgeneratorapi.DownloadGeneratedProjectResponse
-	(*GenerateProjectRequestComponent)(nil),      // 3: projectgeneratorapi.GenerateProjectRequestComponent
-	(*GenerateProjectRequestDependency)(nil),     // 4: projectgeneratorapi.GenerateProjectRequestDependency
-	(*GenerateProjectRequest)(nil),               // 5: projectgeneratorapi.GenerateProjectRequest
-	(*GenerateProjectResponseData)(nil),          // 6: projectgeneratorapi.GenerateProjectResponseData
-	(*GenerateProjectResponse)(nil),              // 7: projectgeneratorapi.GenerateProjectResponse
+	(*DownloadGeneratedProjectRequest)(nil),  // 0: projectgeneratorapi.DownloadGeneratedProjectRequest
+	(*GenerateProjectRequestComponent)(nil),  // 1: projectgeneratorapi.GenerateProjectRequestComponent
+	(*GenerateProjectRequestDependency)(nil), // 2: projectgeneratorapi.GenerateProjectRequestDependency
+	(*GenerateProjectRequest)(nil),           // 3: projectgeneratorapi.GenerateProjectRequest
+	(*GenerateProjectResponseData)(nil),      // 4: projectgeneratorapi.GenerateProjectResponseData
+	(*GenerateProjectResponse)(nil),          // 5: projectgeneratorapi.GenerateProjectResponse
+	(*httpbody.HttpBody)(nil),                // 6: google.api.HttpBody
 }
 var file_projectgeneratorapi_projectgeneratorapi_proto_depIdxs = []int32{
-	1, // 0: projectgeneratorapi.DownloadGeneratedProjectResponse.data:type_name -> projectgeneratorapi.DownloadGeneratedProjectResponseData
-	4, // 1: projectgeneratorapi.GenerateProjectRequest.project_dependencies:type_name -> projectgeneratorapi.GenerateProjectRequestDependency
-	3, // 2: projectgeneratorapi.GenerateProjectRequest.project_components:type_name -> projectgeneratorapi.GenerateProjectRequestComponent
-	6, // 3: projectgeneratorapi.GenerateProjectResponse.data:type_name -> projectgeneratorapi.GenerateProjectResponseData
-	5, // 4: projectgeneratorapi.ProjectGeneratorAPI.GenerateProject:input_type -> projectgeneratorapi.GenerateProjectRequest
-	0, // 5: projectgeneratorapi.ProjectGeneratorAPI.DownloadGeneratedProject:input_type -> projectgeneratorapi.DownloadGeneratedProjectRequest
-	7, // 6: projectgeneratorapi.ProjectGeneratorAPI.GenerateProject:output_type -> projectgeneratorapi.GenerateProjectResponse
-	2, // 7: projectgeneratorapi.ProjectGeneratorAPI.DownloadGeneratedProject:output_type -> projectgeneratorapi.DownloadGeneratedProjectResponse
-	6, // [6:8] is the sub-list for method output_type
-	4, // [4:6] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	2, // 0: projectgeneratorapi.GenerateProjectRequest.project_dependencies:type_name -> projectgeneratorapi.GenerateProjectRequestDependency
+	1, // 1: projectgeneratorapi.GenerateProjectRequest.project_components:type_name -> projectgeneratorapi.GenerateProjectRequestComponent
+	4, // 2: projectgeneratorapi.GenerateProjectResponse.data:type_name -> projectgeneratorapi.GenerateProjectResponseData
+	3, // 3: projectgeneratorapi.ProjectGeneratorAPI.GenerateProject:input_type -> projectgeneratorapi.GenerateProjectRequest
+	0, // 4: projectgeneratorapi.ProjectGeneratorAPI.DownloadGeneratedProject:input_type -> projectgeneratorapi.DownloadGeneratedProjectRequest
+	5, // 5: projectgeneratorapi.ProjectGeneratorAPI.GenerateProject:output_type -> projectgeneratorapi.GenerateProjectResponse
+	6, // 6: projectgeneratorapi.ProjectGeneratorAPI.DownloadGeneratedProject:output_type -> google.api.HttpBody
+	5, // [5:7] is the sub-list for method output_type
+	3, // [3:5] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_projectgeneratorapi_projectgeneratorapi_proto_init() }
@@ -579,7 +468,7 @@ func file_projectgeneratorapi_projectgeneratorapi_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc), len(file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
