@@ -4,6 +4,7 @@ package projectgeneratorapi;
 
 import "mwitkow/go-proto-validators/validator.proto";
 import "google/api/annotations.proto";
+import "google/api/httpbody.proto";
 
 option go_package = "./;projectgeneratorapi";
 
@@ -14,7 +15,7 @@ service ProjectGeneratorAPI {
             body: "*"
         };
     };
-    rpc DownloadGeneratedProject(DownloadGeneratedProjectRequest) returns (DownloadGeneratedProjectResponse) {
+    rpc DownloadGeneratedProject(DownloadGeneratedProjectRequest) returns (google.api.HttpBody) {
         option (google.api.http) = {
             post: "/projects/download"
             body: "*"
@@ -24,11 +25,6 @@ service ProjectGeneratorAPI {
 
 message DownloadGeneratedProjectRequest {
     string seq = 1 [(validator.field) = {length_gt: 0, length_lt: 51, regex: "^[a-zA-Z][a-zA-Z0-9_]*$"}];
-}
-
-message DownloadGeneratedProjectResponse {
-    bytes file_content = 1;
-    string content_type = 2; // MIME类型
 }
 
 message GenerateProjectRequestComponent {
