@@ -19,11 +19,11 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-var _regex_DownloadGeneratedProjectRequest_Seq = regexp.MustCompile(`^[a-zA-Z][a-zA-Z0-9_]*$`)
+var _regex_DownloadGeneratedProjectRequest_Seq = regexp.MustCompile(`^[a-zA-Z0-9_]*$`)
 
 func (this *DownloadGeneratedProjectRequest) Validate() error {
 	if !_regex_DownloadGeneratedProjectRequest_Seq.MatchString(this.Seq) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Seq", fmt.Errorf(`value '%v' must be a string conforming to regex "^[a-zA-Z][a-zA-Z0-9_]*$"`, this.Seq))
+		return github_com_mwitkow_go_proto_validators.FieldError("Seq", fmt.Errorf(`value '%v' must be a string conforming to regex "^[a-zA-Z0-9_]*$"`, this.Seq))
 	}
 	if !(len(this.Seq) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Seq", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Seq))

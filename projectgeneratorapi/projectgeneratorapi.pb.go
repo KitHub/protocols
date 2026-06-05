@@ -388,10 +388,10 @@ var File_projectgeneratorapi_projectgeneratorapi_proto protoreflect.FileDescript
 
 const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\n" +
-	"-projectgeneratorapi/projectgeneratorapi.proto\x12\x13projectgeneratorapi\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/httpbody.proto\"V\n" +
-	"\x1fDownloadGeneratedProjectRequest\x123\n" +
-	"\x03seq\x18\x01 \x01(\tB!\xe2\xdf\x1f\x1d\n" +
-	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x3R\x03seq\"c\n" +
+	"-projectgeneratorapi/projectgeneratorapi.proto\x12\x13projectgeneratorapi\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/httpbody.proto\"N\n" +
+	"\x1fDownloadGeneratedProjectRequest\x12+\n" +
+	"\x03seq\x18\x01 \x01(\tB\x19\xe2\xdf\x1f\x15\n" +
+	"\x0f^[a-zA-Z0-9_]*$p\x00x3R\x03seq\"c\n" +
 	"\x1fGenerateProjectRequestComponent\x12\x1c\n" +
 	"\x04name\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x3R\x04name\x12\"\n" +
 	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"d\n" +
