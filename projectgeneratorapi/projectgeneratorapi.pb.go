@@ -397,16 +397,19 @@ const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"d\n" +
 	" GenerateProjectRequestDependency\x12\x1c\n" +
 	"\x04name\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x3R\x04name\x12\"\n" +
-	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"\x9c\x05\n" +
-	"\x16GenerateProjectRequest\x12+\n" +
-	"\fproject_name\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\vprojectName\x12:\n" +
+	"\aversion\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x15R\aversion\"\xd8\x05\n" +
+	"\x16GenerateProjectRequest\x12<\n" +
+	"\fproject_name\x18\x01 \x01(\tB\x19\xe2\xdf\x1f\x15\n" +
+	"\x0f^[a-zA-Z0-9_]*$p\x00x\x1fR\vprojectName\x12:\n" +
 	"\x13project_description\x18\x02 \x01(\tB\t\xe2\xdf\x1f\x05p\x00x\xf5\x03R\x12projectDescription\x12K\n" +
 	"\x10project_app_name\x18\x03 \x01(\tB!\xe2\xdf\x1f\x1d\n" +
 	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x\x1fR\x0eprojectAppName\x12Q\n" +
 	"\x13project_server_name\x18\x04 \x01(\tB!\xe2\xdf\x1f\x1d\n" +
-	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x\x1fR\x11projectServerName\x123\n" +
-	"\x10project_language\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\x0fprojectLanguage\x12B\n" +
-	"\x18project_language_version\x18\x06 \x01(\tB\b\xe2\xdf\x1f\x04p\x00x\x1fR\x16projectLanguageVersion\x12h\n" +
+	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x\x1fR\x11projectServerName\x12L\n" +
+	"\x10project_language\x18\x05 \x01(\tB!\xe2\xdf\x1f\x1d\n" +
+	"\x17^[a-zA-Z][a-zA-Z0-9_]*$p\x00x\x1fR\x0fprojectLanguage\x12T\n" +
+	"\x18project_language_version\x18\x06 \x01(\tB\x1a\xe2\xdf\x1f\x16\n" +
+	"\x10^[a-zA-Z0-9_.]*$p\x00x\x1fR\x16projectLanguageVersion\x12h\n" +
 	"\x14project_dependencies\x18\a \x03(\v25.projectgeneratorapi.GenerateProjectRequestDependencyR\x13projectDependencies\x12c\n" +
 	"\x12project_components\x18\b \x03(\v24.projectgeneratorapi.GenerateProjectRequestComponentR\x11projectComponents\x121\n" +
 	"\x0fproject_cvs_url\x18\t \x01(\tB\t\xe2\xdf\x1f\x05p\x00x\xc9\x01R\rprojectCvsUrl\"/\n" +

@@ -64,10 +64,16 @@ func (this *GenerateProjectRequestDependency) Validate() error {
 	return nil
 }
 
+var _regex_GenerateProjectRequest_ProjectName = regexp.MustCompile(`^[a-zA-Z0-9_]*$`)
 var _regex_GenerateProjectRequest_ProjectAppName = regexp.MustCompile(`^[a-zA-Z][a-zA-Z0-9_]*$`)
 var _regex_GenerateProjectRequest_ProjectServerName = regexp.MustCompile(`^[a-zA-Z][a-zA-Z0-9_]*$`)
+var _regex_GenerateProjectRequest_ProjectLanguage = regexp.MustCompile(`^[a-zA-Z][a-zA-Z0-9_]*$`)
+var _regex_GenerateProjectRequest_ProjectLanguageVersion = regexp.MustCompile(`^[a-zA-Z0-9_.]*$`)
 
 func (this *GenerateProjectRequest) Validate() error {
+	if !_regex_GenerateProjectRequest_ProjectName.MatchString(this.ProjectName) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectName", fmt.Errorf(`value '%v' must be a string conforming to regex "^[a-zA-Z0-9_]*$"`, this.ProjectName))
+	}
 	if !(len(this.ProjectName) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ProjectName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectName))
 	}
@@ -98,11 +104,17 @@ func (this *GenerateProjectRequest) Validate() error {
 	if !(len(this.ProjectServerName) < 31) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ProjectServerName", fmt.Errorf(`value '%v' must have a length smaller than '31'`, this.ProjectServerName))
 	}
+	if !_regex_GenerateProjectRequest_ProjectLanguage.MatchString(this.ProjectLanguage) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguage", fmt.Errorf(`value '%v' must be a string conforming to regex "^[a-zA-Z][a-zA-Z0-9_]*$"`, this.ProjectLanguage))
+	}
 	if !(len(this.ProjectLanguage) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguage", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectLanguage))
 	}
 	if !(len(this.ProjectLanguage) < 31) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguage", fmt.Errorf(`value '%v' must have a length smaller than '31'`, this.ProjectLanguage))
+	}
+	if !_regex_GenerateProjectRequest_ProjectLanguageVersion.MatchString(this.ProjectLanguageVersion) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguageVersion", fmt.Errorf(`value '%v' must be a string conforming to regex "^[a-zA-Z0-9_.]*$"`, this.ProjectLanguageVersion))
 	}
 	if !(len(this.ProjectLanguageVersion) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ProjectLanguageVersion", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ProjectLanguageVersion))
