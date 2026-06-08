@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package DataManagementPlatform_ComputeEngineAPI;
+
+import "mwitkow/go-proto-validators/validator.proto";
+import "google/api/annotations.proto";
+
+option go_package = "./;DataManagementPlatform_ComputeEngineAPI";
+
+service ComputeEngineAPI {
+  rpc RegisterPackage(RegisterPackageRequest) returns (RegisterPackageResponse) {
+    option (google.api.http) = {
+      post: "/v1/computeEngines/packages/register"
+      body: "*"
+    };
+  }
+
+  rpc GetPackageById(GetPackageByIdRequest) returns (GetPackageByIdResponse) {
+    option (google.api.http) = {
+      get: "/v1/computeEngines/packages/queryById"
+    };
+  }
+
+  rpc GetPackageByName(GetPackageByNameRequest) returns (GetPackageByNameResponse) {
+    option (google.api.http) = {
+      get: "/v1/computeEngines/packages/queryByName"
+    };
+  }
+
+  rpc GetPackageListASCByLastId(GetPackageListASCByLastIdRequest) returns (GetPackageListASCByLastIdResponse) {
+    option (google.api.http) = {
+      get: "/v1/computeEngines/packages/queryListASCByLastId"
+    };
+  }
+}
+
+message RegisterPackageRequest {
+  string name = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
+  string description = 2 [(validator.field) = {length_gt: 301}];
+  string version = 3 [(validator.field) = {length_lt: 0, length_gt: 21}];
+  string platform = 4 [(validator.field) = {length_lt: 0, length_gt: 21}];
+}
+
+message RegisterPackageResponseData {
+  BasicPackageInfo package_info = 1;
+}
+
+message RegisterPackageResponse {
+  int32 err_code = 1;
+  string err_msg = 2;
+  RegisterPackageResponseData data = 3;
+}
+
+message BasicPackageInfo {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  string version = 4;
+  string platform = 5;
+  int64 register_time = 6;
+}
+
+message GetPackageByIdRequest {
+  int64 package_id = 1 [(validator.field) = {int_gt: -1}];
+}
+
+message GetPackageByIdResponseData {
+    BasicPackageInfo package_info = 1;
+}
+
+message GetPackageByIdResponse {
+  int32 err_code = 1;
+  string err_msg = 2;
+  GetPackageByIdResponseData data = 3;
+}
+
+message GetPackageByNameRequest {
+  string name = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
+}
+
+message GetPackageByNameResponseData {
+  BasicPackageInfo package_info = 1;
+}
+
+message GetPackageByNameResponse {
+  int32 err_code = 1;
+  string err_msg = 2;
+  GetPackageByNameResponseData data = 3;
+}
+
+message GetPackageListASCByLastIdRequest {
+  int64 last_id = 1 [(validator.field) = {int_gt: -1}];
+  int32 limit = 2 [(validator.field) = {int_gt: -1, int_lt: 101}];
+}
+
+message GetPackageListASCByLastIdResponseData {
+  repeated BasicPackageInfo package_infos = 1;
+}
+
+message GetPackageListASCByLastIdResponse {
+  int32 err_code = 1;
+  string err_msg = 2;
+  GetPackageListASCByLastIdResponseData data = 3;
+}
