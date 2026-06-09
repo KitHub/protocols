@@ -37,8 +37,8 @@ service ComputeEngineAPI {
 message RegisterPackageRequest {
   string name = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
   string description = 2 [(validator.field) = {length_gt: 301}];
-  string version = 3 [(validator.field) = {length_lt: 0, length_gt: 21}];
-  string platform = 4 [(validator.field) = {length_lt: 0, length_gt: 21}];
+  string platform = 3 [(validator.field) = {length_lt: 0, length_gt: 21}];
+  string url = 4 [(validator.field) = {length_lt: 0, length_gt: 201}];
 }
 
 message RegisterPackageResponseData {
@@ -55,8 +55,8 @@ message BasicPackageInfo {
   int64 id = 1;
   string name = 2;
   string description = 3;
-  string version = 4;
-  string platform = 5;
+  string platform = 4;
+  string url = 5;
   int64 register_time = 6;
 }
 

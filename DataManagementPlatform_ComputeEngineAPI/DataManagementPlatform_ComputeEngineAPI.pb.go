@@ -27,8 +27,8 @@ type RegisterPackageRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
-	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
-	Platform      string                 `protobuf:"bytes,4,opt,name=platform,proto3" json:"platform,omitempty"`
+	Platform      string                 `protobuf:"bytes,3,opt,name=platform,proto3" json:"platform,omitempty"`
+	Url           string                 `protobuf:"bytes,4,opt,name=url,proto3" json:"url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -77,16 +77,16 @@ func (x *RegisterPackageRequest) GetDescription() string {
 	return ""
 }
 
-func (x *RegisterPackageRequest) GetVersion() string {
+func (x *RegisterPackageRequest) GetPlatform() string {
 	if x != nil {
-		return x.Version
+		return x.Platform
 	}
 	return ""
 }
 
-func (x *RegisterPackageRequest) GetPlatform() string {
+func (x *RegisterPackageRequest) GetUrl() string {
 	if x != nil {
-		return x.Platform
+		return x.Url
 	}
 	return ""
 }
@@ -200,8 +200,8 @@ type BasicPackageInfo struct {
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Version       string                 `protobuf:"bytes,4,opt,name=version,proto3" json:"version,omitempty"`
-	Platform      string                 `protobuf:"bytes,5,opt,name=platform,proto3" json:"platform,omitempty"`
+	Platform      string                 `protobuf:"bytes,4,opt,name=platform,proto3" json:"platform,omitempty"`
+	Url           string                 `protobuf:"bytes,5,opt,name=url,proto3" json:"url,omitempty"`
 	RegisterTime  int64                  `protobuf:"varint,6,opt,name=register_time,json=registerTime,proto3" json:"register_time,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -258,16 +258,16 @@ func (x *BasicPackageInfo) GetDescription() string {
 	return ""
 }
 
-func (x *BasicPackageInfo) GetVersion() string {
+func (x *BasicPackageInfo) GetPlatform() string {
 	if x != nil {
-		return x.Version
+		return x.Platform
 	}
 	return ""
 }
 
-func (x *BasicPackageInfo) GetPlatform() string {
+func (x *BasicPackageInfo) GetUrl() string {
 	if x != nil {
-		return x.Platform
+		return x.Url
 	}
 	return ""
 }
@@ -735,24 +735,24 @@ var File_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeE
 
 const file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc = "" +
 	"\n" +
-	"UDataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto\x12'DataManagementPlatform_ComputeEngineAPI\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"\xab\x01\n" +
+	"UDataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto\x12'DataManagementPlatform_ComputeEngineAPI\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"\xa4\x01\n" +
 	"\x16RegisterPackageRequest\x12\x1c\n" +
 	"\x04name\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\x04name\x12)\n" +
-	"\vdescription\x18\x02 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\vdescription\x12\"\n" +
-	"\aversion\x18\x03 \x01(\tB\b\xe2\xdf\x1f\x04p\x15x\x00R\aversion\x12$\n" +
-	"\bplatform\x18\x04 \x01(\tB\b\xe2\xdf\x1f\x04p\x15x\x00R\bplatform\"{\n" +
+	"\vdescription\x18\x02 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\vdescription\x12$\n" +
+	"\bplatform\x18\x03 \x01(\tB\b\xe2\xdf\x1f\x04p\x15x\x00R\bplatform\x12\x1b\n" +
+	"\x03url\x18\x04 \x01(\tB\t\xe2\xdf\x1f\x05p\xc9\x01x\x00R\x03url\"{\n" +
 	"\x1bRegisterPackageResponseData\x12\\\n" +
 	"\fpackage_info\x18\x01 \x01(\v29.DataManagementPlatform_ComputeEngineAPI.BasicPackageInfoR\vpackageInfo\"\xa7\x01\n" +
 	"\x17RegisterPackageResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12X\n" +
-	"\x04data\x18\x03 \x01(\v2D.DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseDataR\x04data\"\xb3\x01\n" +
+	"\x04data\x18\x03 \x01(\v2D.DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseDataR\x04data\"\xab\x01\n" +
 	"\x10BasicPackageInfo\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x18\n" +
-	"\aversion\x18\x04 \x01(\tR\aversion\x12\x1a\n" +
-	"\bplatform\x18\x05 \x01(\tR\bplatform\x12#\n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x1a\n" +
+	"\bplatform\x18\x04 \x01(\tR\bplatform\x12\x10\n" +
+	"\x03url\x18\x05 \x01(\tR\x03url\x12#\n" +
 	"\rregister_time\x18\x06 \x01(\x03R\fregisterTime\"G\n" +
 	"\x15GetPackageByIdRequest\x12.\n" +
 	"\n" +

@@ -7,8 +7,8 @@ import (
 	fmt "fmt"
 	math "math"
 	proto "github.com/golang/protobuf/proto"
-	_ "google.golang.org/genproto/googleapis/api/annotations"
 	_ "github.com/mwitkow/go-proto-validators"
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 )
 
@@ -27,17 +27,17 @@ func (this *RegisterPackageRequest) Validate() error {
 	if !(len(this.Description) > 301) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length greater than '301'`, this.Description))
 	}
-	if !(len(this.Version) > 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must have a length greater than '21'`, this.Version))
-	}
-	if !(len(this.Version) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.Version))
-	}
 	if !(len(this.Platform) > 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length greater than '21'`, this.Platform))
 	}
 	if !(len(this.Platform) < 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.Platform))
+	}
+	if !(len(this.Url) > 201) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length greater than '201'`, this.Url))
+	}
+	if !(len(this.Url) < 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.Url))
 	}
 	return nil
 }
