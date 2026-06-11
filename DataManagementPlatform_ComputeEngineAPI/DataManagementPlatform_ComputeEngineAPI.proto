@@ -58,7 +58,7 @@ message UploadPackageResponseData {
 message UploadPackageResponse {
   int32 err_code = 1;
   string err_msg = 2;
-  RegisterPackageResponseData data = 3;
+  UploadPackageResponseData data = 3;
 }
 
 message RegisterPackageRequest {

@@ -152,10 +152,10 @@ func (x *UploadPackageResponseData) GetPackageInfo() *BasicPackageInfo {
 }
 
 type UploadPackageResponse struct {
-	state         protoimpl.MessageState       `protogen:"open.v1"`
-	ErrCode       int32                        `protobuf:"varint,1,opt,name=err_code,json=errCode,proto3" json:"err_code,omitempty"`
-	ErrMsg        string                       `protobuf:"bytes,2,opt,name=err_msg,json=errMsg,proto3" json:"err_msg,omitempty"`
-	Data          *RegisterPackageResponseData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	ErrCode       int32                      `protobuf:"varint,1,opt,name=err_code,json=errCode,proto3" json:"err_code,omitempty"`
+	ErrMsg        string                     `protobuf:"bytes,2,opt,name=err_msg,json=errMsg,proto3" json:"err_msg,omitempty"`
+	Data          *UploadPackageResponseData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -204,7 +204,7 @@ func (x *UploadPackageResponse) GetErrMsg() string {
 	return ""
 }
 
-func (x *UploadPackageResponse) GetData() *RegisterPackageResponseData {
+func (x *UploadPackageResponse) GetData() *UploadPackageResponseData {
 	if x != nil {
 		return x.Data
 	}
@@ -949,11 +949,11 @@ const file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_Comput
 	"\bkey_name\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\akeyName\x12!\n" +
 	"\fpackage_file\x18\x06 \x01(\fR\vpackageFile\"y\n" +
 	"\x19UploadPackageResponseData\x12\\\n" +
-	"\fpackage_info\x18\x01 \x01(\v29.DataManagementPlatform_ComputeEngineAPI.BasicPackageInfoR\vpackageInfo\"\xa5\x01\n" +
+	"\fpackage_info\x18\x01 \x01(\v29.DataManagementPlatform_ComputeEngineAPI.BasicPackageInfoR\vpackageInfo\"\xa3\x01\n" +
 	"\x15UploadPackageResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
-	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12X\n" +
-	"\x04data\x18\x03 \x01(\v2D.DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseDataR\x04data\"\xd8\x01\n" +
+	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12V\n" +
+	"\x04data\x18\x03 \x01(\v2B.DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseDataR\x04data\"\xd8\x01\n" +
 	"\x16RegisterPackageRequest\x12%\n" +
 	"\torigin_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\boriginId\x12!\n" +
 	"\acomment\x18\x02 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\acomment\x12$\n" +
@@ -1042,7 +1042,7 @@ var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeE
 }
 var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs = []int32{
 	6,  // 0: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
-	4,  // 1: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData
+	1,  // 1: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseData
 	6,  // 2: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
 	4,  // 3: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData
 	6,  // 4: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
