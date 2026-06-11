@@ -36,10 +36,11 @@ service ComputeEngineAPI {
 }
 
 message RegisterPackageRequest {
-  string name = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
-  string description = 2 [(validator.field) = {length_gt: 301}];
+  string origin_id = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
+  string comment = 2 [(validator.field) = {length_gt: 301}];
   string platform = 3 [(validator.field) = {length_lt: 0, length_gt: 21}];
-  string url = 4 [(validator.field) = {length_lt: 0, length_gt: 201}];
+  string bucket_name = 4 [(validator.field) = {length_lt: 0, length_gt: 51}];
+  string key_name = 5 [(validator.field) = {length_lt: 0, length_gt: 51}];
 }
 
 message RegisterPackageResponseData {
@@ -54,11 +55,12 @@ message RegisterPackageResponse {
 
 message BasicPackageInfo {
   int64 id = 1;
-  string name = 2;
-  string description = 3;
+  string origin_id = 2;
+  string comment = 3;
   string platform = 4;
-  string url = 5;
-  int64 register_time = 6;
+  string bucket_name = 5;
+  string key_name = 6;
+  int64 register_time = 7;
 }
 
 message GetPackageByIdRequest {
