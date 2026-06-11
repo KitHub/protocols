@@ -17,6 +17,52 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *UploadPackageRequest) Validate() error {
+	if !(len(this.OriginId) > 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))
+	}
+	if !(len(this.OriginId) < 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.OriginId))
+	}
+	if !(len(this.Comment) > 301) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length greater than '301'`, this.Comment))
+	}
+	if !(len(this.Platform) > 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length greater than '21'`, this.Platform))
+	}
+	if !(len(this.Platform) < 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.Platform))
+	}
+	if !(len(this.BucketName) > 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.BucketName))
+	}
+	if !(len(this.BucketName) < 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.BucketName))
+	}
+	if !(len(this.KeyName) > 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.KeyName))
+	}
+	if !(len(this.KeyName) < 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.KeyName))
+	}
+	return nil
+}
+func (this *UploadPackageResponseData) Validate() error {
+	if this.PackageInfo != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.PackageInfo); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("PackageInfo", err)
+		}
+	}
+	return nil
+}
+func (this *UploadPackageResponse) Validate() error {
+	if this.Data != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Data); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Data", err)
+		}
+	}
+	return nil
+}
 func (this *RegisterPackageRequest) Validate() error {
 	if !(len(this.OriginId) > 51) {
 		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))

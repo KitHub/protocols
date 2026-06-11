@@ -23,6 +23,194 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type UploadPackageRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OriginId      string                 `protobuf:"bytes,1,opt,name=origin_id,json=originId,proto3" json:"origin_id,omitempty"`
+	Comment       string                 `protobuf:"bytes,2,opt,name=comment,proto3" json:"comment,omitempty"`
+	Platform      string                 `protobuf:"bytes,3,opt,name=platform,proto3" json:"platform,omitempty"`
+	BucketName    string                 `protobuf:"bytes,4,opt,name=bucket_name,json=bucketName,proto3" json:"bucket_name,omitempty"`
+	KeyName       string                 `protobuf:"bytes,5,opt,name=key_name,json=keyName,proto3" json:"key_name,omitempty"`
+	PackageFile   []byte                 `protobuf:"bytes,6,opt,name=package_file,json=packageFile,proto3" json:"package_file,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UploadPackageRequest) Reset() {
+	*x = UploadPackageRequest{}
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UploadPackageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadPackageRequest) ProtoMessage() {}
+
+func (x *UploadPackageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadPackageRequest.ProtoReflect.Descriptor instead.
+func (*UploadPackageRequest) Descriptor() ([]byte, []int) {
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *UploadPackageRequest) GetOriginId() string {
+	if x != nil {
+		return x.OriginId
+	}
+	return ""
+}
+
+func (x *UploadPackageRequest) GetComment() string {
+	if x != nil {
+		return x.Comment
+	}
+	return ""
+}
+
+func (x *UploadPackageRequest) GetPlatform() string {
+	if x != nil {
+		return x.Platform
+	}
+	return ""
+}
+
+func (x *UploadPackageRequest) GetBucketName() string {
+	if x != nil {
+		return x.BucketName
+	}
+	return ""
+}
+
+func (x *UploadPackageRequest) GetKeyName() string {
+	if x != nil {
+		return x.KeyName
+	}
+	return ""
+}
+
+func (x *UploadPackageRequest) GetPackageFile() []byte {
+	if x != nil {
+		return x.PackageFile
+	}
+	return nil
+}
+
+type UploadPackageResponseData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PackageInfo   *BasicPackageInfo      `protobuf:"bytes,1,opt,name=package_info,json=packageInfo,proto3" json:"package_info,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UploadPackageResponseData) Reset() {
+	*x = UploadPackageResponseData{}
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UploadPackageResponseData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadPackageResponseData) ProtoMessage() {}
+
+func (x *UploadPackageResponseData) ProtoReflect() protoreflect.Message {
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadPackageResponseData.ProtoReflect.Descriptor instead.
+func (*UploadPackageResponseData) Descriptor() ([]byte, []int) {
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *UploadPackageResponseData) GetPackageInfo() *BasicPackageInfo {
+	if x != nil {
+		return x.PackageInfo
+	}
+	return nil
+}
+
+type UploadPackageResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	ErrCode       int32                        `protobuf:"varint,1,opt,name=err_code,json=errCode,proto3" json:"err_code,omitempty"`
+	ErrMsg        string                       `protobuf:"bytes,2,opt,name=err_msg,json=errMsg,proto3" json:"err_msg,omitempty"`
+	Data          *RegisterPackageResponseData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UploadPackageResponse) Reset() {
+	*x = UploadPackageResponse{}
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UploadPackageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadPackageResponse) ProtoMessage() {}
+
+func (x *UploadPackageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadPackageResponse.ProtoReflect.Descriptor instead.
+func (*UploadPackageResponse) Descriptor() ([]byte, []int) {
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *UploadPackageResponse) GetErrCode() int32 {
+	if x != nil {
+		return x.ErrCode
+	}
+	return 0
+}
+
+func (x *UploadPackageResponse) GetErrMsg() string {
+	if x != nil {
+		return x.ErrMsg
+	}
+	return ""
+}
+
+func (x *UploadPackageResponse) GetData() *RegisterPackageResponseData {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 type RegisterPackageRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OriginId      string                 `protobuf:"bytes,1,opt,name=origin_id,json=originId,proto3" json:"origin_id,omitempty"`
@@ -36,7 +224,7 @@ type RegisterPackageRequest struct {
 
 func (x *RegisterPackageRequest) Reset() {
 	*x = RegisterPackageRequest{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[0]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48,7 +236,7 @@ func (x *RegisterPackageRequest) String() string {
 func (*RegisterPackageRequest) ProtoMessage() {}
 
 func (x *RegisterPackageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[0]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -61,7 +249,7 @@ func (x *RegisterPackageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterPackageRequest.ProtoReflect.Descriptor instead.
 func (*RegisterPackageRequest) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{0}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *RegisterPackageRequest) GetOriginId() string {
@@ -108,7 +296,7 @@ type RegisterPackageResponseData struct {
 
 func (x *RegisterPackageResponseData) Reset() {
 	*x = RegisterPackageResponseData{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[1]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -120,7 +308,7 @@ func (x *RegisterPackageResponseData) String() string {
 func (*RegisterPackageResponseData) ProtoMessage() {}
 
 func (x *RegisterPackageResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[1]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -133,7 +321,7 @@ func (x *RegisterPackageResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterPackageResponseData.ProtoReflect.Descriptor instead.
 func (*RegisterPackageResponseData) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{1}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *RegisterPackageResponseData) GetPackageInfo() *BasicPackageInfo {
@@ -154,7 +342,7 @@ type RegisterPackageResponse struct {
 
 func (x *RegisterPackageResponse) Reset() {
 	*x = RegisterPackageResponse{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[2]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -166,7 +354,7 @@ func (x *RegisterPackageResponse) String() string {
 func (*RegisterPackageResponse) ProtoMessage() {}
 
 func (x *RegisterPackageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[2]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -179,7 +367,7 @@ func (x *RegisterPackageResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterPackageResponse.ProtoReflect.Descriptor instead.
 func (*RegisterPackageResponse) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{2}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *RegisterPackageResponse) GetErrCode() int32 {
@@ -218,7 +406,7 @@ type BasicPackageInfo struct {
 
 func (x *BasicPackageInfo) Reset() {
 	*x = BasicPackageInfo{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[3]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -230,7 +418,7 @@ func (x *BasicPackageInfo) String() string {
 func (*BasicPackageInfo) ProtoMessage() {}
 
 func (x *BasicPackageInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[3]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -243,7 +431,7 @@ func (x *BasicPackageInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BasicPackageInfo.ProtoReflect.Descriptor instead.
 func (*BasicPackageInfo) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{3}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *BasicPackageInfo) GetId() int64 {
@@ -304,7 +492,7 @@ type GetPackageByIdRequest struct {
 
 func (x *GetPackageByIdRequest) Reset() {
 	*x = GetPackageByIdRequest{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[4]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -316,7 +504,7 @@ func (x *GetPackageByIdRequest) String() string {
 func (*GetPackageByIdRequest) ProtoMessage() {}
 
 func (x *GetPackageByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[4]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -329,7 +517,7 @@ func (x *GetPackageByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByIdRequest.ProtoReflect.Descriptor instead.
 func (*GetPackageByIdRequest) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{4}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetPackageByIdRequest) GetPackageId() int64 {
@@ -348,7 +536,7 @@ type GetPackageByIdResponseData struct {
 
 func (x *GetPackageByIdResponseData) Reset() {
 	*x = GetPackageByIdResponseData{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[5]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -360,7 +548,7 @@ func (x *GetPackageByIdResponseData) String() string {
 func (*GetPackageByIdResponseData) ProtoMessage() {}
 
 func (x *GetPackageByIdResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[5]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -373,7 +561,7 @@ func (x *GetPackageByIdResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByIdResponseData.ProtoReflect.Descriptor instead.
 func (*GetPackageByIdResponseData) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{5}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetPackageByIdResponseData) GetPackageInfo() *BasicPackageInfo {
@@ -394,7 +582,7 @@ type GetPackageByIdResponse struct {
 
 func (x *GetPackageByIdResponse) Reset() {
 	*x = GetPackageByIdResponse{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[6]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -406,7 +594,7 @@ func (x *GetPackageByIdResponse) String() string {
 func (*GetPackageByIdResponse) ProtoMessage() {}
 
 func (x *GetPackageByIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[6]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -419,7 +607,7 @@ func (x *GetPackageByIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByIdResponse.ProtoReflect.Descriptor instead.
 func (*GetPackageByIdResponse) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{6}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetPackageByIdResponse) GetErrCode() int32 {
@@ -452,7 +640,7 @@ type GetPackageByOriginIdRequest struct {
 
 func (x *GetPackageByOriginIdRequest) Reset() {
 	*x = GetPackageByOriginIdRequest{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[7]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -464,7 +652,7 @@ func (x *GetPackageByOriginIdRequest) String() string {
 func (*GetPackageByOriginIdRequest) ProtoMessage() {}
 
 func (x *GetPackageByOriginIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[7]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -477,7 +665,7 @@ func (x *GetPackageByOriginIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByOriginIdRequest.ProtoReflect.Descriptor instead.
 func (*GetPackageByOriginIdRequest) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{7}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetPackageByOriginIdRequest) GetOriginId() string {
@@ -496,7 +684,7 @@ type GetPackageByOriginIdResponseData struct {
 
 func (x *GetPackageByOriginIdResponseData) Reset() {
 	*x = GetPackageByOriginIdResponseData{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[8]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -508,7 +696,7 @@ func (x *GetPackageByOriginIdResponseData) String() string {
 func (*GetPackageByOriginIdResponseData) ProtoMessage() {}
 
 func (x *GetPackageByOriginIdResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[8]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -521,7 +709,7 @@ func (x *GetPackageByOriginIdResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByOriginIdResponseData.ProtoReflect.Descriptor instead.
 func (*GetPackageByOriginIdResponseData) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{8}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetPackageByOriginIdResponseData) GetPackageInfo() *BasicPackageInfo {
@@ -542,7 +730,7 @@ type GetPackageByOriginIdResponse struct {
 
 func (x *GetPackageByOriginIdResponse) Reset() {
 	*x = GetPackageByOriginIdResponse{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[9]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -554,7 +742,7 @@ func (x *GetPackageByOriginIdResponse) String() string {
 func (*GetPackageByOriginIdResponse) ProtoMessage() {}
 
 func (x *GetPackageByOriginIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[9]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -567,7 +755,7 @@ func (x *GetPackageByOriginIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByOriginIdResponse.ProtoReflect.Descriptor instead.
 func (*GetPackageByOriginIdResponse) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{9}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetPackageByOriginIdResponse) GetErrCode() int32 {
@@ -601,7 +789,7 @@ type GetPackageListASCByLastIdRequest struct {
 
 func (x *GetPackageListASCByLastIdRequest) Reset() {
 	*x = GetPackageListASCByLastIdRequest{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[10]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -613,7 +801,7 @@ func (x *GetPackageListASCByLastIdRequest) String() string {
 func (*GetPackageListASCByLastIdRequest) ProtoMessage() {}
 
 func (x *GetPackageListASCByLastIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[10]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -626,7 +814,7 @@ func (x *GetPackageListASCByLastIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageListASCByLastIdRequest.ProtoReflect.Descriptor instead.
 func (*GetPackageListASCByLastIdRequest) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{10}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetPackageListASCByLastIdRequest) GetLastId() int64 {
@@ -652,7 +840,7 @@ type GetPackageListASCByLastIdResponseData struct {
 
 func (x *GetPackageListASCByLastIdResponseData) Reset() {
 	*x = GetPackageListASCByLastIdResponseData{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[11]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -664,7 +852,7 @@ func (x *GetPackageListASCByLastIdResponseData) String() string {
 func (*GetPackageListASCByLastIdResponseData) ProtoMessage() {}
 
 func (x *GetPackageListASCByLastIdResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[11]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -677,7 +865,7 @@ func (x *GetPackageListASCByLastIdResponseData) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GetPackageListASCByLastIdResponseData.ProtoReflect.Descriptor instead.
 func (*GetPackageListASCByLastIdResponseData) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{11}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetPackageListASCByLastIdResponseData) GetPackageInfos() []*BasicPackageInfo {
@@ -698,7 +886,7 @@ type GetPackageListASCByLastIdResponse struct {
 
 func (x *GetPackageListASCByLastIdResponse) Reset() {
 	*x = GetPackageListASCByLastIdResponse{}
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[12]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -710,7 +898,7 @@ func (x *GetPackageListASCByLastIdResponse) String() string {
 func (*GetPackageListASCByLastIdResponse) ProtoMessage() {}
 
 func (x *GetPackageListASCByLastIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[12]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -723,7 +911,7 @@ func (x *GetPackageListASCByLastIdResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetPackageListASCByLastIdResponse.ProtoReflect.Descriptor instead.
 func (*GetPackageListASCByLastIdResponse) Descriptor() ([]byte, []int) {
-	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{12}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *GetPackageListASCByLastIdResponse) GetErrCode() int32 {
@@ -751,7 +939,21 @@ var File_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeE
 
 const file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc = "" +
 	"\n" +
-	"UDataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto\x12'DataManagementPlatform_ComputeEngineAPI\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"\xd8\x01\n" +
+	"UDataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto\x12'DataManagementPlatform_ComputeEngineAPI\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"\xf9\x01\n" +
+	"\x14UploadPackageRequest\x12%\n" +
+	"\torigin_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\boriginId\x12!\n" +
+	"\acomment\x18\x02 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\acomment\x12$\n" +
+	"\bplatform\x18\x03 \x01(\tB\b\xe2\xdf\x1f\x04p\x15x\x00R\bplatform\x12)\n" +
+	"\vbucket_name\x18\x04 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\n" +
+	"bucketName\x12#\n" +
+	"\bkey_name\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\akeyName\x12!\n" +
+	"\fpackage_file\x18\x06 \x01(\fR\vpackageFile\"y\n" +
+	"\x19UploadPackageResponseData\x12\\\n" +
+	"\fpackage_info\x18\x01 \x01(\v29.DataManagementPlatform_ComputeEngineAPI.BasicPackageInfoR\vpackageInfo\"\xa5\x01\n" +
+	"\x15UploadPackageResponse\x12\x19\n" +
+	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
+	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12X\n" +
+	"\x04data\x18\x03 \x01(\v2D.DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseDataR\x04data\"\xd8\x01\n" +
 	"\x16RegisterPackageRequest\x12%\n" +
 	"\torigin_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\boriginId\x12!\n" +
 	"\acomment\x18\x02 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\acomment\x12$\n" +
@@ -799,9 +1001,10 @@ const file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_Comput
 	"!GetPackageListASCByLastIdResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12b\n" +
-	"\x04data\x18\x03 \x01(\v2N.DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponseDataR\x04data2\xe7\x06\n" +
+	"\x04data\x18\x03 \x01(\v2N.DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponseDataR\x04data2\xa7\b\n" +
 	"\x10ComputeEngineAPI\x12\xc5\x01\n" +
-	"\x0fRegisterPackage\x12?.DataManagementPlatform_ComputeEngineAPI.RegisterPackageRequest\x1a@.DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse\"/\x82\xd3\xe4\x93\x02):\x01*\"$/v1/computeEngines/packages/register\x12\xc0\x01\n" +
+	"\x0fRegisterPackage\x12?.DataManagementPlatform_ComputeEngineAPI.RegisterPackageRequest\x1a@.DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse\"/\x82\xd3\xe4\x93\x02):\x01*\"$/v1/computeEngines/packages/register\x12\xbd\x01\n" +
+	"\rUploadPackage\x12=.DataManagementPlatform_ComputeEngineAPI.UploadPackageRequest\x1a>.DataManagementPlatform_ComputeEngineAPI.UploadPackageResponse\"-\x82\xd3\xe4\x93\x02':\x01*\"\"/v1/computeEngines/packages/upload\x12\xc0\x01\n" +
 	"\x0eGetPackageById\x12>.DataManagementPlatform_ComputeEngineAPI.GetPackageByIdRequest\x1a?.DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse\"-\x82\xd3\xe4\x93\x02'\x12%/v1/computeEngines/packages/queryById\x12\xd8\x01\n" +
 	"\x14GetPackageByOriginId\x12D.DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdRequest\x1aE.DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse\"3\x82\xd3\xe4\x93\x02-\x12+/v1/computeEngines/packages/queryByOriginId\x12\xec\x01\n" +
 	"\x19GetPackageListASCByLastId\x12I.DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdRequest\x1aJ.DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse\"8\x82\xd3\xe4\x93\x022\x120/v1/computeEngines/packages/queryListASCByLastIdB,Z*./;DataManagementPlatform_ComputeEngineAPIb\x06proto3"
@@ -818,44 +1021,51 @@ func file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_Compute
 	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescData
 }
 
-var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
 var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_goTypes = []any{
-	(*RegisterPackageRequest)(nil),                // 0: DataManagementPlatform_ComputeEngineAPI.RegisterPackageRequest
-	(*RegisterPackageResponseData)(nil),           // 1: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData
-	(*RegisterPackageResponse)(nil),               // 2: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse
-	(*BasicPackageInfo)(nil),                      // 3: DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
-	(*GetPackageByIdRequest)(nil),                 // 4: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdRequest
-	(*GetPackageByIdResponseData)(nil),            // 5: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponseData
-	(*GetPackageByIdResponse)(nil),                // 6: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse
-	(*GetPackageByOriginIdRequest)(nil),           // 7: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdRequest
-	(*GetPackageByOriginIdResponseData)(nil),      // 8: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponseData
-	(*GetPackageByOriginIdResponse)(nil),          // 9: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse
-	(*GetPackageListASCByLastIdRequest)(nil),      // 10: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdRequest
-	(*GetPackageListASCByLastIdResponseData)(nil), // 11: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponseData
-	(*GetPackageListASCByLastIdResponse)(nil),     // 12: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse
+	(*UploadPackageRequest)(nil),                  // 0: DataManagementPlatform_ComputeEngineAPI.UploadPackageRequest
+	(*UploadPackageResponseData)(nil),             // 1: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseData
+	(*UploadPackageResponse)(nil),                 // 2: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponse
+	(*RegisterPackageRequest)(nil),                // 3: DataManagementPlatform_ComputeEngineAPI.RegisterPackageRequest
+	(*RegisterPackageResponseData)(nil),           // 4: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData
+	(*RegisterPackageResponse)(nil),               // 5: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse
+	(*BasicPackageInfo)(nil),                      // 6: DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
+	(*GetPackageByIdRequest)(nil),                 // 7: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdRequest
+	(*GetPackageByIdResponseData)(nil),            // 8: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponseData
+	(*GetPackageByIdResponse)(nil),                // 9: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse
+	(*GetPackageByOriginIdRequest)(nil),           // 10: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdRequest
+	(*GetPackageByOriginIdResponseData)(nil),      // 11: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponseData
+	(*GetPackageByOriginIdResponse)(nil),          // 12: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse
+	(*GetPackageListASCByLastIdRequest)(nil),      // 13: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdRequest
+	(*GetPackageListASCByLastIdResponseData)(nil), // 14: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponseData
+	(*GetPackageListASCByLastIdResponse)(nil),     // 15: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse
 }
 var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs = []int32{
-	3,  // 0: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
-	1,  // 1: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData
-	3,  // 2: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
-	5,  // 3: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponseData
-	3,  // 4: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
-	8,  // 5: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponseData
-	3,  // 6: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponseData.package_infos:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
-	11, // 7: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponseData
-	0,  // 8: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.RegisterPackage:input_type -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageRequest
-	4,  // 9: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageById:input_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageByIdRequest
-	7,  // 10: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageByOriginId:input_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdRequest
-	10, // 11: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageListASCByLastId:input_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdRequest
-	2,  // 12: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.RegisterPackage:output_type -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse
-	6,  // 13: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageById:output_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse
-	9,  // 14: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageByOriginId:output_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse
-	12, // 15: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageListASCByLastId:output_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse
-	12, // [12:16] is the sub-list for method output_type
-	8,  // [8:12] is the sub-list for method input_type
-	8,  // [8:8] is the sub-list for extension type_name
-	8,  // [8:8] is the sub-list for extension extendee
-	0,  // [0:8] is the sub-list for field type_name
+	6,  // 0: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
+	4,  // 1: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData
+	6,  // 2: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
+	4,  // 3: DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponseData
+	6,  // 4: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
+	8,  // 5: DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponseData
+	6,  // 6: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
+	11, // 7: DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponseData
+	6,  // 8: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponseData.package_infos:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
+	14, // 9: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponseData
+	3,  // 10: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.RegisterPackage:input_type -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageRequest
+	0,  // 11: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.UploadPackage:input_type -> DataManagementPlatform_ComputeEngineAPI.UploadPackageRequest
+	7,  // 12: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageById:input_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageByIdRequest
+	10, // 13: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageByOriginId:input_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdRequest
+	13, // 14: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageListASCByLastId:input_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdRequest
+	5,  // 15: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.RegisterPackage:output_type -> DataManagementPlatform_ComputeEngineAPI.RegisterPackageResponse
+	2,  // 16: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.UploadPackage:output_type -> DataManagementPlatform_ComputeEngineAPI.UploadPackageResponse
+	9,  // 17: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageById:output_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse
+	12, // 18: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageByOriginId:output_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse
+	15, // 19: DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI.GetPackageListASCByLastId:output_type -> DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse
+	15, // [15:20] is the sub-list for method output_type
+	10, // [10:15] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() {
@@ -871,7 +1081,7 @@ func file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_Compute
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc), len(file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   16,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

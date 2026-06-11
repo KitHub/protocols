@@ -15,6 +15,13 @@ service ComputeEngineAPI {
     };
   }
 
+  rpc UploadPackage(UploadPackageRequest) returns (UploadPackageResponse) {
+    option (google.api.http) = {
+      post: "/v1/computeEngines/packages/upload"
+      body: "*"
+    };
+  }
+
   rpc GetPackageById(GetPackageByIdRequest) returns (GetPackageByIdResponse) {
     option (google.api.http) = {
       get: "/v1/computeEngines/packages/queryById"
@@ -33,6 +40,25 @@ service ComputeEngineAPI {
     };
   }
 
+}
+
+message UploadPackageRequest {
+  string origin_id = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
+  string comment = 2 [(validator.field) = {length_gt: 301}];
+  string platform = 3 [(validator.field) = {length_lt: 0, length_gt: 21}];
+  string bucket_name = 4 [(validator.field) = {length_lt: 0, length_gt: 51}];
+  string key_name = 5 [(validator.field) = {length_lt: 0, length_gt: 51}];
+  bytes package_file = 6;
+}
+
+message UploadPackageResponseData {
+  BasicPackageInfo package_info = 1;
+}
+
+message UploadPackageResponse {
+  int32 err_code = 1;
+  string err_msg = 2;
+  RegisterPackageResponseData data = 3;
 }
 
 message RegisterPackageRequest {

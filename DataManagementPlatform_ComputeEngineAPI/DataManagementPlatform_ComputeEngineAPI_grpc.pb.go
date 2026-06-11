@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	ComputeEngineAPI_RegisterPackage_FullMethodName           = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/RegisterPackage"
+	ComputeEngineAPI_UploadPackage_FullMethodName             = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/UploadPackage"
 	ComputeEngineAPI_GetPackageById_FullMethodName            = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageById"
 	ComputeEngineAPI_GetPackageByOriginId_FullMethodName      = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageByOriginId"
 	ComputeEngineAPI_GetPackageListASCByLastId_FullMethodName = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageListASCByLastId"
@@ -30,6 +31,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ComputeEngineAPIClient interface {
 	RegisterPackage(ctx context.Context, in *RegisterPackageRequest, opts ...grpc.CallOption) (*RegisterPackageResponse, error)
+	UploadPackage(ctx context.Context, in *UploadPackageRequest, opts ...grpc.CallOption) (*UploadPackageResponse, error)
 	GetPackageById(ctx context.Context, in *GetPackageByIdRequest, opts ...grpc.CallOption) (*GetPackageByIdResponse, error)
 	GetPackageByOriginId(ctx context.Context, in *GetPackageByOriginIdRequest, opts ...grpc.CallOption) (*GetPackageByOriginIdResponse, error)
 	GetPackageListASCByLastId(ctx context.Context, in *GetPackageListASCByLastIdRequest, opts ...grpc.CallOption) (*GetPackageListASCByLastIdResponse, error)
@@ -47,6 +49,16 @@ func (c *computeEngineAPIClient) RegisterPackage(ctx context.Context, in *Regist
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(RegisterPackageResponse)
 	err := c.cc.Invoke(ctx, ComputeEngineAPI_RegisterPackage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *computeEngineAPIClient) UploadPackage(ctx context.Context, in *UploadPackageRequest, opts ...grpc.CallOption) (*UploadPackageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UploadPackageResponse)
+	err := c.cc.Invoke(ctx, ComputeEngineAPI_UploadPackage_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,6 +100,7 @@ func (c *computeEngineAPIClient) GetPackageListASCByLastId(ctx context.Context, 
 // for forward compatibility.
 type ComputeEngineAPIServer interface {
 	RegisterPackage(context.Context, *RegisterPackageRequest) (*RegisterPackageResponse, error)
+	UploadPackage(context.Context, *UploadPackageRequest) (*UploadPackageResponse, error)
 	GetPackageById(context.Context, *GetPackageByIdRequest) (*GetPackageByIdResponse, error)
 	GetPackageByOriginId(context.Context, *GetPackageByOriginIdRequest) (*GetPackageByOriginIdResponse, error)
 	GetPackageListASCByLastId(context.Context, *GetPackageListASCByLastIdRequest) (*GetPackageListASCByLastIdResponse, error)
@@ -103,6 +116,9 @@ type UnimplementedComputeEngineAPIServer struct{}
 
 func (UnimplementedComputeEngineAPIServer) RegisterPackage(context.Context, *RegisterPackageRequest) (*RegisterPackageResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RegisterPackage not implemented")
+}
+func (UnimplementedComputeEngineAPIServer) UploadPackage(context.Context, *UploadPackageRequest) (*UploadPackageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UploadPackage not implemented")
 }
 func (UnimplementedComputeEngineAPIServer) GetPackageById(context.Context, *GetPackageByIdRequest) (*GetPackageByIdResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetPackageById not implemented")
@@ -148,6 +164,24 @@ func _ComputeEngineAPI_RegisterPackage_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ComputeEngineAPIServer).RegisterPackage(ctx, req.(*RegisterPackageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ComputeEngineAPI_UploadPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadPackageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ComputeEngineAPIServer).UploadPackage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ComputeEngineAPI_UploadPackage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ComputeEngineAPIServer).UploadPackage(ctx, req.(*UploadPackageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -216,6 +250,10 @@ var ComputeEngineAPI_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RegisterPackage",
 			Handler:    _ComputeEngineAPI_RegisterPackage_Handler,
+		},
+		{
+			MethodName: "UploadPackage",
+			Handler:    _ComputeEngineAPI_UploadPackage_Handler,
 		},
 		{
 			MethodName: "GetPackageById",

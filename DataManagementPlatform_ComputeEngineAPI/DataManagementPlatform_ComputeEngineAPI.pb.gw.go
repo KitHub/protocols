@@ -62,6 +62,33 @@ func local_request_ComputeEngineAPI_RegisterPackage_0(ctx context.Context, marsh
 	return msg, metadata, err
 }
 
+func request_ComputeEngineAPI_UploadPackage_0(ctx context.Context, marshaler runtime.Marshaler, client ComputeEngineAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq UploadPackageRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if req.Body != nil {
+		_, _ = io.Copy(io.Discard, req.Body)
+	}
+	msg, err := client.UploadPackage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_ComputeEngineAPI_UploadPackage_0(ctx context.Context, marshaler runtime.Marshaler, server ComputeEngineAPIServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq UploadPackageRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.UploadPackage(ctx, &protoReq)
+	return msg, metadata, err
+}
+
 var filter_ComputeEngineAPI_GetPackageById_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_ComputeEngineAPI_GetPackageById_0(ctx context.Context, marshaler runtime.Marshaler, client ComputeEngineAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -193,6 +220,26 @@ func RegisterComputeEngineAPIHandlerServer(ctx context.Context, mux *runtime.Ser
 		}
 		forward_ComputeEngineAPI_RegisterPackage_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_ComputeEngineAPI_UploadPackage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/UploadPackage", runtime.WithHTTPPathPattern("/v1/computeEngines/packages/upload"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_ComputeEngineAPI_UploadPackage_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_ComputeEngineAPI_UploadPackage_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	mux.Handle(http.MethodGet, pattern_ComputeEngineAPI_GetPackageById_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -310,6 +357,23 @@ func RegisterComputeEngineAPIHandlerClient(ctx context.Context, mux *runtime.Ser
 		}
 		forward_ComputeEngineAPI_RegisterPackage_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_ComputeEngineAPI_UploadPackage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/UploadPackage", runtime.WithHTTPPathPattern("/v1/computeEngines/packages/upload"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_ComputeEngineAPI_UploadPackage_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_ComputeEngineAPI_UploadPackage_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	mux.Handle(http.MethodGet, pattern_ComputeEngineAPI_GetPackageById_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -366,6 +430,7 @@ func RegisterComputeEngineAPIHandlerClient(ctx context.Context, mux *runtime.Ser
 
 var (
 	pattern_ComputeEngineAPI_RegisterPackage_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "computeEngines", "packages", "register"}, ""))
+	pattern_ComputeEngineAPI_UploadPackage_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "computeEngines", "packages", "upload"}, ""))
 	pattern_ComputeEngineAPI_GetPackageById_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "computeEngines", "packages", "queryById"}, ""))
 	pattern_ComputeEngineAPI_GetPackageByOriginId_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "computeEngines", "packages", "queryByOriginId"}, ""))
 	pattern_ComputeEngineAPI_GetPackageListASCByLastId_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "computeEngines", "packages", "queryListASCByLastId"}, ""))
@@ -373,6 +438,7 @@ var (
 
 var (
 	forward_ComputeEngineAPI_RegisterPackage_0           = runtime.ForwardResponseMessage
+	forward_ComputeEngineAPI_UploadPackage_0             = runtime.ForwardResponseMessage
 	forward_ComputeEngineAPI_GetPackageById_0            = runtime.ForwardResponseMessage
 	forward_ComputeEngineAPI_GetPackageByOriginId_0      = runtime.ForwardResponseMessage
 	forward_ComputeEngineAPI_GetPackageListASCByLastId_0 = runtime.ForwardResponseMessage
