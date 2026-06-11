@@ -21,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	ComputeEngineAPI_RegisterPackage_FullMethodName           = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/RegisterPackage"
 	ComputeEngineAPI_GetPackageById_FullMethodName            = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageById"
-	ComputeEngineAPI_GetPackageByName_FullMethodName          = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageByName"
+	ComputeEngineAPI_GetPackageByOriginId_FullMethodName      = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageByOriginId"
 	ComputeEngineAPI_GetPackageListASCByLastId_FullMethodName = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageListASCByLastId"
 )
 
@@ -31,7 +31,7 @@ const (
 type ComputeEngineAPIClient interface {
 	RegisterPackage(ctx context.Context, in *RegisterPackageRequest, opts ...grpc.CallOption) (*RegisterPackageResponse, error)
 	GetPackageById(ctx context.Context, in *GetPackageByIdRequest, opts ...grpc.CallOption) (*GetPackageByIdResponse, error)
-	GetPackageByName(ctx context.Context, in *GetPackageByNameRequest, opts ...grpc.CallOption) (*GetPackageByNameResponse, error)
+	GetPackageByOriginId(ctx context.Context, in *GetPackageByOriginIdRequest, opts ...grpc.CallOption) (*GetPackageByOriginIdResponse, error)
 	GetPackageListASCByLastId(ctx context.Context, in *GetPackageListASCByLastIdRequest, opts ...grpc.CallOption) (*GetPackageListASCByLastIdResponse, error)
 }
 
@@ -63,10 +63,10 @@ func (c *computeEngineAPIClient) GetPackageById(ctx context.Context, in *GetPack
 	return out, nil
 }
 
-func (c *computeEngineAPIClient) GetPackageByName(ctx context.Context, in *GetPackageByNameRequest, opts ...grpc.CallOption) (*GetPackageByNameResponse, error) {
+func (c *computeEngineAPIClient) GetPackageByOriginId(ctx context.Context, in *GetPackageByOriginIdRequest, opts ...grpc.CallOption) (*GetPackageByOriginIdResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetPackageByNameResponse)
-	err := c.cc.Invoke(ctx, ComputeEngineAPI_GetPackageByName_FullMethodName, in, out, cOpts...)
+	out := new(GetPackageByOriginIdResponse)
+	err := c.cc.Invoke(ctx, ComputeEngineAPI_GetPackageByOriginId_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *computeEngineAPIClient) GetPackageListASCByLastId(ctx context.Context, 
 type ComputeEngineAPIServer interface {
 	RegisterPackage(context.Context, *RegisterPackageRequest) (*RegisterPackageResponse, error)
 	GetPackageById(context.Context, *GetPackageByIdRequest) (*GetPackageByIdResponse, error)
-	GetPackageByName(context.Context, *GetPackageByNameRequest) (*GetPackageByNameResponse, error)
+	GetPackageByOriginId(context.Context, *GetPackageByOriginIdRequest) (*GetPackageByOriginIdResponse, error)
 	GetPackageListASCByLastId(context.Context, *GetPackageListASCByLastIdRequest) (*GetPackageListASCByLastIdResponse, error)
 	mustEmbedUnimplementedComputeEngineAPIServer()
 }
@@ -107,8 +107,8 @@ func (UnimplementedComputeEngineAPIServer) RegisterPackage(context.Context, *Reg
 func (UnimplementedComputeEngineAPIServer) GetPackageById(context.Context, *GetPackageByIdRequest) (*GetPackageByIdResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetPackageById not implemented")
 }
-func (UnimplementedComputeEngineAPIServer) GetPackageByName(context.Context, *GetPackageByNameRequest) (*GetPackageByNameResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method GetPackageByName not implemented")
+func (UnimplementedComputeEngineAPIServer) GetPackageByOriginId(context.Context, *GetPackageByOriginIdRequest) (*GetPackageByOriginIdResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPackageByOriginId not implemented")
 }
 func (UnimplementedComputeEngineAPIServer) GetPackageListASCByLastId(context.Context, *GetPackageListASCByLastIdRequest) (*GetPackageListASCByLastIdResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetPackageListASCByLastId not implemented")
@@ -170,20 +170,20 @@ func _ComputeEngineAPI_GetPackageById_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ComputeEngineAPI_GetPackageByName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPackageByNameRequest)
+func _ComputeEngineAPI_GetPackageByOriginId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPackageByOriginIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ComputeEngineAPIServer).GetPackageByName(ctx, in)
+		return srv.(ComputeEngineAPIServer).GetPackageByOriginId(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ComputeEngineAPI_GetPackageByName_FullMethodName,
+		FullMethod: ComputeEngineAPI_GetPackageByOriginId_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ComputeEngineAPIServer).GetPackageByName(ctx, req.(*GetPackageByNameRequest))
+		return srv.(ComputeEngineAPIServer).GetPackageByOriginId(ctx, req.(*GetPackageByOriginIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -222,8 +222,8 @@ var ComputeEngineAPI_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ComputeEngineAPI_GetPackageById_Handler,
 		},
 		{
-			MethodName: "GetPackageByName",
-			Handler:    _ComputeEngineAPI_GetPackageByName_Handler,
+			MethodName: "GetPackageByOriginId",
+			Handler:    _ComputeEngineAPI_GetPackageByOriginId_Handler,
 		},
 		{
 			MethodName: "GetPackageListASCByLastId",

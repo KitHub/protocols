@@ -7,8 +7,8 @@ import (
 	fmt "fmt"
 	math "math"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
+	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 )
 
@@ -82,16 +82,16 @@ func (this *GetPackageByIdResponse) Validate() error {
 	}
 	return nil
 }
-func (this *GetPackageByNameRequest) Validate() error {
-	if !(len(this.Name) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.Name))
+func (this *GetPackageByOriginIdRequest) Validate() error {
+	if !(len(this.OriginId) > 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))
 	}
-	if !(len(this.Name) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.Name))
+	if !(len(this.OriginId) < 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.OriginId))
 	}
 	return nil
 }
-func (this *GetPackageByNameResponseData) Validate() error {
+func (this *GetPackageByOriginIdResponseData) Validate() error {
 	if this.PackageInfo != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.PackageInfo); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("PackageInfo", err)
@@ -99,7 +99,7 @@ func (this *GetPackageByNameResponseData) Validate() error {
 	}
 	return nil
 }
-func (this *GetPackageByNameResponse) Validate() error {
+func (this *GetPackageByOriginIdResponse) Validate() error {
 	if this.Data != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Data); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Data", err)

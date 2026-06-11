@@ -21,9 +21,9 @@ service ComputeEngineAPI {
     };
   }
 
-  rpc GetPackageByName(GetPackageByNameRequest) returns (GetPackageByNameResponse) {
+  rpc GetPackageByOriginId(GetPackageByOriginIdRequest) returns (GetPackageByOriginIdResponse) {
     option (google.api.http) = {
-      get: "/v1/computeEngines/packages/queryByName"
+      get: "/v1/computeEngines/packages/queryByOriginId"
     };
   }
 
@@ -32,6 +32,7 @@ service ComputeEngineAPI {
       get: "/v1/computeEngines/packages/queryListASCByLastId"
     };
   }
+
 }
 
 message RegisterPackageRequest {
@@ -74,18 +75,18 @@ message GetPackageByIdResponse {
   GetPackageByIdResponseData data = 3;
 }
 
-message GetPackageByNameRequest {
-  string name = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
+message GetPackageByOriginIdRequest {
+  string origin_id = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
 }
 
-message GetPackageByNameResponseData {
+message GetPackageByOriginIdResponseData {
   BasicPackageInfo package_info = 1;
 }
 
-message GetPackageByNameResponse {
+message GetPackageByOriginIdResponse {
   int32 err_code = 1;
   string err_msg = 2;
-  GetPackageByNameResponseData data = 3;
+  GetPackageByOriginIdResponseData data = 3;
 }
 
 message GetPackageListASCByLastIdRequest {
