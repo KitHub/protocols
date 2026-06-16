@@ -4,6 +4,7 @@ package DataManagementPlatform_ComputeEngineAPI;
 
 import "mwitkow/go-proto-validators/validator.proto";
 import "google/api/annotations.proto";
+import "compute_operation/compute_operation.proto";
 
 option go_package = "./;DataManagementPlatform_ComputeEngineAPI";
 
@@ -39,6 +40,21 @@ service ComputeEngineAPI {
       get: "/v1/computeEngines/packages/queryListASCByLastId"
     };
   }
+
+  rpc ComputePackagesCombo(ComputePackageComboRequest) returns (ComputePackageComboResponse) {
+    option (google.api.http) = {
+      post: "/v1/computeEngines/packages/computeCombo"
+    };
+  }
+
+}
+
+
+message ComputePackageComboRequest {
+    string basePackageOriginId = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
+}
+
+message ComputePackageComboResponse {
 
 }
 

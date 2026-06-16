@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package compute_operation;
+
+option go_package = "./;compute_operation";
+
+enum OperationType {
+    LOGIC = "logic";
+    CONDITION = "condition";
+}
+
+enum LogicOperator {
+    AND = "and";
+    OR = "or";
+    NOT = "not";
+}
+
+enum ConditionOperator {
+    EQ = "=";
+    NEQ = "!=";
+    GT = ">";
+    GTE = ">=";
+    LT = "<";
+    LTE = "<=";
+    LIKE = "like";
+    NOT_LIKE = "not_like";
+    IN = "in";
+    NOT_IN = "not_in";
+    IS_NULL = "is_null";
+    IS_NOT_NULL = "is_not_null"
+}
+
+message Operation {
+    OperationType type = 0;
+}
