@@ -15,7 +15,10 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *LogicNode) Validate() error {
+func (this *LogicCompute) Validate() error {
+	return nil
+}
+func (this *LogicCompute_LogicNode) Validate() error {
 	for _, item := range this.Children {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -25,21 +28,34 @@ func (this *LogicNode) Validate() error {
 	}
 	return nil
 }
-func (this *FieldConditionNode) Validate() error {
+func (this *LogicCompute_FieldConditionNode) Validate() error {
 	return nil
 }
-func (this *ConditionNode) Validate() error {
-	if oneOfNester, ok := this.GetNode().(*ConditionNode_LogicNode); ok {
+func (this *LogicCompute_ConditionNode) Validate() error {
+	if oneOfNester, ok := this.GetNode().(*LogicCompute_ConditionNode_LogicNode); ok {
 		if oneOfNester.LogicNode != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.LogicNode); err != nil {
 				return github_com_mwitkow_go_proto_validators.FieldError("LogicNode", err)
 			}
 		}
 	}
-	if oneOfNester, ok := this.GetNode().(*ConditionNode_ConditionNode); ok {
+	if oneOfNester, ok := this.GetNode().(*LogicCompute_ConditionNode_ConditionNode); ok {
 		if oneOfNester.ConditionNode != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.ConditionNode); err != nil {
 				return github_com_mwitkow_go_proto_validators.FieldError("ConditionNode", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *SetCompute) Validate() error {
+	return nil
+}
+func (this *SetCompute_Node) Validate() error {
+	for _, item := range this.Children {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Children", err)
 			}
 		}
 	}

@@ -21,78 +21,78 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// 逻辑运算符枚举
-type LogicOp int32
+// 条件运算符枚举
+type LogicCompute_LogicOp int32
 
 const (
-	LogicOp_LOGIC_OP_UNSPECIFIED LogicOp = 0
-	LogicOp_LOGIC_OP_AND         LogicOp = 1
-	LogicOp_LOGIC_OP_OR          LogicOp = 2
+	LogicCompute_LOGIC_OP_UNSPECIFIED LogicCompute_LogicOp = 0
+	LogicCompute_LOGIC_OP_AND         LogicCompute_LogicOp = 1
+	LogicCompute_LOGIC_OP_OR          LogicCompute_LogicOp = 2
 )
 
-// Enum value maps for LogicOp.
+// Enum value maps for LogicCompute_LogicOp.
 var (
-	LogicOp_name = map[int32]string{
+	LogicCompute_LogicOp_name = map[int32]string{
 		0: "LOGIC_OP_UNSPECIFIED",
 		1: "LOGIC_OP_AND",
 		2: "LOGIC_OP_OR",
 	}
-	LogicOp_value = map[string]int32{
+	LogicCompute_LogicOp_value = map[string]int32{
 		"LOGIC_OP_UNSPECIFIED": 0,
 		"LOGIC_OP_AND":         1,
 		"LOGIC_OP_OR":          2,
 	}
 )
 
-func (x LogicOp) Enum() *LogicOp {
-	p := new(LogicOp)
+func (x LogicCompute_LogicOp) Enum() *LogicCompute_LogicOp {
+	p := new(LogicCompute_LogicOp)
 	*p = x
 	return p
 }
 
-func (x LogicOp) String() string {
+func (x LogicCompute_LogicOp) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (LogicOp) Descriptor() protoreflect.EnumDescriptor {
+func (LogicCompute_LogicOp) Descriptor() protoreflect.EnumDescriptor {
 	return file_compute_operation_compute_operation_proto_enumTypes[0].Descriptor()
 }
 
-func (LogicOp) Type() protoreflect.EnumType {
+func (LogicCompute_LogicOp) Type() protoreflect.EnumType {
 	return &file_compute_operation_compute_operation_proto_enumTypes[0]
 }
 
-func (x LogicOp) Number() protoreflect.EnumNumber {
+func (x LogicCompute_LogicOp) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use LogicOp.Descriptor instead.
-func (LogicOp) EnumDescriptor() ([]byte, []int) {
-	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0}
+// Deprecated: Use LogicCompute_LogicOp.Descriptor instead.
+func (LogicCompute_LogicOp) EnumDescriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 0}
 }
 
-// 比较运算符枚举
-type CompareOp int32
+// 条件运算比较运算符枚举
+type LogicCompute_CompareOp int32
 
 const (
-	CompareOp_COMPARE_OP_UNSPECIFIED CompareOp = 0  // unspecified
-	CompareOp_COMPARE_OP_EQ          CompareOp = 1  // =
-	CompareOp_COMPARE_OP_NEQ         CompareOp = 2  // !=
-	CompareOp_COMPARE_OP_GT          CompareOp = 3  // >
-	CompareOp_COMPARE_OP_GTE         CompareOp = 4  // >=
-	CompareOp_COMPARE_OP_LT          CompareOp = 5  // <
-	CompareOp_COMPARE_OP_LTE         CompareOp = 6  // <=
-	CompareOp_COMPARE_OP_LIKE        CompareOp = 7  // like
-	CompareOp_COMPARE_OP_NOT_LIKE    CompareOp = 8  // not like
-	CompareOp_COMPARE_OP_IN          CompareOp = 9  // in
-	CompareOp_COMPARE_OP_NOT_IN      CompareOp = 10 // not in
-	CompareOp_COMPARE_OP_IS_NULL     CompareOp = 11 // is null
-	CompareOp_COMPARE_OP_IS_NOT_NULL CompareOp = 12 // is not null
+	LogicCompute_COMPARE_OP_UNSPECIFIED LogicCompute_CompareOp = 0  // unspecified
+	LogicCompute_COMPARE_OP_EQ          LogicCompute_CompareOp = 1  // =
+	LogicCompute_COMPARE_OP_NEQ         LogicCompute_CompareOp = 2  // !=
+	LogicCompute_COMPARE_OP_GT          LogicCompute_CompareOp = 3  // >
+	LogicCompute_COMPARE_OP_GTE         LogicCompute_CompareOp = 4  // >=
+	LogicCompute_COMPARE_OP_LT          LogicCompute_CompareOp = 5  // <
+	LogicCompute_COMPARE_OP_LTE         LogicCompute_CompareOp = 6  // <=
+	LogicCompute_COMPARE_OP_LIKE        LogicCompute_CompareOp = 7  // like
+	LogicCompute_COMPARE_OP_NOT_LIKE    LogicCompute_CompareOp = 8  // not like
+	LogicCompute_COMPARE_OP_IN          LogicCompute_CompareOp = 9  // in
+	LogicCompute_COMPARE_OP_NOT_IN      LogicCompute_CompareOp = 10 // not in
+	LogicCompute_COMPARE_OP_IS_NULL     LogicCompute_CompareOp = 11 // is null
+	LogicCompute_COMPARE_OP_IS_NOT_NULL LogicCompute_CompareOp = 12 // is not null
 )
 
-// Enum value maps for CompareOp.
+// Enum value maps for LogicCompute_CompareOp.
 var (
-	CompareOp_name = map[int32]string{
+	LogicCompute_CompareOp_name = map[int32]string{
 		0:  "COMPARE_OP_UNSPECIFIED",
 		1:  "COMPARE_OP_EQ",
 		2:  "COMPARE_OP_NEQ",
@@ -107,7 +107,7 @@ var (
 		11: "COMPARE_OP_IS_NULL",
 		12: "COMPARE_OP_IS_NOT_NULL",
 	}
-	CompareOp_value = map[string]int32{
+	LogicCompute_CompareOp_value = map[string]int32{
 		"COMPARE_OP_UNSPECIFIED": 0,
 		"COMPARE_OP_EQ":          1,
 		"COMPARE_OP_NEQ":         2,
@@ -124,56 +124,159 @@ var (
 	}
 )
 
-func (x CompareOp) Enum() *CompareOp {
-	p := new(CompareOp)
+func (x LogicCompute_CompareOp) Enum() *LogicCompute_CompareOp {
+	p := new(LogicCompute_CompareOp)
 	*p = x
 	return p
 }
 
-func (x CompareOp) String() string {
+func (x LogicCompute_CompareOp) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (CompareOp) Descriptor() protoreflect.EnumDescriptor {
+func (LogicCompute_CompareOp) Descriptor() protoreflect.EnumDescriptor {
 	return file_compute_operation_compute_operation_proto_enumTypes[1].Descriptor()
 }
 
-func (CompareOp) Type() protoreflect.EnumType {
+func (LogicCompute_CompareOp) Type() protoreflect.EnumType {
 	return &file_compute_operation_compute_operation_proto_enumTypes[1]
 }
 
-func (x CompareOp) Number() protoreflect.EnumNumber {
+func (x LogicCompute_CompareOp) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use CompareOp.Descriptor instead.
-func (CompareOp) EnumDescriptor() ([]byte, []int) {
-	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1}
+// Deprecated: Use LogicCompute_CompareOp.Descriptor instead.
+func (LogicCompute_CompareOp) EnumDescriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 1}
 }
 
-// 逻辑节点：AND/OR 分组节点
-type LogicNode struct {
+// 节点类型
+type SetCompute_NodeType int32
+
+const (
+	SetCompute_NODE_TYPE_UNSPECIFIED SetCompute_NodeType = 0 // 未指定
+	SetCompute_DATASET               SetCompute_NodeType = 1 // 叶子节点：原始数据集
+	SetCompute_OPERATOR              SetCompute_NodeType = 2 // 运算节点：并交差补
+)
+
+// Enum value maps for SetCompute_NodeType.
+var (
+	SetCompute_NodeType_name = map[int32]string{
+		0: "NODE_TYPE_UNSPECIFIED",
+		1: "DATASET",
+		2: "OPERATOR",
+	}
+	SetCompute_NodeType_value = map[string]int32{
+		"NODE_TYPE_UNSPECIFIED": 0,
+		"DATASET":               1,
+		"OPERATOR":              2,
+	}
+)
+
+func (x SetCompute_NodeType) Enum() *SetCompute_NodeType {
+	p := new(SetCompute_NodeType)
+	*p = x
+	return p
+}
+
+func (x SetCompute_NodeType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SetCompute_NodeType) Descriptor() protoreflect.EnumDescriptor {
+	return file_compute_operation_compute_operation_proto_enumTypes[2].Descriptor()
+}
+
+func (SetCompute_NodeType) Type() protoreflect.EnumType {
+	return &file_compute_operation_compute_operation_proto_enumTypes[2]
+}
+
+func (x SetCompute_NodeType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SetCompute_NodeType.Descriptor instead.
+func (SetCompute_NodeType) EnumDescriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 0}
+}
+
+// 集合运算枚举
+type SetCompute_Operator int32
+
+const (
+	SetCompute_OPERATOR_UNSPECIFIED SetCompute_Operator = 0 // 未指定
+	SetCompute_UNION                SetCompute_Operator = 1 // 并集
+	SetCompute_INTERSECT            SetCompute_Operator = 2 // 交集
+	SetCompute_DIFF                 SetCompute_Operator = 3 // 左差集 A-B
+	SetCompute_COMPLEMENT           SetCompute_Operator = 4 // 补集
+)
+
+// Enum value maps for SetCompute_Operator.
+var (
+	SetCompute_Operator_name = map[int32]string{
+		0: "OPERATOR_UNSPECIFIED",
+		1: "UNION",
+		2: "INTERSECT",
+		3: "DIFF",
+		4: "COMPLEMENT",
+	}
+	SetCompute_Operator_value = map[string]int32{
+		"OPERATOR_UNSPECIFIED": 0,
+		"UNION":                1,
+		"INTERSECT":            2,
+		"DIFF":                 3,
+		"COMPLEMENT":           4,
+	}
+)
+
+func (x SetCompute_Operator) Enum() *SetCompute_Operator {
+	p := new(SetCompute_Operator)
+	*p = x
+	return p
+}
+
+func (x SetCompute_Operator) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SetCompute_Operator) Descriptor() protoreflect.EnumDescriptor {
+	return file_compute_operation_compute_operation_proto_enumTypes[3].Descriptor()
+}
+
+func (SetCompute_Operator) Type() protoreflect.EnumType {
+	return &file_compute_operation_compute_operation_proto_enumTypes[3]
+}
+
+func (x SetCompute_Operator) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SetCompute_Operator.Descriptor instead.
+func (SetCompute_Operator) EnumDescriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 1}
+}
+
+type LogicCompute struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Logic         LogicOp                `protobuf:"varint,1,opt,name=logic,proto3,enum=compute_operation.LogicOp" json:"logic,omitempty"`
-	Children      []*ConditionNode       `protobuf:"bytes,2,rep,name=children,proto3" json:"children,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *LogicNode) Reset() {
-	*x = LogicNode{}
+func (x *LogicCompute) Reset() {
+	*x = LogicCompute{}
 	mi := &file_compute_operation_compute_operation_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *LogicNode) String() string {
+func (x *LogicCompute) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*LogicNode) ProtoMessage() {}
+func (*LogicCompute) ProtoMessage() {}
 
-func (x *LogicNode) ProtoReflect() protoreflect.Message {
+func (x *LogicCompute) ProtoReflect() protoreflect.Message {
 	mi := &file_compute_operation_compute_operation_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -185,19 +288,94 @@ func (x *LogicNode) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use LogicNode.ProtoReflect.Descriptor instead.
-func (*LogicNode) Descriptor() ([]byte, []int) {
+// Deprecated: Use LogicCompute.ProtoReflect.Descriptor instead.
+func (*LogicCompute) Descriptor() ([]byte, []int) {
 	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *LogicNode) GetLogic() LogicOp {
+type SetCompute struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetCompute) Reset() {
+	*x = SetCompute{}
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetCompute) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetCompute) ProtoMessage() {}
+
+func (x *SetCompute) ProtoReflect() protoreflect.Message {
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetCompute.ProtoReflect.Descriptor instead.
+func (*SetCompute) Descriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1}
+}
+
+// 条件运算逻辑节点：AND/OR 分组节点
+type LogicCompute_LogicNode struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Logic         LogicCompute_LogicOp          `protobuf:"varint,1,opt,name=logic,proto3,enum=compute_operation.LogicCompute_LogicOp" json:"logic,omitempty"`
+	Children      []*LogicCompute_ConditionNode `protobuf:"bytes,2,rep,name=children,proto3" json:"children,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogicCompute_LogicNode) Reset() {
+	*x = LogicCompute_LogicNode{}
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogicCompute_LogicNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogicCompute_LogicNode) ProtoMessage() {}
+
+func (x *LogicCompute_LogicNode) ProtoReflect() protoreflect.Message {
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogicCompute_LogicNode.ProtoReflect.Descriptor instead.
+func (*LogicCompute_LogicNode) Descriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 0}
+}
+
+func (x *LogicCompute_LogicNode) GetLogic() LogicCompute_LogicOp {
 	if x != nil {
 		return x.Logic
 	}
-	return LogicOp_LOGIC_OP_UNSPECIFIED
+	return LogicCompute_LOGIC_OP_UNSPECIFIED
 }
 
-func (x *LogicNode) GetChildren() []*ConditionNode {
+func (x *LogicCompute_LogicNode) GetChildren() []*LogicCompute_ConditionNode {
 	if x != nil {
 		return x.Children
 	}
@@ -205,31 +383,31 @@ func (x *LogicNode) GetChildren() []*ConditionNode {
 }
 
 // 字段条件叶子节点
-type FieldConditionNode struct {
+type LogicCompute_FieldConditionNode struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Field         string                 `protobuf:"bytes,1,opt,name=field,proto3" json:"field,omitempty"`
-	Operator      CompareOp              `protobuf:"varint,2,opt,name=operator,proto3,enum=compute_operation.CompareOp" json:"operator,omitempty"`
+	Operator      LogicCompute_CompareOp `protobuf:"varint,2,opt,name=operator,proto3,enum=compute_operation.LogicCompute_CompareOp" json:"operator,omitempty"`
 	Value         string                 `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
 	TableAlias    string                 `protobuf:"bytes,5,opt,name=table_alias,json=tableAlias,proto3" json:"table_alias,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *FieldConditionNode) Reset() {
-	*x = FieldConditionNode{}
-	mi := &file_compute_operation_compute_operation_proto_msgTypes[1]
+func (x *LogicCompute_FieldConditionNode) Reset() {
+	*x = LogicCompute_FieldConditionNode{}
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *FieldConditionNode) String() string {
+func (x *LogicCompute_FieldConditionNode) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FieldConditionNode) ProtoMessage() {}
+func (*LogicCompute_FieldConditionNode) ProtoMessage() {}
 
-func (x *FieldConditionNode) ProtoReflect() protoreflect.Message {
-	mi := &file_compute_operation_compute_operation_proto_msgTypes[1]
+func (x *LogicCompute_FieldConditionNode) ProtoReflect() protoreflect.Message {
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -240,33 +418,33 @@ func (x *FieldConditionNode) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FieldConditionNode.ProtoReflect.Descriptor instead.
-func (*FieldConditionNode) Descriptor() ([]byte, []int) {
-	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1}
+// Deprecated: Use LogicCompute_FieldConditionNode.ProtoReflect.Descriptor instead.
+func (*LogicCompute_FieldConditionNode) Descriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 1}
 }
 
-func (x *FieldConditionNode) GetField() string {
+func (x *LogicCompute_FieldConditionNode) GetField() string {
 	if x != nil {
 		return x.Field
 	}
 	return ""
 }
 
-func (x *FieldConditionNode) GetOperator() CompareOp {
+func (x *LogicCompute_FieldConditionNode) GetOperator() LogicCompute_CompareOp {
 	if x != nil {
 		return x.Operator
 	}
-	return CompareOp_COMPARE_OP_UNSPECIFIED
+	return LogicCompute_COMPARE_OP_UNSPECIFIED
 }
 
-func (x *FieldConditionNode) GetValue() string {
+func (x *LogicCompute_FieldConditionNode) GetValue() string {
 	if x != nil {
 		return x.Value
 	}
 	return ""
 }
 
-func (x *FieldConditionNode) GetTableAlias() string {
+func (x *LogicCompute_FieldConditionNode) GetTableAlias() string {
 	if x != nil {
 		return x.TableAlias
 	}
@@ -274,7 +452,7 @@ func (x *FieldConditionNode) GetTableAlias() string {
 }
 
 // 条件节点总结构：oneof 实现两种节点互斥（替代Go接口多态）
-type ConditionNode struct {
+type LogicCompute_ConditionNode struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 当前节点是否取反 NOT
 	Not bool `protobuf:"varint,1,opt,name=not,proto3" json:"not,omitempty"`
@@ -282,28 +460,28 @@ type ConditionNode struct {
 	//
 	// Types that are valid to be assigned to Node:
 	//
-	//	*ConditionNode_LogicNode
-	//	*ConditionNode_ConditionNode
-	Node          isConditionNode_Node `protobuf_oneof:"node"`
+	//	*LogicCompute_ConditionNode_LogicNode
+	//	*LogicCompute_ConditionNode_ConditionNode
+	Node          isLogicCompute_ConditionNode_Node `protobuf_oneof:"node"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ConditionNode) Reset() {
-	*x = ConditionNode{}
-	mi := &file_compute_operation_compute_operation_proto_msgTypes[2]
+func (x *LogicCompute_ConditionNode) Reset() {
+	*x = LogicCompute_ConditionNode{}
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ConditionNode) String() string {
+func (x *LogicCompute_ConditionNode) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConditionNode) ProtoMessage() {}
+func (*LogicCompute_ConditionNode) ProtoMessage() {}
 
-func (x *ConditionNode) ProtoReflect() protoreflect.Message {
-	mi := &file_compute_operation_compute_operation_proto_msgTypes[2]
+func (x *LogicCompute_ConditionNode) ProtoReflect() protoreflect.Message {
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -314,83 +492,153 @@ func (x *ConditionNode) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConditionNode.ProtoReflect.Descriptor instead.
-func (*ConditionNode) Descriptor() ([]byte, []int) {
-	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{2}
+// Deprecated: Use LogicCompute_ConditionNode.ProtoReflect.Descriptor instead.
+func (*LogicCompute_ConditionNode) Descriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 2}
 }
 
-func (x *ConditionNode) GetNot() bool {
+func (x *LogicCompute_ConditionNode) GetNot() bool {
 	if x != nil {
 		return x.Not
 	}
 	return false
 }
 
-func (x *ConditionNode) GetNode() isConditionNode_Node {
+func (x *LogicCompute_ConditionNode) GetNode() isLogicCompute_ConditionNode_Node {
 	if x != nil {
 		return x.Node
 	}
 	return nil
 }
 
-func (x *ConditionNode) GetLogicNode() *LogicNode {
+func (x *LogicCompute_ConditionNode) GetLogicNode() *LogicCompute_LogicNode {
 	if x != nil {
-		if x, ok := x.Node.(*ConditionNode_LogicNode); ok {
+		if x, ok := x.Node.(*LogicCompute_ConditionNode_LogicNode); ok {
 			return x.LogicNode
 		}
 	}
 	return nil
 }
 
-func (x *ConditionNode) GetConditionNode() *FieldConditionNode {
+func (x *LogicCompute_ConditionNode) GetConditionNode() *LogicCompute_FieldConditionNode {
 	if x != nil {
-		if x, ok := x.Node.(*ConditionNode_ConditionNode); ok {
+		if x, ok := x.Node.(*LogicCompute_ConditionNode_ConditionNode); ok {
 			return x.ConditionNode
 		}
 	}
 	return nil
 }
 
-type isConditionNode_Node interface {
-	isConditionNode_Node()
+type isLogicCompute_ConditionNode_Node interface {
+	isLogicCompute_ConditionNode_Node()
 }
 
-type ConditionNode_LogicNode struct {
-	LogicNode *LogicNode `protobuf:"bytes,2,opt,name=logic_node,json=logicNode,proto3,oneof"`
+type LogicCompute_ConditionNode_LogicNode struct {
+	LogicNode *LogicCompute_LogicNode `protobuf:"bytes,2,opt,name=logic_node,json=logicNode,proto3,oneof"`
 }
 
-type ConditionNode_ConditionNode struct {
-	ConditionNode *FieldConditionNode `protobuf:"bytes,3,opt,name=condition_node,json=conditionNode,proto3,oneof"`
+type LogicCompute_ConditionNode_ConditionNode struct {
+	ConditionNode *LogicCompute_FieldConditionNode `protobuf:"bytes,3,opt,name=condition_node,json=conditionNode,proto3,oneof"`
 }
 
-func (*ConditionNode_LogicNode) isConditionNode_Node() {}
+func (*LogicCompute_ConditionNode_LogicNode) isLogicCompute_ConditionNode_Node() {}
 
-func (*ConditionNode_ConditionNode) isConditionNode_Node() {}
+func (*LogicCompute_ConditionNode_ConditionNode) isLogicCompute_ConditionNode_Node() {}
+
+// 运算树节点
+type SetCompute_Node struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	NodeType      SetCompute_NodeType    `protobuf:"varint,1,opt,name=node_type,json=nodeType,proto3,enum=compute_operation.SetCompute_NodeType" json:"node_type,omitempty"`
+	Operator      SetCompute_Operator    `protobuf:"varint,2,opt,name=operator,proto3,enum=compute_operation.SetCompute_Operator" json:"operator,omitempty"` // node_type为dataset时无需填充此值
+	SetKey        string                 `protobuf:"bytes,3,opt,name=set_key,json=setKey,proto3" json:"set_key,omitempty"`                                   // node_type为operator时无需填充此值
+	Children      []*SetCompute_Node     `protobuf:"bytes,4,rep,name=children,proto3" json:"children,omitempty"`                                             // node_type为operator时需要填充此值
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetCompute_Node) Reset() {
+	*x = SetCompute_Node{}
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetCompute_Node) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetCompute_Node) ProtoMessage() {}
+
+func (x *SetCompute_Node) ProtoReflect() protoreflect.Message {
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetCompute_Node.ProtoReflect.Descriptor instead.
+func (*SetCompute_Node) Descriptor() ([]byte, []int) {
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 0}
+}
+
+func (x *SetCompute_Node) GetNodeType() SetCompute_NodeType {
+	if x != nil {
+		return x.NodeType
+	}
+	return SetCompute_NODE_TYPE_UNSPECIFIED
+}
+
+func (x *SetCompute_Node) GetOperator() SetCompute_Operator {
+	if x != nil {
+		return x.Operator
+	}
+	return SetCompute_OPERATOR_UNSPECIFIED
+}
+
+func (x *SetCompute_Node) GetSetKey() string {
+	if x != nil {
+		return x.SetKey
+	}
+	return ""
+}
+
+func (x *SetCompute_Node) GetChildren() []*SetCompute_Node {
+	if x != nil {
+		return x.Children
+	}
+	return nil
+}
 
 var File_compute_operation_compute_operation_proto protoreflect.FileDescriptor
 
 const file_compute_operation_compute_operation_proto_rawDesc = "" +
 	"\n" +
-	")compute_operation/compute_operation.proto\x12\x11compute_operation\"{\n" +
-	"\tLogicNode\x120\n" +
-	"\x05logic\x18\x01 \x01(\x0e2\x1a.compute_operation.LogicOpR\x05logic\x12<\n" +
-	"\bchildren\x18\x02 \x03(\v2 .compute_operation.ConditionNodeR\bchildren\"\x9b\x01\n" +
+	")compute_operation/compute_operation.proto\x12\x11compute_operation\"\x99\a\n" +
+	"\fLogicCompute\x1a\x95\x01\n" +
+	"\tLogicNode\x12=\n" +
+	"\x05logic\x18\x01 \x01(\x0e2'.compute_operation.LogicCompute.LogicOpR\x05logic\x12I\n" +
+	"\bchildren\x18\x02 \x03(\v2-.compute_operation.LogicCompute.ConditionNodeR\bchildren\x1a\xa8\x01\n" +
 	"\x12FieldConditionNode\x12\x14\n" +
-	"\x05field\x18\x01 \x01(\tR\x05field\x128\n" +
-	"\boperator\x18\x02 \x01(\x0e2\x1c.compute_operation.CompareOpR\boperator\x12\x14\n" +
+	"\x05field\x18\x01 \x01(\tR\x05field\x12E\n" +
+	"\boperator\x18\x02 \x01(\x0e2).compute_operation.LogicCompute.CompareOpR\boperator\x12\x14\n" +
 	"\x05value\x18\x03 \x01(\tR\x05value\x12\x1f\n" +
 	"\vtable_alias\x18\x05 \x01(\tR\n" +
-	"tableAlias\"\xb8\x01\n" +
+	"tableAlias\x1a\xd2\x01\n" +
 	"\rConditionNode\x12\x10\n" +
-	"\x03not\x18\x01 \x01(\bR\x03not\x12=\n" +
+	"\x03not\x18\x01 \x01(\bR\x03not\x12J\n" +
 	"\n" +
-	"logic_node\x18\x02 \x01(\v2\x1c.compute_operation.LogicNodeH\x00R\tlogicNode\x12N\n" +
-	"\x0econdition_node\x18\x03 \x01(\v2%.compute_operation.FieldConditionNodeH\x00R\rconditionNodeB\x06\n" +
-	"\x04node*F\n" +
+	"logic_node\x18\x02 \x01(\v2).compute_operation.LogicCompute.LogicNodeH\x00R\tlogicNode\x12[\n" +
+	"\x0econdition_node\x18\x03 \x01(\v22.compute_operation.LogicCompute.FieldConditionNodeH\x00R\rconditionNodeB\x06\n" +
+	"\x04node\"F\n" +
 	"\aLogicOp\x12\x18\n" +
 	"\x14LOGIC_OP_UNSPECIFIED\x10\x00\x12\x10\n" +
 	"\fLOGIC_OP_AND\x10\x01\x12\x0f\n" +
-	"\vLOGIC_OP_OR\x10\x02*\xa8\x02\n" +
+	"\vLOGIC_OP_OR\x10\x02\"\xa8\x02\n" +
 	"\tCompareOp\x12\x1a\n" +
 	"\x16COMPARE_OP_UNSPECIFIED\x10\x00\x12\x11\n" +
 	"\rCOMPARE_OP_EQ\x10\x01\x12\x12\n" +
@@ -405,7 +653,25 @@ const file_compute_operation_compute_operation_proto_rawDesc = "" +
 	"\x11COMPARE_OP_NOT_IN\x10\n" +
 	"\x12\x16\n" +
 	"\x12COMPARE_OP_IS_NULL\x10\v\x12\x1a\n" +
-	"\x16COMPARE_OP_IS_NOT_NULL\x10\fB\x16Z\x14./;compute_operationb\x06proto3"
+	"\x16COMPARE_OP_IS_NOT_NULL\x10\f\"\x93\x03\n" +
+	"\n" +
+	"SetCompute\x1a\xe8\x01\n" +
+	"\x04Node\x12C\n" +
+	"\tnode_type\x18\x01 \x01(\x0e2&.compute_operation.SetCompute.NodeTypeR\bnodeType\x12B\n" +
+	"\boperator\x18\x02 \x01(\x0e2&.compute_operation.SetCompute.OperatorR\boperator\x12\x17\n" +
+	"\aset_key\x18\x03 \x01(\tR\x06setKey\x12>\n" +
+	"\bchildren\x18\x04 \x03(\v2\".compute_operation.SetCompute.NodeR\bchildren\"@\n" +
+	"\bNodeType\x12\x19\n" +
+	"\x15NODE_TYPE_UNSPECIFIED\x10\x00\x12\v\n" +
+	"\aDATASET\x10\x01\x12\f\n" +
+	"\bOPERATOR\x10\x02\"X\n" +
+	"\bOperator\x12\x18\n" +
+	"\x14OPERATOR_UNSPECIFIED\x10\x00\x12\t\n" +
+	"\x05UNION\x10\x01\x12\r\n" +
+	"\tINTERSECT\x10\x02\x12\b\n" +
+	"\x04DIFF\x10\x03\x12\x0e\n" +
+	"\n" +
+	"COMPLEMENT\x10\x04B\x16Z\x14./;compute_operationb\x06proto3"
 
 var (
 	file_compute_operation_compute_operation_proto_rawDescOnce sync.Once
@@ -419,26 +685,34 @@ func file_compute_operation_compute_operation_proto_rawDescGZIP() []byte {
 	return file_compute_operation_compute_operation_proto_rawDescData
 }
 
-var file_compute_operation_compute_operation_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_compute_operation_compute_operation_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_compute_operation_compute_operation_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_compute_operation_compute_operation_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_compute_operation_compute_operation_proto_goTypes = []any{
-	(LogicOp)(0),               // 0: compute_operation.LogicOp
-	(CompareOp)(0),             // 1: compute_operation.CompareOp
-	(*LogicNode)(nil),          // 2: compute_operation.LogicNode
-	(*FieldConditionNode)(nil), // 3: compute_operation.FieldConditionNode
-	(*ConditionNode)(nil),      // 4: compute_operation.ConditionNode
+	(LogicCompute_LogicOp)(0),               // 0: compute_operation.LogicCompute.LogicOp
+	(LogicCompute_CompareOp)(0),             // 1: compute_operation.LogicCompute.CompareOp
+	(SetCompute_NodeType)(0),                // 2: compute_operation.SetCompute.NodeType
+	(SetCompute_Operator)(0),                // 3: compute_operation.SetCompute.Operator
+	(*LogicCompute)(nil),                    // 4: compute_operation.LogicCompute
+	(*SetCompute)(nil),                      // 5: compute_operation.SetCompute
+	(*LogicCompute_LogicNode)(nil),          // 6: compute_operation.LogicCompute.LogicNode
+	(*LogicCompute_FieldConditionNode)(nil), // 7: compute_operation.LogicCompute.FieldConditionNode
+	(*LogicCompute_ConditionNode)(nil),      // 8: compute_operation.LogicCompute.ConditionNode
+	(*SetCompute_Node)(nil),                 // 9: compute_operation.SetCompute.Node
 }
 var file_compute_operation_compute_operation_proto_depIdxs = []int32{
-	0, // 0: compute_operation.LogicNode.logic:type_name -> compute_operation.LogicOp
-	4, // 1: compute_operation.LogicNode.children:type_name -> compute_operation.ConditionNode
-	1, // 2: compute_operation.FieldConditionNode.operator:type_name -> compute_operation.CompareOp
-	2, // 3: compute_operation.ConditionNode.logic_node:type_name -> compute_operation.LogicNode
-	3, // 4: compute_operation.ConditionNode.condition_node:type_name -> compute_operation.FieldConditionNode
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	0, // 0: compute_operation.LogicCompute.LogicNode.logic:type_name -> compute_operation.LogicCompute.LogicOp
+	8, // 1: compute_operation.LogicCompute.LogicNode.children:type_name -> compute_operation.LogicCompute.ConditionNode
+	1, // 2: compute_operation.LogicCompute.FieldConditionNode.operator:type_name -> compute_operation.LogicCompute.CompareOp
+	6, // 3: compute_operation.LogicCompute.ConditionNode.logic_node:type_name -> compute_operation.LogicCompute.LogicNode
+	7, // 4: compute_operation.LogicCompute.ConditionNode.condition_node:type_name -> compute_operation.LogicCompute.FieldConditionNode
+	2, // 5: compute_operation.SetCompute.Node.node_type:type_name -> compute_operation.SetCompute.NodeType
+	3, // 6: compute_operation.SetCompute.Node.operator:type_name -> compute_operation.SetCompute.Operator
+	9, // 7: compute_operation.SetCompute.Node.children:type_name -> compute_operation.SetCompute.Node
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_compute_operation_compute_operation_proto_init() }
@@ -446,17 +720,17 @@ func file_compute_operation_compute_operation_proto_init() {
 	if File_compute_operation_compute_operation_proto != nil {
 		return
 	}
-	file_compute_operation_compute_operation_proto_msgTypes[2].OneofWrappers = []any{
-		(*ConditionNode_LogicNode)(nil),
-		(*ConditionNode_ConditionNode)(nil),
+	file_compute_operation_compute_operation_proto_msgTypes[4].OneofWrappers = []any{
+		(*LogicCompute_ConditionNode_LogicNode)(nil),
+		(*LogicCompute_ConditionNode_ConditionNode)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_compute_operation_compute_operation_proto_rawDesc), len(file_compute_operation_compute_operation_proto_rawDesc)),
-			NumEnums:      2,
-			NumMessages:   3,
+			NumEnums:      4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
