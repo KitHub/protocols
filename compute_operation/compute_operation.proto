@@ -4,32 +4,52 @@ package compute_operation;
 
 option go_package = "./;compute_operation";
 
-enum OperationType {
-    LOGIC = "logic";
-    CONDITION = "condition";
+// 逻辑运算符枚举
+enum LogicOp {
+  LOGIC_OP_UNSPECIFIED = 0;
+  LOGIC_OP_AND = 1;
+  LOGIC_OP_OR = 2;
 }
 
-enum LogicOperator {
-    AND = "and";
-    OR = "or";
-    NOT = "not";
+// 比较运算符枚举
+enum CompareOp {
+  COMPARE_OP_UNSPECIFIED = 0;   // unspecified
+  COMPARE_OP_EQ = 1;            // =
+  COMPARE_OP_NEQ = 2;           // !=
+  COMPARE_OP_GT = 3;            // >
+  COMPARE_OP_GTE = 4;           // >=
+  COMPARE_OP_LT = 5;            // <
+  COMPARE_OP_LTE = 6;           // <=
+  COMPARE_OP_LIKE = 7;          // like
+  COMPARE_OP_NOT_LIKE = 8;      // not like
+  COMPARE_OP_IN = 9;            // in
+  COMPARE_OP_NOT_IN = 10;       // not in
+  COMPARE_OP_IS_NULL = 11;      // is null
+  COMPARE_OP_IS_NOT_NULL = 12;  // is not null
 }
 
-enum ConditionOperator {
-    EQ = "=";
-    NEQ = "!=";
-    GT = ">";
-    GTE = ">=";
-    LT = "<";
-    LTE = "<=";
-    LIKE = "like";
-    NOT_LIKE = "not_like";
-    IN = "in";
-    NOT_IN = "not_in";
-    IS_NULL = "is_null";
-    IS_NOT_NULL = "is_not_null"
+// 逻辑节点：AND/OR 分组节点
+message LogicNode {
+  LogicOp logic = 1;
+  repeated ConditionNode children = 2;
 }
 
-message Operation {
-    OperationType type = 0;
+// 字段条件叶子节点
+message FieldConditionNode {
+  string field = 1;
+  CompareOp operator = 2;
+  string value = 3;
+  string table_alias = 5;
+}
+
+// 条件节点总结构：oneof 实现两种节点互斥（替代Go接口多态）
+message ConditionNode {
+  // 当前节点是否取反 NOT
+  bool not = 1;
+
+  // 二选一：要么是逻辑组，要么是单条件
+  oneof node {
+    LogicNode logic_node = 2;
+    FieldConditionNode condition_node = 3;
+  }
 }
