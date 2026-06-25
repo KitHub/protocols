@@ -3,10 +3,10 @@ protocols and implementations for kithub services
 
 ## 编译方式
 
-以*projectgeneratorapi*项目为例
+以*projectgeneratorapi*项目为例，在项目根目录下运行
 
 ```
-protoc --go_out=./projectgeneratorapi --go-grpc_out=./projectgeneratorapi --grpc-gateway_out=./projectgeneratorapi --govalidators_out="./projectgeneratorapi" ./projectgeneratorapi/projectgeneratorapi.proto`
+protoc --go_out=./ --go-grpc_out=./ --grpc-gateway_out=./ --govalidators_out="./" ./projectgeneratorapi/projectgeneratorapi.proto`
 ```
 
 ## 依赖库
@@ -18,7 +18,7 @@ protoc --go_out=./projectgeneratorapi --go-grpc_out=./projectgeneratorapi --grpc
 使用方式，以 *DeviceManagementPlatform*服务为例进行编译，
 
 ```
-protoc --go_out=./devicemanagementplatformapi --go-grpc_out=./devicemanagementplatformapi --grpc-gateway_out=./devicemanagementplatformapi --govalidators_out="./devicemanagementplatformapi" ./devicemanagementplatformapi/devicemanagementplatformapi.proto
+protoc --go_out=./ --go-grpc_out=./ --grpc-gateway_out=./ --govalidators_out="./" ./devicemanagementplatformapi/devicemanagementplatformapi.proto
 ```
 
 参考文档，https://github.com/mwitkow/go-proto-validators
@@ -30,7 +30,7 @@ protoc --go_out=./devicemanagementplatformapi --go-grpc_out=./devicemanagementpl
 使用方式，以 *DeviceManagementPlatform*服务为例进行编译，
 
 ```
-protoc --go_out=./devicemanagementplatformapi --go-grpc_out=./devicemanagementplatformapi --grpc-gateway_out=./devicemanagementplatformapi ./devicemanagementplatformapi/devicemanagementplatformapi.proto
+protoc --go_out=./ --go-grpc_out=./ --grpc-gateway_out=./ ./devicemanagementplatformapi/devicemanagementplatformapi.proto
 ```
 
 参考文档，https://zhuanlan.zhihu.com/p/602560212

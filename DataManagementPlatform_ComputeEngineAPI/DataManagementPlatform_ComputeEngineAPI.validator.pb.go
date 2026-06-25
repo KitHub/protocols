@@ -17,6 +17,36 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *ReloadAllPackagesRequest) Validate() error {
+	return nil
+}
+func (this *ReloadAllPackagesResponse) Validate() error {
+	return nil
+}
+func (this *ReloadPackageRequest) Validate() error {
+	if !(len(this.OriginId) > 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))
+	}
+	if !(len(this.OriginId) < 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.OriginId))
+	}
+	return nil
+}
+func (this *ReloadPackageResponse) Validate() error {
+	return nil
+}
+func (this *ComputePackageComboRequest) Validate() error {
+	if !(len(this.BasePackageOriginId) > 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("BasePackageOriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.BasePackageOriginId))
+	}
+	if !(len(this.BasePackageOriginId) < 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("BasePackageOriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.BasePackageOriginId))
+	}
+	return nil
+}
+func (this *ComputePackageComboResponse) Validate() error {
+	return nil
+}
 func (this *UploadPackageRequest) Validate() error {
 	if !(len(this.OriginId) > 51) {
 		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))

@@ -4,9 +4,9 @@ package DataManagementPlatform_ComputeEngineAPI;
 
 import "mwitkow/go-proto-validators/validator.proto";
 import "google/api/annotations.proto";
-import "compute_operation/compute_operation.proto";
+//import "compute_operation/compute_operation.proto";
 
-option go_package = "./;DataManagementPlatform_ComputeEngineAPI";
+option go_package = "./DataManagementPlatform_ComputeEngineAPI;DataManagementPlatform_ComputeEngineAPI";
 
 service ComputeEngineAPI {
   rpc RegisterPackage(RegisterPackageRequest) returns (RegisterPackageResponse) {
@@ -19,6 +19,20 @@ service ComputeEngineAPI {
   rpc UploadPackage(UploadPackageRequest) returns (UploadPackageResponse) {
     option (google.api.http) = {
       post: "/v1/computeEngines/packages/upload"
+      body: "*"
+    };
+  }
+
+  rpc ReloadPackage(ReloadPackageRequest) returns (ReloadPackageResponse) {
+    option (google.api.http) = {
+      post: "/v1/computeEngines/packages/reload"
+      body: "*"
+    };
+  }
+
+  rpc ReloadAllPackages(ReloadAllPackagesRequest) returns (ReloadAllPackagesResponse) {
+    option (google.api.http) = {
+      post: "/v1/computeEngines/packages/reloadAll"
       body: "*"
     };
   }
@@ -49,6 +63,23 @@ service ComputeEngineAPI {
 
 }
 
+message ReloadAllPackagesRequest {
+
+}
+
+message ReloadAllPackagesResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+}
+
+message ReloadPackageRequest {
+    string origin_id = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
+}
+
+message ReloadPackageResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+}
 
 message ComputePackageComboRequest {
     string basePackageOriginId = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];

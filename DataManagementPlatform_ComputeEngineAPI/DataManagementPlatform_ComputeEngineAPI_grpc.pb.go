@@ -21,9 +21,12 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	ComputeEngineAPI_RegisterPackage_FullMethodName           = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/RegisterPackage"
 	ComputeEngineAPI_UploadPackage_FullMethodName             = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/UploadPackage"
+	ComputeEngineAPI_ReloadPackage_FullMethodName             = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/ReloadPackage"
+	ComputeEngineAPI_ReloadAllPackages_FullMethodName         = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/ReloadAllPackages"
 	ComputeEngineAPI_GetPackageById_FullMethodName            = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageById"
 	ComputeEngineAPI_GetPackageByOriginId_FullMethodName      = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageByOriginId"
 	ComputeEngineAPI_GetPackageListASCByLastId_FullMethodName = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/GetPackageListASCByLastId"
+	ComputeEngineAPI_ComputePackagesCombo_FullMethodName      = "/DataManagementPlatform_ComputeEngineAPI.ComputeEngineAPI/ComputePackagesCombo"
 )
 
 // ComputeEngineAPIClient is the client API for ComputeEngineAPI service.
@@ -32,9 +35,12 @@ const (
 type ComputeEngineAPIClient interface {
 	RegisterPackage(ctx context.Context, in *RegisterPackageRequest, opts ...grpc.CallOption) (*RegisterPackageResponse, error)
 	UploadPackage(ctx context.Context, in *UploadPackageRequest, opts ...grpc.CallOption) (*UploadPackageResponse, error)
+	ReloadPackage(ctx context.Context, in *ReloadPackageRequest, opts ...grpc.CallOption) (*ReloadPackageResponse, error)
+	ReloadAllPackages(ctx context.Context, in *ReloadAllPackagesRequest, opts ...grpc.CallOption) (*ReloadAllPackagesResponse, error)
 	GetPackageById(ctx context.Context, in *GetPackageByIdRequest, opts ...grpc.CallOption) (*GetPackageByIdResponse, error)
 	GetPackageByOriginId(ctx context.Context, in *GetPackageByOriginIdRequest, opts ...grpc.CallOption) (*GetPackageByOriginIdResponse, error)
 	GetPackageListASCByLastId(ctx context.Context, in *GetPackageListASCByLastIdRequest, opts ...grpc.CallOption) (*GetPackageListASCByLastIdResponse, error)
+	ComputePackagesCombo(ctx context.Context, in *ComputePackageComboRequest, opts ...grpc.CallOption) (*ComputePackageComboResponse, error)
 }
 
 type computeEngineAPIClient struct {
@@ -59,6 +65,26 @@ func (c *computeEngineAPIClient) UploadPackage(ctx context.Context, in *UploadPa
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(UploadPackageResponse)
 	err := c.cc.Invoke(ctx, ComputeEngineAPI_UploadPackage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *computeEngineAPIClient) ReloadPackage(ctx context.Context, in *ReloadPackageRequest, opts ...grpc.CallOption) (*ReloadPackageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReloadPackageResponse)
+	err := c.cc.Invoke(ctx, ComputeEngineAPI_ReloadPackage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *computeEngineAPIClient) ReloadAllPackages(ctx context.Context, in *ReloadAllPackagesRequest, opts ...grpc.CallOption) (*ReloadAllPackagesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReloadAllPackagesResponse)
+	err := c.cc.Invoke(ctx, ComputeEngineAPI_ReloadAllPackages_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,15 +121,28 @@ func (c *computeEngineAPIClient) GetPackageListASCByLastId(ctx context.Context, 
 	return out, nil
 }
 
+func (c *computeEngineAPIClient) ComputePackagesCombo(ctx context.Context, in *ComputePackageComboRequest, opts ...grpc.CallOption) (*ComputePackageComboResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ComputePackageComboResponse)
+	err := c.cc.Invoke(ctx, ComputeEngineAPI_ComputePackagesCombo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ComputeEngineAPIServer is the server API for ComputeEngineAPI service.
 // All implementations must embed UnimplementedComputeEngineAPIServer
 // for forward compatibility.
 type ComputeEngineAPIServer interface {
 	RegisterPackage(context.Context, *RegisterPackageRequest) (*RegisterPackageResponse, error)
 	UploadPackage(context.Context, *UploadPackageRequest) (*UploadPackageResponse, error)
+	ReloadPackage(context.Context, *ReloadPackageRequest) (*ReloadPackageResponse, error)
+	ReloadAllPackages(context.Context, *ReloadAllPackagesRequest) (*ReloadAllPackagesResponse, error)
 	GetPackageById(context.Context, *GetPackageByIdRequest) (*GetPackageByIdResponse, error)
 	GetPackageByOriginId(context.Context, *GetPackageByOriginIdRequest) (*GetPackageByOriginIdResponse, error)
 	GetPackageListASCByLastId(context.Context, *GetPackageListASCByLastIdRequest) (*GetPackageListASCByLastIdResponse, error)
+	ComputePackagesCombo(context.Context, *ComputePackageComboRequest) (*ComputePackageComboResponse, error)
 	mustEmbedUnimplementedComputeEngineAPIServer()
 }
 
@@ -120,6 +159,12 @@ func (UnimplementedComputeEngineAPIServer) RegisterPackage(context.Context, *Reg
 func (UnimplementedComputeEngineAPIServer) UploadPackage(context.Context, *UploadPackageRequest) (*UploadPackageResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UploadPackage not implemented")
 }
+func (UnimplementedComputeEngineAPIServer) ReloadPackage(context.Context, *ReloadPackageRequest) (*ReloadPackageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReloadPackage not implemented")
+}
+func (UnimplementedComputeEngineAPIServer) ReloadAllPackages(context.Context, *ReloadAllPackagesRequest) (*ReloadAllPackagesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReloadAllPackages not implemented")
+}
 func (UnimplementedComputeEngineAPIServer) GetPackageById(context.Context, *GetPackageByIdRequest) (*GetPackageByIdResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetPackageById not implemented")
 }
@@ -128,6 +173,9 @@ func (UnimplementedComputeEngineAPIServer) GetPackageByOriginId(context.Context,
 }
 func (UnimplementedComputeEngineAPIServer) GetPackageListASCByLastId(context.Context, *GetPackageListASCByLastIdRequest) (*GetPackageListASCByLastIdResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetPackageListASCByLastId not implemented")
+}
+func (UnimplementedComputeEngineAPIServer) ComputePackagesCombo(context.Context, *ComputePackageComboRequest) (*ComputePackageComboResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ComputePackagesCombo not implemented")
 }
 func (UnimplementedComputeEngineAPIServer) mustEmbedUnimplementedComputeEngineAPIServer() {}
 func (UnimplementedComputeEngineAPIServer) testEmbeddedByValue()                          {}
@@ -186,6 +234,42 @@ func _ComputeEngineAPI_UploadPackage_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ComputeEngineAPI_ReloadPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReloadPackageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ComputeEngineAPIServer).ReloadPackage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ComputeEngineAPI_ReloadPackage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ComputeEngineAPIServer).ReloadPackage(ctx, req.(*ReloadPackageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ComputeEngineAPI_ReloadAllPackages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReloadAllPackagesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ComputeEngineAPIServer).ReloadAllPackages(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ComputeEngineAPI_ReloadAllPackages_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ComputeEngineAPIServer).ReloadAllPackages(ctx, req.(*ReloadAllPackagesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ComputeEngineAPI_GetPackageById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetPackageByIdRequest)
 	if err := dec(in); err != nil {
@@ -240,6 +324,24 @@ func _ComputeEngineAPI_GetPackageListASCByLastId_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ComputeEngineAPI_ComputePackagesCombo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ComputePackageComboRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ComputeEngineAPIServer).ComputePackagesCombo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ComputeEngineAPI_ComputePackagesCombo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ComputeEngineAPIServer).ComputePackagesCombo(ctx, req.(*ComputePackageComboRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ComputeEngineAPI_ServiceDesc is the grpc.ServiceDesc for ComputeEngineAPI service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -256,6 +358,14 @@ var ComputeEngineAPI_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ComputeEngineAPI_UploadPackage_Handler,
 		},
 		{
+			MethodName: "ReloadPackage",
+			Handler:    _ComputeEngineAPI_ReloadPackage_Handler,
+		},
+		{
+			MethodName: "ReloadAllPackages",
+			Handler:    _ComputeEngineAPI_ReloadAllPackages_Handler,
+		},
+		{
 			MethodName: "GetPackageById",
 			Handler:    _ComputeEngineAPI_GetPackageById_Handler,
 		},
@@ -266,6 +376,10 @@ var ComputeEngineAPI_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetPackageListASCByLastId",
 			Handler:    _ComputeEngineAPI_GetPackageListASCByLastId_Handler,
+		},
+		{
+			MethodName: "ComputePackagesCombo",
+			Handler:    _ComputeEngineAPI_ComputePackagesCombo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

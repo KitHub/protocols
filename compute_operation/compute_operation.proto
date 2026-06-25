@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package compute_operation;
 
-option go_package = "./;compute_operation";
+option go_package = "./compute_operation;compute_operation";
 
 // 条件运算数据结构 ================================================
 
