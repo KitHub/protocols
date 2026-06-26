@@ -421,7 +421,7 @@ const file_projectgeneratorapi_projectgeneratorapi_proto_rawDesc = "" +
 	"\x04data\x18\x03 \x01(\v20.projectgeneratorapi.GenerateProjectResponseDataR\x04data2\xab\x02\n" +
 	"\x13ProjectGeneratorAPI\x12\x8b\x01\n" +
 	"\x0fGenerateProject\x12+.projectgeneratorapi.GenerateProjectRequest\x1a,.projectgeneratorapi.GenerateProjectResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/projects/generate\x12\x85\x01\n" +
-	"\x18DownloadGeneratedProject\x124.projectgeneratorapi.DownloadGeneratedProjectRequest\x1a\x14.google.api.HttpBody\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/projects/downloadB\x18Z\x16./;projectgeneratorapib\x06proto3"
+	"\x18DownloadGeneratedProject\x124.projectgeneratorapi.DownloadGeneratedProjectRequest\x1a\x14.google.api.HttpBody\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/projects/downloadB,Z*./projectgeneratorapi/;projectgeneratorapib\x06proto3"
 
 var (
 	file_projectgeneratorapi_projectgeneratorapi_proto_rawDescOnce sync.Once

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v7.34.1
-// source: github.com/KitHub/protocols/compute_operation/compute_operation.proto
+// source: compute_operation/compute_operation.proto
 
 package compute_operation
 
@@ -55,11 +55,11 @@ func (x LogicCompute_LogicOp) String() string {
 }
 
 func (LogicCompute_LogicOp) Descriptor() protoreflect.EnumDescriptor {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes[0].Descriptor()
+	return file_compute_operation_compute_operation_proto_enumTypes[0].Descriptor()
 }
 
 func (LogicCompute_LogicOp) Type() protoreflect.EnumType {
-	return &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes[0]
+	return &file_compute_operation_compute_operation_proto_enumTypes[0]
 }
 
 func (x LogicCompute_LogicOp) Number() protoreflect.EnumNumber {
@@ -68,7 +68,7 @@ func (x LogicCompute_LogicOp) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use LogicCompute_LogicOp.Descriptor instead.
 func (LogicCompute_LogicOp) EnumDescriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 0}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // 条件运算比较运算符枚举
@@ -135,11 +135,11 @@ func (x LogicCompute_CompareOp) String() string {
 }
 
 func (LogicCompute_CompareOp) Descriptor() protoreflect.EnumDescriptor {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes[1].Descriptor()
+	return file_compute_operation_compute_operation_proto_enumTypes[1].Descriptor()
 }
 
 func (LogicCompute_CompareOp) Type() protoreflect.EnumType {
-	return &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes[1]
+	return &file_compute_operation_compute_operation_proto_enumTypes[1]
 }
 
 func (x LogicCompute_CompareOp) Number() protoreflect.EnumNumber {
@@ -148,7 +148,7 @@ func (x LogicCompute_CompareOp) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use LogicCompute_CompareOp.Descriptor instead.
 func (LogicCompute_CompareOp) EnumDescriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 1}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 1}
 }
 
 // 节点类型
@@ -185,11 +185,11 @@ func (x SetCompute_NodeType) String() string {
 }
 
 func (SetCompute_NodeType) Descriptor() protoreflect.EnumDescriptor {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes[2].Descriptor()
+	return file_compute_operation_compute_operation_proto_enumTypes[2].Descriptor()
 }
 
 func (SetCompute_NodeType) Type() protoreflect.EnumType {
-	return &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes[2]
+	return &file_compute_operation_compute_operation_proto_enumTypes[2]
 }
 
 func (x SetCompute_NodeType) Number() protoreflect.EnumNumber {
@@ -198,7 +198,7 @@ func (x SetCompute_NodeType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SetCompute_NodeType.Descriptor instead.
 func (SetCompute_NodeType) EnumDescriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 0}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 0}
 }
 
 // 集合运算枚举
@@ -238,11 +238,11 @@ func (x SetCompute_Operator) String() string {
 }
 
 func (SetCompute_Operator) Descriptor() protoreflect.EnumDescriptor {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes[3].Descriptor()
+	return file_compute_operation_compute_operation_proto_enumTypes[3].Descriptor()
 }
 
 func (SetCompute_Operator) Type() protoreflect.EnumType {
-	return &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes[3]
+	return &file_compute_operation_compute_operation_proto_enumTypes[3]
 }
 
 func (x SetCompute_Operator) Number() protoreflect.EnumNumber {
@@ -251,7 +251,7 @@ func (x SetCompute_Operator) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SetCompute_Operator.Descriptor instead.
 func (SetCompute_Operator) EnumDescriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 1}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 1}
 }
 
 type LogicCompute struct {
@@ -262,7 +262,7 @@ type LogicCompute struct {
 
 func (x *LogicCompute) Reset() {
 	*x = LogicCompute{}
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[0]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -274,7 +274,7 @@ func (x *LogicCompute) String() string {
 func (*LogicCompute) ProtoMessage() {}
 
 func (x *LogicCompute) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[0]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -287,7 +287,7 @@ func (x *LogicCompute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogicCompute.ProtoReflect.Descriptor instead.
 func (*LogicCompute) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0}
 }
 
 type SetCompute struct {
@@ -298,7 +298,7 @@ type SetCompute struct {
 
 func (x *SetCompute) Reset() {
 	*x = SetCompute{}
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[1]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -310,7 +310,7 @@ func (x *SetCompute) String() string {
 func (*SetCompute) ProtoMessage() {}
 
 func (x *SetCompute) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[1]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -323,7 +323,7 @@ func (x *SetCompute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetCompute.ProtoReflect.Descriptor instead.
 func (*SetCompute) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1}
 }
 
 // 条件运算逻辑节点：AND/OR 分组节点
@@ -337,7 +337,7 @@ type LogicCompute_LogicNode struct {
 
 func (x *LogicCompute_LogicNode) Reset() {
 	*x = LogicCompute_LogicNode{}
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[2]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -349,7 +349,7 @@ func (x *LogicCompute_LogicNode) String() string {
 func (*LogicCompute_LogicNode) ProtoMessage() {}
 
 func (x *LogicCompute_LogicNode) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[2]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -362,7 +362,7 @@ func (x *LogicCompute_LogicNode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogicCompute_LogicNode.ProtoReflect.Descriptor instead.
 func (*LogicCompute_LogicNode) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 0}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *LogicCompute_LogicNode) GetLogic() LogicCompute_LogicOp {
@@ -392,7 +392,7 @@ type LogicCompute_FieldConditionNode struct {
 
 func (x *LogicCompute_FieldConditionNode) Reset() {
 	*x = LogicCompute_FieldConditionNode{}
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[3]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -404,7 +404,7 @@ func (x *LogicCompute_FieldConditionNode) String() string {
 func (*LogicCompute_FieldConditionNode) ProtoMessage() {}
 
 func (x *LogicCompute_FieldConditionNode) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[3]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -417,7 +417,7 @@ func (x *LogicCompute_FieldConditionNode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogicCompute_FieldConditionNode.ProtoReflect.Descriptor instead.
 func (*LogicCompute_FieldConditionNode) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 1}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 1}
 }
 
 func (x *LogicCompute_FieldConditionNode) GetField() string {
@@ -466,7 +466,7 @@ type LogicCompute_ConditionNode struct {
 
 func (x *LogicCompute_ConditionNode) Reset() {
 	*x = LogicCompute_ConditionNode{}
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[4]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -478,7 +478,7 @@ func (x *LogicCompute_ConditionNode) String() string {
 func (*LogicCompute_ConditionNode) ProtoMessage() {}
 
 func (x *LogicCompute_ConditionNode) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[4]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -491,7 +491,7 @@ func (x *LogicCompute_ConditionNode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogicCompute_ConditionNode.ProtoReflect.Descriptor instead.
 func (*LogicCompute_ConditionNode) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 2}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{0, 2}
 }
 
 func (x *LogicCompute_ConditionNode) GetNot() bool {
@@ -555,7 +555,7 @@ type SetCompute_Node struct {
 
 func (x *SetCompute_Node) Reset() {
 	*x = SetCompute_Node{}
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[5]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -567,7 +567,7 @@ func (x *SetCompute_Node) String() string {
 func (*SetCompute_Node) ProtoMessage() {}
 
 func (x *SetCompute_Node) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[5]
+	mi := &file_compute_operation_compute_operation_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -580,7 +580,7 @@ func (x *SetCompute_Node) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetCompute_Node.ProtoReflect.Descriptor instead.
 func (*SetCompute_Node) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 0}
+	return file_compute_operation_compute_operation_proto_rawDescGZIP(), []int{1, 0}
 }
 
 func (x *SetCompute_Node) GetNodeType() SetCompute_NodeType {
@@ -611,11 +611,11 @@ func (x *SetCompute_Node) GetChildren() []*SetCompute_Node {
 	return nil
 }
 
-var File_github_com_KitHub_protocols_compute_operation_compute_operation_proto protoreflect.FileDescriptor
+var File_compute_operation_compute_operation_proto protoreflect.FileDescriptor
 
-const file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDesc = "" +
+const file_compute_operation_compute_operation_proto_rawDesc = "" +
 	"\n" +
-	"Egithub.com/KitHub/protocols/compute_operation/compute_operation.proto\x12\x11compute_operation\"\x99\a\n" +
+	")compute_operation/compute_operation.proto\x12\x11compute_operation\"\x99\a\n" +
 	"\fLogicCompute\x1a\x95\x01\n" +
 	"\tLogicNode\x12=\n" +
 	"\x05logic\x18\x01 \x01(\x0e2'.compute_operation.LogicCompute.LogicOpR\x05logic\x12I\n" +
@@ -666,23 +666,23 @@ const file_github_com_KitHub_protocols_compute_operation_compute_operation_proto
 	"\x14OPERATOR_UNSPECIFIED\x10\x00\x12\t\n" +
 	"\x05UNION\x10\x01\x12\r\n" +
 	"\tINTERSECT\x10\x02\x12\b\n" +
-	"\x04DIFF\x10\x03BAZ?github.com/KitHub/protocols/compute_operation;compute_operationb\x06proto3"
+	"\x04DIFF\x10\x03B'Z%./compute_operation;compute_operationb\x06proto3"
 
 var (
-	file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescOnce sync.Once
-	file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescData []byte
+	file_compute_operation_compute_operation_proto_rawDescOnce sync.Once
+	file_compute_operation_compute_operation_proto_rawDescData []byte
 )
 
-func file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescGZIP() []byte {
-	file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescOnce.Do(func() {
-		file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDesc), len(file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDesc)))
+func file_compute_operation_compute_operation_proto_rawDescGZIP() []byte {
+	file_compute_operation_compute_operation_proto_rawDescOnce.Do(func() {
+		file_compute_operation_compute_operation_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_compute_operation_compute_operation_proto_rawDesc), len(file_compute_operation_compute_operation_proto_rawDesc)))
 	})
-	return file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDescData
+	return file_compute_operation_compute_operation_proto_rawDescData
 }
 
-var file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_goTypes = []any{
+var file_compute_operation_compute_operation_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_compute_operation_compute_operation_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_compute_operation_compute_operation_proto_goTypes = []any{
 	(LogicCompute_LogicOp)(0),               // 0: compute_operation.LogicCompute.LogicOp
 	(LogicCompute_CompareOp)(0),             // 1: compute_operation.LogicCompute.CompareOp
 	(SetCompute_NodeType)(0),                // 2: compute_operation.SetCompute.NodeType
@@ -694,7 +694,7 @@ var file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_g
 	(*LogicCompute_ConditionNode)(nil),      // 8: compute_operation.LogicCompute.ConditionNode
 	(*SetCompute_Node)(nil),                 // 9: compute_operation.SetCompute.Node
 }
-var file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_depIdxs = []int32{
+var file_compute_operation_compute_operation_proto_depIdxs = []int32{
 	0, // 0: compute_operation.LogicCompute.LogicNode.logic:type_name -> compute_operation.LogicCompute.LogicOp
 	8, // 1: compute_operation.LogicCompute.LogicNode.children:type_name -> compute_operation.LogicCompute.ConditionNode
 	1, // 2: compute_operation.LogicCompute.FieldConditionNode.operator:type_name -> compute_operation.LogicCompute.CompareOp
@@ -710,12 +710,12 @@ var file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_d
 	0, // [0:8] is the sub-list for field type_name
 }
 
-func init() { file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_init() }
-func file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_init() {
-	if File_github_com_KitHub_protocols_compute_operation_compute_operation_proto != nil {
+func init() { file_compute_operation_compute_operation_proto_init() }
+func file_compute_operation_compute_operation_proto_init() {
+	if File_compute_operation_compute_operation_proto != nil {
 		return
 	}
-	file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes[4].OneofWrappers = []any{
+	file_compute_operation_compute_operation_proto_msgTypes[4].OneofWrappers = []any{
 		(*LogicCompute_ConditionNode_LogicNode)(nil),
 		(*LogicCompute_ConditionNode_ConditionNode)(nil),
 	}
@@ -723,18 +723,18 @@ func file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDesc), len(file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_compute_operation_compute_operation_proto_rawDesc), len(file_compute_operation_compute_operation_proto_rawDesc)),
 			NumEnums:      4,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_goTypes,
-		DependencyIndexes: file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_depIdxs,
-		EnumInfos:         file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_enumTypes,
-		MessageInfos:      file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_msgTypes,
+		GoTypes:           file_compute_operation_compute_operation_proto_goTypes,
+		DependencyIndexes: file_compute_operation_compute_operation_proto_depIdxs,
+		EnumInfos:         file_compute_operation_compute_operation_proto_enumTypes,
+		MessageInfos:      file_compute_operation_compute_operation_proto_msgTypes,
 	}.Build()
-	File_github_com_KitHub_protocols_compute_operation_compute_operation_proto = out.File
-	file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_goTypes = nil
-	file_github_com_KitHub_protocols_compute_operation_compute_operation_proto_depIdxs = nil
+	File_compute_operation_compute_operation_proto = out.File
+	file_compute_operation_compute_operation_proto_goTypes = nil
+	file_compute_operation_compute_operation_proto_depIdxs = nil
 }

@@ -4,9 +4,9 @@ package DataManagementPlatform_ComputeEngineAPI;
 
 import "mwitkow/go-proto-validators/validator.proto";
 import "google/api/annotations.proto";
-import "github.com/KitHub/protocols/compute_operation/compute_operation.proto";
+import "compute_operation/compute_operation.proto";
 
-option go_package = "github.com/KitHub/protocols/DataManagementPlatform_ComputeEngineAPI;DataManagementPlatform_ComputeEngineAPI";
+option go_package = "./DataManagementPlatform_ComputeEngineAPI;DataManagementPlatform_ComputeEngineAPI";
 
 service ComputeEngineAPI {
   rpc RegisterPackage(RegisterPackageRequest) returns (RegisterPackageResponse) {

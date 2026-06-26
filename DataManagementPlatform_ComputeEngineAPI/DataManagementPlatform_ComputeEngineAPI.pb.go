@@ -2,12 +2,12 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v7.34.1
-// source: github.com/KitHub/protocols/DataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto
+// source: DataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto
 
 package DataManagementPlatform_ComputeEngineAPI
 
 import (
-	compute_operation "github.com/KitHub/protocols/compute_operation"
+	compute_operation "./compute_operation"
 	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -32,7 +32,7 @@ type ReloadAllPackagesRequest struct {
 
 func (x *ReloadAllPackagesRequest) Reset() {
 	*x = ReloadAllPackagesRequest{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[0]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +44,7 @@ func (x *ReloadAllPackagesRequest) String() string {
 func (*ReloadAllPackagesRequest) ProtoMessage() {}
 
 func (x *ReloadAllPackagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[0]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *ReloadAllPackagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReloadAllPackagesRequest.ProtoReflect.Descriptor instead.
 func (*ReloadAllPackagesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{0}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{0}
 }
 
 type ReloadAllPackagesResponse struct {
@@ -70,7 +70,7 @@ type ReloadAllPackagesResponse struct {
 
 func (x *ReloadAllPackagesResponse) Reset() {
 	*x = ReloadAllPackagesResponse{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[1]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -82,7 +82,7 @@ func (x *ReloadAllPackagesResponse) String() string {
 func (*ReloadAllPackagesResponse) ProtoMessage() {}
 
 func (x *ReloadAllPackagesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[1]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -95,7 +95,7 @@ func (x *ReloadAllPackagesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReloadAllPackagesResponse.ProtoReflect.Descriptor instead.
 func (*ReloadAllPackagesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{1}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ReloadAllPackagesResponse) GetErrCode() int32 {
@@ -121,7 +121,7 @@ type ReloadPackageRequest struct {
 
 func (x *ReloadPackageRequest) Reset() {
 	*x = ReloadPackageRequest{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[2]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -133,7 +133,7 @@ func (x *ReloadPackageRequest) String() string {
 func (*ReloadPackageRequest) ProtoMessage() {}
 
 func (x *ReloadPackageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[2]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -146,7 +146,7 @@ func (x *ReloadPackageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReloadPackageRequest.ProtoReflect.Descriptor instead.
 func (*ReloadPackageRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{2}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ReloadPackageRequest) GetOriginId() string {
@@ -166,7 +166,7 @@ type ReloadPackageResponse struct {
 
 func (x *ReloadPackageResponse) Reset() {
 	*x = ReloadPackageResponse{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[3]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -178,7 +178,7 @@ func (x *ReloadPackageResponse) String() string {
 func (*ReloadPackageResponse) ProtoMessage() {}
 
 func (x *ReloadPackageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[3]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -191,7 +191,7 @@ func (x *ReloadPackageResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReloadPackageResponse.ProtoReflect.Descriptor instead.
 func (*ReloadPackageResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{3}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ReloadPackageResponse) GetErrCode() int32 {
@@ -217,7 +217,7 @@ type ComputePackageComboRequest struct {
 
 func (x *ComputePackageComboRequest) Reset() {
 	*x = ComputePackageComboRequest{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[4]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -229,7 +229,7 @@ func (x *ComputePackageComboRequest) String() string {
 func (*ComputePackageComboRequest) ProtoMessage() {}
 
 func (x *ComputePackageComboRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[4]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -242,7 +242,7 @@ func (x *ComputePackageComboRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ComputePackageComboRequest.ProtoReflect.Descriptor instead.
 func (*ComputePackageComboRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{4}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ComputePackageComboRequest) GetRules() []*compute_operation.SetCompute_Node {
@@ -261,7 +261,7 @@ type ComputePackageComboResponseData struct {
 
 func (x *ComputePackageComboResponseData) Reset() {
 	*x = ComputePackageComboResponseData{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[5]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -273,7 +273,7 @@ func (x *ComputePackageComboResponseData) String() string {
 func (*ComputePackageComboResponseData) ProtoMessage() {}
 
 func (x *ComputePackageComboResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[5]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -286,7 +286,7 @@ func (x *ComputePackageComboResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ComputePackageComboResponseData.ProtoReflect.Descriptor instead.
 func (*ComputePackageComboResponseData) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{5}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ComputePackageComboResponseData) GetPackageOriginId() string {
@@ -307,7 +307,7 @@ type ComputePackageComboResponse struct {
 
 func (x *ComputePackageComboResponse) Reset() {
 	*x = ComputePackageComboResponse{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[6]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -319,7 +319,7 @@ func (x *ComputePackageComboResponse) String() string {
 func (*ComputePackageComboResponse) ProtoMessage() {}
 
 func (x *ComputePackageComboResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[6]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -332,7 +332,7 @@ func (x *ComputePackageComboResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ComputePackageComboResponse.ProtoReflect.Descriptor instead.
 func (*ComputePackageComboResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{6}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ComputePackageComboResponse) GetErrCode() int32 {
@@ -370,7 +370,7 @@ type UploadPackageRequest struct {
 
 func (x *UploadPackageRequest) Reset() {
 	*x = UploadPackageRequest{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[7]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -382,7 +382,7 @@ func (x *UploadPackageRequest) String() string {
 func (*UploadPackageRequest) ProtoMessage() {}
 
 func (x *UploadPackageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[7]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -395,7 +395,7 @@ func (x *UploadPackageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadPackageRequest.ProtoReflect.Descriptor instead.
 func (*UploadPackageRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{7}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UploadPackageRequest) GetOriginId() string {
@@ -449,7 +449,7 @@ type UploadPackageResponseData struct {
 
 func (x *UploadPackageResponseData) Reset() {
 	*x = UploadPackageResponseData{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[8]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -461,7 +461,7 @@ func (x *UploadPackageResponseData) String() string {
 func (*UploadPackageResponseData) ProtoMessage() {}
 
 func (x *UploadPackageResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[8]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -474,7 +474,7 @@ func (x *UploadPackageResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadPackageResponseData.ProtoReflect.Descriptor instead.
 func (*UploadPackageResponseData) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{8}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *UploadPackageResponseData) GetPackageInfo() *BasicPackageInfo {
@@ -495,7 +495,7 @@ type UploadPackageResponse struct {
 
 func (x *UploadPackageResponse) Reset() {
 	*x = UploadPackageResponse{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[9]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -507,7 +507,7 @@ func (x *UploadPackageResponse) String() string {
 func (*UploadPackageResponse) ProtoMessage() {}
 
 func (x *UploadPackageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[9]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -520,7 +520,7 @@ func (x *UploadPackageResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadPackageResponse.ProtoReflect.Descriptor instead.
 func (*UploadPackageResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{9}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *UploadPackageResponse) GetErrCode() int32 {
@@ -557,7 +557,7 @@ type RegisterPackageRequest struct {
 
 func (x *RegisterPackageRequest) Reset() {
 	*x = RegisterPackageRequest{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[10]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -569,7 +569,7 @@ func (x *RegisterPackageRequest) String() string {
 func (*RegisterPackageRequest) ProtoMessage() {}
 
 func (x *RegisterPackageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[10]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -582,7 +582,7 @@ func (x *RegisterPackageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterPackageRequest.ProtoReflect.Descriptor instead.
 func (*RegisterPackageRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{10}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *RegisterPackageRequest) GetOriginId() string {
@@ -629,7 +629,7 @@ type RegisterPackageResponseData struct {
 
 func (x *RegisterPackageResponseData) Reset() {
 	*x = RegisterPackageResponseData{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[11]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -641,7 +641,7 @@ func (x *RegisterPackageResponseData) String() string {
 func (*RegisterPackageResponseData) ProtoMessage() {}
 
 func (x *RegisterPackageResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[11]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -654,7 +654,7 @@ func (x *RegisterPackageResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterPackageResponseData.ProtoReflect.Descriptor instead.
 func (*RegisterPackageResponseData) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{11}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *RegisterPackageResponseData) GetPackageInfo() *BasicPackageInfo {
@@ -675,7 +675,7 @@ type RegisterPackageResponse struct {
 
 func (x *RegisterPackageResponse) Reset() {
 	*x = RegisterPackageResponse{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[12]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -687,7 +687,7 @@ func (x *RegisterPackageResponse) String() string {
 func (*RegisterPackageResponse) ProtoMessage() {}
 
 func (x *RegisterPackageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[12]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -700,7 +700,7 @@ func (x *RegisterPackageResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterPackageResponse.ProtoReflect.Descriptor instead.
 func (*RegisterPackageResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{12}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *RegisterPackageResponse) GetErrCode() int32 {
@@ -739,7 +739,7 @@ type BasicPackageInfo struct {
 
 func (x *BasicPackageInfo) Reset() {
 	*x = BasicPackageInfo{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[13]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -751,7 +751,7 @@ func (x *BasicPackageInfo) String() string {
 func (*BasicPackageInfo) ProtoMessage() {}
 
 func (x *BasicPackageInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[13]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -764,7 +764,7 @@ func (x *BasicPackageInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BasicPackageInfo.ProtoReflect.Descriptor instead.
 func (*BasicPackageInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{13}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *BasicPackageInfo) GetId() int64 {
@@ -825,7 +825,7 @@ type GetPackageByIdRequest struct {
 
 func (x *GetPackageByIdRequest) Reset() {
 	*x = GetPackageByIdRequest{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[14]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -837,7 +837,7 @@ func (x *GetPackageByIdRequest) String() string {
 func (*GetPackageByIdRequest) ProtoMessage() {}
 
 func (x *GetPackageByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[14]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -850,7 +850,7 @@ func (x *GetPackageByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByIdRequest.ProtoReflect.Descriptor instead.
 func (*GetPackageByIdRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{14}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetPackageByIdRequest) GetPackageId() int64 {
@@ -869,7 +869,7 @@ type GetPackageByIdResponseData struct {
 
 func (x *GetPackageByIdResponseData) Reset() {
 	*x = GetPackageByIdResponseData{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[15]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -881,7 +881,7 @@ func (x *GetPackageByIdResponseData) String() string {
 func (*GetPackageByIdResponseData) ProtoMessage() {}
 
 func (x *GetPackageByIdResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[15]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -894,7 +894,7 @@ func (x *GetPackageByIdResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByIdResponseData.ProtoReflect.Descriptor instead.
 func (*GetPackageByIdResponseData) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{15}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *GetPackageByIdResponseData) GetPackageInfo() *BasicPackageInfo {
@@ -915,7 +915,7 @@ type GetPackageByIdResponse struct {
 
 func (x *GetPackageByIdResponse) Reset() {
 	*x = GetPackageByIdResponse{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[16]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -927,7 +927,7 @@ func (x *GetPackageByIdResponse) String() string {
 func (*GetPackageByIdResponse) ProtoMessage() {}
 
 func (x *GetPackageByIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[16]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -940,7 +940,7 @@ func (x *GetPackageByIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByIdResponse.ProtoReflect.Descriptor instead.
 func (*GetPackageByIdResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{16}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *GetPackageByIdResponse) GetErrCode() int32 {
@@ -973,7 +973,7 @@ type GetPackageByOriginIdRequest struct {
 
 func (x *GetPackageByOriginIdRequest) Reset() {
 	*x = GetPackageByOriginIdRequest{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[17]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -985,7 +985,7 @@ func (x *GetPackageByOriginIdRequest) String() string {
 func (*GetPackageByOriginIdRequest) ProtoMessage() {}
 
 func (x *GetPackageByOriginIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[17]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -998,7 +998,7 @@ func (x *GetPackageByOriginIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByOriginIdRequest.ProtoReflect.Descriptor instead.
 func (*GetPackageByOriginIdRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{17}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *GetPackageByOriginIdRequest) GetOriginId() string {
@@ -1017,7 +1017,7 @@ type GetPackageByOriginIdResponseData struct {
 
 func (x *GetPackageByOriginIdResponseData) Reset() {
 	*x = GetPackageByOriginIdResponseData{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[18]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1029,7 +1029,7 @@ func (x *GetPackageByOriginIdResponseData) String() string {
 func (*GetPackageByOriginIdResponseData) ProtoMessage() {}
 
 func (x *GetPackageByOriginIdResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[18]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1042,7 +1042,7 @@ func (x *GetPackageByOriginIdResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByOriginIdResponseData.ProtoReflect.Descriptor instead.
 func (*GetPackageByOriginIdResponseData) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{18}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetPackageByOriginIdResponseData) GetPackageInfo() *BasicPackageInfo {
@@ -1063,7 +1063,7 @@ type GetPackageByOriginIdResponse struct {
 
 func (x *GetPackageByOriginIdResponse) Reset() {
 	*x = GetPackageByOriginIdResponse{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[19]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1075,7 +1075,7 @@ func (x *GetPackageByOriginIdResponse) String() string {
 func (*GetPackageByOriginIdResponse) ProtoMessage() {}
 
 func (x *GetPackageByOriginIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[19]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1088,7 +1088,7 @@ func (x *GetPackageByOriginIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageByOriginIdResponse.ProtoReflect.Descriptor instead.
 func (*GetPackageByOriginIdResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{19}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *GetPackageByOriginIdResponse) GetErrCode() int32 {
@@ -1122,7 +1122,7 @@ type GetPackageListASCByLastIdRequest struct {
 
 func (x *GetPackageListASCByLastIdRequest) Reset() {
 	*x = GetPackageListASCByLastIdRequest{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[20]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1134,7 +1134,7 @@ func (x *GetPackageListASCByLastIdRequest) String() string {
 func (*GetPackageListASCByLastIdRequest) ProtoMessage() {}
 
 func (x *GetPackageListASCByLastIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[20]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1147,7 +1147,7 @@ func (x *GetPackageListASCByLastIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPackageListASCByLastIdRequest.ProtoReflect.Descriptor instead.
 func (*GetPackageListASCByLastIdRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{20}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GetPackageListASCByLastIdRequest) GetLastId() int64 {
@@ -1173,7 +1173,7 @@ type GetPackageListASCByLastIdResponseData struct {
 
 func (x *GetPackageListASCByLastIdResponseData) Reset() {
 	*x = GetPackageListASCByLastIdResponseData{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[21]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1185,7 +1185,7 @@ func (x *GetPackageListASCByLastIdResponseData) String() string {
 func (*GetPackageListASCByLastIdResponseData) ProtoMessage() {}
 
 func (x *GetPackageListASCByLastIdResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[21]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1198,7 +1198,7 @@ func (x *GetPackageListASCByLastIdResponseData) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GetPackageListASCByLastIdResponseData.ProtoReflect.Descriptor instead.
 func (*GetPackageListASCByLastIdResponseData) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{21}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetPackageListASCByLastIdResponseData) GetPackageInfos() []*BasicPackageInfo {
@@ -1219,7 +1219,7 @@ type GetPackageListASCByLastIdResponse struct {
 
 func (x *GetPackageListASCByLastIdResponse) Reset() {
 	*x = GetPackageListASCByLastIdResponse{}
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[22]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1231,7 +1231,7 @@ func (x *GetPackageListASCByLastIdResponse) String() string {
 func (*GetPackageListASCByLastIdResponse) ProtoMessage() {}
 
 func (x *GetPackageListASCByLastIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[22]
+	mi := &file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1244,7 +1244,7 @@ func (x *GetPackageListASCByLastIdResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetPackageListASCByLastIdResponse.ProtoReflect.Descriptor instead.
 func (*GetPackageListASCByLastIdResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{22}
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *GetPackageListASCByLastIdResponse) GetErrCode() int32 {
@@ -1268,11 +1268,11 @@ func (x *GetPackageListASCByLastIdResponse) GetData() *GetPackageListASCByLastId
 	return nil
 }
 
-var File_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto protoreflect.FileDescriptor
+var File_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto protoreflect.FileDescriptor
 
-const file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc = "" +
+const file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc = "" +
 	"\n" +
-	"qgithub.com/KitHub/protocols/DataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto\x12'DataManagementPlatform_ComputeEngineAPI\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\x1aEgithub.com/KitHub/protocols/compute_operation/compute_operation.proto\"\x1a\n" +
+	"UDataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto\x12'DataManagementPlatform_ComputeEngineAPI\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\x1a)compute_operation/compute_operation.proto\"\x1a\n" +
 	"\x18ReloadAllPackagesRequest\"O\n" +
 	"\x19ReloadAllPackagesResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
@@ -1360,22 +1360,22 @@ const file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_D
 	"\x0eGetPackageById\x12>.DataManagementPlatform_ComputeEngineAPI.GetPackageByIdRequest\x1a?.DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse\"-\x82\xd3\xe4\x93\x02'\x12%/v1/computeEngines/packages/queryById\x12\xd8\x01\n" +
 	"\x14GetPackageByOriginId\x12D.DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdRequest\x1aE.DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse\"3\x82\xd3\xe4\x93\x02-\x12+/v1/computeEngines/packages/queryByOriginId\x12\xec\x01\n" +
 	"\x19GetPackageListASCByLastId\x12I.DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdRequest\x1aJ.DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse\"8\x82\xd3\xe4\x93\x022\x120/v1/computeEngines/packages/queryListASCByLastId\x12\xd3\x01\n" +
-	"\x14ComputePackagesCombo\x12C.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboRequest\x1aD.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/computeEngines/packages/computeComboBmZkgithub.com/KitHub/protocols/DataManagementPlatform_ComputeEngineAPI;DataManagementPlatform_ComputeEngineAPIb\x06proto3"
+	"\x14ComputePackagesCombo\x12C.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboRequest\x1aD.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/computeEngines/packages/computeComboBSZQ./DataManagementPlatform_ComputeEngineAPI;DataManagementPlatform_ComputeEngineAPIb\x06proto3"
 
 var (
-	file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescOnce sync.Once
-	file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescData []byte
+	file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescOnce sync.Once
+	file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescData []byte
 )
 
-func file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP() []byte {
-	file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescOnce.Do(func() {
-		file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc), len(file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc)))
+func file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP() []byte {
+	file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescOnce.Do(func() {
+		file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc), len(file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc)))
 	})
-	return file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescData
+	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescData
 }
 
-var file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
-var file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_goTypes = []any{
+var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_goTypes = []any{
 	(*ReloadAllPackagesRequest)(nil),              // 0: DataManagementPlatform_ComputeEngineAPI.ReloadAllPackagesRequest
 	(*ReloadAllPackagesResponse)(nil),             // 1: DataManagementPlatform_ComputeEngineAPI.ReloadAllPackagesResponse
 	(*ReloadPackageRequest)(nil),                  // 2: DataManagementPlatform_ComputeEngineAPI.ReloadPackageRequest
@@ -1401,7 +1401,7 @@ var file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_Dat
 	(*GetPackageListASCByLastIdResponse)(nil),     // 22: DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse
 	(*compute_operation.SetCompute_Node)(nil),     // 23: compute_operation.SetCompute.Node
 }
-var file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs = []int32{
+var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs = []int32{
 	23, // 0: DataManagementPlatform_ComputeEngineAPI.ComputePackageComboRequest.rules:type_name -> compute_operation.SetCompute.Node
 	5,  // 1: DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponseData
 	13, // 2: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
@@ -1438,27 +1438,27 @@ var file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_Dat
 }
 
 func init() {
-	file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_init()
+	file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_init()
 }
-func file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_init() {
-	if File_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto != nil {
+func file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_init() {
+	if File_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc), len(file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc), len(file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_goTypes,
-		DependencyIndexes: file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs,
-		MessageInfos:      file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes,
+		GoTypes:           file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_goTypes,
+		DependencyIndexes: file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs,
+		MessageInfos:      file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_msgTypes,
 	}.Build()
-	File_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto = out.File
-	file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_goTypes = nil
-	file_github_com_KitHub_protocols_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs = nil
+	File_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto = out.File
+	file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_goTypes = nil
+	file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs = nil
 }
