@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.2
 // - protoc             v7.34.1
-// source: DataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto
+// source: github.com/KitHub/protocols/DataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto
 
 package DataManagementPlatform_ComputeEngineAPI
 
@@ -383,5 +383,5 @@ var ComputeEngineAPI_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "DataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto",
+	Metadata: "github.com/KitHub/protocols/DataManagementPlatform_ComputeEngineAPI/DataManagementPlatform_ComputeEngineAPI.proto",
 }

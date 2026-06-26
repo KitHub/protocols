@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.2
 // - protoc             v7.34.1
-// source: devicemanagementplatformapi/devicemanagementplatformapi.proto
+// source: github.com/KitHub/protocols/devicemanagementplatformapi/devicemanagementplatformapi.proto
 
 package devicemanagementplatformapi
 
@@ -194,5 +194,5 @@ var DeviceManagementPlatformAPI_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "devicemanagementplatformapi/devicemanagementplatformapi.proto",
+	Metadata: "github.com/KitHub/protocols/devicemanagementplatformapi/devicemanagementplatformapi.proto",
 }

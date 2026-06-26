@@ -5,7 +5,7 @@ package devicemanagementplatformapi;
 import "mwitkow/go-proto-validators/validator.proto";
 import "google/api/annotations.proto";
 
-option go_package = "./devicemanagementplatformapi;devicemanagementplatformapi";
+option go_package = "github.com/KitHub/protocols/devicemanagementplatformapi;devicemanagementplatformapi";
 
 message DeviceInfo {
     int64 device_id = 1;
