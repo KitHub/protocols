@@ -209,7 +209,6 @@ const (
 	SetCompute_UNION                SetCompute_Operator = 1 // 并集
 	SetCompute_INTERSECT            SetCompute_Operator = 2 // 交集
 	SetCompute_DIFF                 SetCompute_Operator = 3 // 左差集 A-B
-	SetCompute_COMPLEMENT           SetCompute_Operator = 4 // 补集
 )
 
 // Enum value maps for SetCompute_Operator.
@@ -219,14 +218,12 @@ var (
 		1: "UNION",
 		2: "INTERSECT",
 		3: "DIFF",
-		4: "COMPLEMENT",
 	}
 	SetCompute_Operator_value = map[string]int32{
 		"OPERATOR_UNSPECIFIED": 0,
 		"UNION":                1,
 		"INTERSECT":            2,
 		"DIFF":                 3,
-		"COMPLEMENT":           4,
 	}
 )
 
@@ -653,7 +650,7 @@ const file_compute_operation_compute_operation_proto_rawDesc = "" +
 	"\x11COMPARE_OP_NOT_IN\x10\n" +
 	"\x12\x16\n" +
 	"\x12COMPARE_OP_IS_NULL\x10\v\x12\x1a\n" +
-	"\x16COMPARE_OP_IS_NOT_NULL\x10\f\"\x93\x03\n" +
+	"\x16COMPARE_OP_IS_NOT_NULL\x10\f\"\x83\x03\n" +
 	"\n" +
 	"SetCompute\x1a\xe8\x01\n" +
 	"\x04Node\x12C\n" +
@@ -664,14 +661,12 @@ const file_compute_operation_compute_operation_proto_rawDesc = "" +
 	"\bNodeType\x12\x19\n" +
 	"\x15NODE_TYPE_UNSPECIFIED\x10\x00\x12\v\n" +
 	"\aDATASET\x10\x01\x12\f\n" +
-	"\bOPERATOR\x10\x02\"X\n" +
+	"\bOPERATOR\x10\x02\"H\n" +
 	"\bOperator\x12\x18\n" +
 	"\x14OPERATOR_UNSPECIFIED\x10\x00\x12\t\n" +
 	"\x05UNION\x10\x01\x12\r\n" +
 	"\tINTERSECT\x10\x02\x12\b\n" +
-	"\x04DIFF\x10\x03\x12\x0e\n" +
-	"\n" +
-	"COMPLEMENT\x10\x04B\x16Z\x14./;compute_operationb\x06proto3"
+	"\x04DIFF\x10\x03B'Z%./compute_operation;compute_operationb\x06proto3"
 
 var (
 	file_compute_operation_compute_operation_proto_rawDescOnce sync.Once

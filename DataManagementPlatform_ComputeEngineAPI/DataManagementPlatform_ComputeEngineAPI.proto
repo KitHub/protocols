@@ -4,7 +4,7 @@ package DataManagementPlatform_ComputeEngineAPI;
 
 import "mwitkow/go-proto-validators/validator.proto";
 import "google/api/annotations.proto";
-//import "compute_operation/compute_operation.proto";
+import "compute_operation/compute_operation.proto";
 
 option go_package = "./DataManagementPlatform_ComputeEngineAPI;DataManagementPlatform_ComputeEngineAPI";
 
@@ -82,11 +82,17 @@ message ReloadPackageResponse {
 }
 
 message ComputePackageComboRequest {
-    string basePackageOriginId = 1 [(validator.field) = {length_lt: 0, length_gt: 51}];
+    repeated compute_operation.SetCompute.Node rules = 1 [(validator.field) = {repeated_count_min: 1}];
+}
+
+message ComputePackageComboResponseData {
+    string package_origin_id = 1;
 }
 
 message ComputePackageComboResponse {
-
+    int32 err_code = 1;
+    string err_msg = 2; 
+    ComputePackageComboResponseData data = 3;
 }
 
 message UploadPackageRequest {

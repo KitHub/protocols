@@ -7,8 +7,9 @@ import (
 	fmt "fmt"
 	math "math"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
+	_ "./compute_operation"
+	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 )
 
@@ -36,15 +37,27 @@ func (this *ReloadPackageResponse) Validate() error {
 	return nil
 }
 func (this *ComputePackageComboRequest) Validate() error {
-	if !(len(this.BasePackageOriginId) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("BasePackageOriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.BasePackageOriginId))
+	if len(this.Rules) < 1 {
+		return github_com_mwitkow_go_proto_validators.FieldError("Rules", fmt.Errorf(`value '%v' must contain at least 1 elements`, this.Rules))
 	}
-	if !(len(this.BasePackageOriginId) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("BasePackageOriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.BasePackageOriginId))
+	for _, item := range this.Rules {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Rules", err)
+			}
+		}
 	}
 	return nil
 }
+func (this *ComputePackageComboResponseData) Validate() error {
+	return nil
+}
 func (this *ComputePackageComboResponse) Validate() error {
+	if this.Data != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Data); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Data", err)
+		}
+	}
 	return nil
 }
 func (this *UploadPackageRequest) Validate() error {

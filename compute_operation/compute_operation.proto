@@ -74,14 +74,13 @@ message SetCompute {
         UNION = 1;                  // 并集
         INTERSECT = 2;              // 交集
         DIFF = 3;                   // 左差集 A-B
-        COMPLEMENT = 4;             // 补集
     }
 
     // 运算树节点
     message Node {
         NodeType node_type = 1;
         Operator operator = 2;       // node_type为dataset时无需填充此值
-        string set_key = 3;               // node_type为operator时无需填充此值
+        string set_key = 3;          // node_type为operator时无需填充此值
         repeated Node children = 4;  // node_type为operator时需要填充此值
     }
 }
