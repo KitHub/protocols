@@ -7,7 +7,7 @@
 package DataManagementPlatform_ComputeEngineAPI
 
 import (
-	compute_operation "./compute_operation"
+	compute_operation "github.com/KitHub/protocols/compute_operation"
 	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -1360,7 +1360,7 @@ const file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_Comput
 	"\x0eGetPackageById\x12>.DataManagementPlatform_ComputeEngineAPI.GetPackageByIdRequest\x1a?.DataManagementPlatform_ComputeEngineAPI.GetPackageByIdResponse\"-\x82\xd3\xe4\x93\x02'\x12%/v1/computeEngines/packages/queryById\x12\xd8\x01\n" +
 	"\x14GetPackageByOriginId\x12D.DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdRequest\x1aE.DataManagementPlatform_ComputeEngineAPI.GetPackageByOriginIdResponse\"3\x82\xd3\xe4\x93\x02-\x12+/v1/computeEngines/packages/queryByOriginId\x12\xec\x01\n" +
 	"\x19GetPackageListASCByLastId\x12I.DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdRequest\x1aJ.DataManagementPlatform_ComputeEngineAPI.GetPackageListASCByLastIdResponse\"8\x82\xd3\xe4\x93\x022\x120/v1/computeEngines/packages/queryListASCByLastId\x12\xd3\x01\n" +
-	"\x14ComputePackagesCombo\x12C.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboRequest\x1aD.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/computeEngines/packages/computeComboBSZQ./DataManagementPlatform_ComputeEngineAPI;DataManagementPlatform_ComputeEngineAPIb\x06proto3"
+	"\x14ComputePackagesCombo\x12C.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboRequest\x1aD.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/computeEngines/packages/computeComboBmZkgithub.com/KitHub/protocols/DataManagementPlatform_ComputeEngineAPI;DataManagementPlatform_ComputeEngineAPIb\x06proto3"
 
 var (
 	file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescOnce sync.Once

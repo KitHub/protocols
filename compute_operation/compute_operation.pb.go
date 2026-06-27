@@ -666,7 +666,7 @@ const file_compute_operation_compute_operation_proto_rawDesc = "" +
 	"\x14OPERATOR_UNSPECIFIED\x10\x00\x12\t\n" +
 	"\x05UNION\x10\x01\x12\r\n" +
 	"\tINTERSECT\x10\x02\x12\b\n" +
-	"\x04DIFF\x10\x03B'Z%./compute_operation;compute_operationb\x06proto3"
+	"\x04DIFF\x10\x03BAZ?github.com/KitHub/protocols/compute_operation;compute_operationb\x06proto3"
 
 var (
 	file_compute_operation_compute_operation_proto_rawDescOnce sync.Once

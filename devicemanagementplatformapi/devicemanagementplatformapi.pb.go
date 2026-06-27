@@ -567,7 +567,7 @@ const file_devicemanagementplatformapi_devicemanagementplatformapi_proto_rawDesc
 	"\x1bDeviceManagementPlatformAPI\x12\x9c\x01\n" +
 	"\x0fQueryDeviceByNo\x123.devicemanagementplatformapi.QueryDeviceByNoRequest\x1a4.devicemanagementplatformapi.QueryDeviceByNoResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/devices/getDeviceByNo\x12\x9c\x01\n" +
 	"\x0fQueryDeviceById\x123.devicemanagementplatformapi.QueryDeviceByIdRequest\x1a4.devicemanagementplatformapi.QueryDeviceByIdResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/devices/getDeviceById\x12\x97\x01\n" +
-	"\x0eRegisterDevice\x122.devicemanagementplatformapi.RegisterDeviceRequest\x1a3.devicemanagementplatformapi.RegisterDeviceResponse\"\x1c\x82\xd3\xe4\x93\x02\x16:\x01*\"\x11/devices/registerB;Z9./devicemanagementplatformapi;devicemanagementplatformapib\x06proto3"
+	"\x0eRegisterDevice\x122.devicemanagementplatformapi.RegisterDeviceRequest\x1a3.devicemanagementplatformapi.RegisterDeviceResponse\"\x1c\x82\xd3\xe4\x93\x02\x16:\x01*\"\x11/devices/registerBUZSgithub.com/KitHub/protocols/devicemanagementplatformapi;devicemanagementplatformapib\x06proto3"
 
 var (
 	file_devicemanagementplatformapi_devicemanagementplatformapi_proto_rawDescOnce sync.Once
