@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package kms_api;
+
+import "mwitkow/go-proto-validators/validator.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/KitHub/protocols/kms_api;kms_api";
+
+service KMSAPI {
+    rpc Store(StoreRequest) returns (StoreResponse) {
+        option (google.api.http) = {
+            post: "/keys/store"
+            body: "*"
+        };
+    }
+
+    rpc Load(LoadRequest) returns (LoadResponse) {
+        option (google.api.http) = {
+            get: "/keys/load"
+        };
+    }
+}
+
+message StoreRequest {
+    string key = 1 [(validator.field) = {length_gt: 0, length_lt: 100}];
+    string content = 2 [(validator.field) = {length_gt: 0, length_lt: 1000}];
+}
+
+message StoreResponseData {}
+
+message StoreResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    StoreResponseData data = 3;
+}
+
+message LoadRequest {
+    string key = 1 [(validator.field) = {length_gt: 0, length_lt: 100}];
+}
+
+message LoadResponseData{
+    string content = 1;
+}
+
+message LoadResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    LoadResponseData data = 3;
+}
