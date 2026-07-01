@@ -25,8 +25,9 @@ const (
 
 type StoreRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
-	Content       string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+	ProjectId     int64                  `protobuf:"varint,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	Key           string                 `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -59,6 +60,13 @@ func (x *StoreRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use StoreRequest.ProtoReflect.Descriptor instead.
 func (*StoreRequest) Descriptor() ([]byte, []int) {
 	return file_kms_api_kms_api_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *StoreRequest) GetProjectId() int64 {
+	if x != nil {
+		return x.ProjectId
+	}
+	return 0
 }
 
 func (x *StoreRequest) GetKey() string {
@@ -173,7 +181,8 @@ func (x *StoreResponse) GetData() *StoreResponseData {
 
 type LoadRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	ProjectId     int64                  `protobuf:"varint,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	Key           string                 `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -206,6 +215,13 @@ func (x *LoadRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use LoadRequest.ProtoReflect.Descriptor instead.
 func (*LoadRequest) Descriptor() ([]byte, []int) {
 	return file_kms_api_kms_api_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *LoadRequest) GetProjectId() int64 {
+	if x != nil {
+		return x.ProjectId
+	}
+	return 0
 }
 
 func (x *LoadRequest) GetKey() string {
@@ -323,17 +339,21 @@ var File_kms_api_kms_api_proto protoreflect.FileDescriptor
 
 const file_kms_api_kms_api_proto_rawDesc = "" +
 	"\n" +
-	"\x15kms_api/kms_api.proto\x12\akms_api\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"O\n" +
-	"\fStoreRequest\x12\x1a\n" +
-	"\x03key\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00xdR\x03key\x12#\n" +
-	"\acontent\x18\x02 \x01(\tB\t\xe2\xdf\x1f\x05p\x00x\xe8\aR\acontent\"\x13\n" +
+	"\x15kms_api/kms_api.proto\x12\akms_api\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"\x7f\n" +
+	"\fStoreRequest\x12.\n" +
+	"\n" +
+	"project_id\x18\x01 \x01(\x03B\x0f\xe2\xdf\x1f\v\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\tprojectId\x12\x1a\n" +
+	"\x03key\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00xdR\x03key\x12#\n" +
+	"\acontent\x18\x03 \x01(\tB\t\xe2\xdf\x1f\x05p\x00x\xe8\aR\acontent\"\x13\n" +
 	"\x11StoreResponseData\"s\n" +
 	"\rStoreResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12.\n" +
-	"\x04data\x18\x03 \x01(\v2\x1a.kms_api.StoreResponseDataR\x04data\")\n" +
-	"\vLoadRequest\x12\x1a\n" +
-	"\x03key\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x00xdR\x03key\",\n" +
+	"\x04data\x18\x03 \x01(\v2\x1a.kms_api.StoreResponseDataR\x04data\"Y\n" +
+	"\vLoadRequest\x12.\n" +
+	"\n" +
+	"project_id\x18\x01 \x01(\x03B\x0f\xe2\xdf\x1f\v\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\tprojectId\x12\x1a\n" +
+	"\x03key\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x00xdR\x03key\",\n" +
 	"\x10LoadResponseData\x12\x18\n" +
 	"\acontent\x18\x01 \x01(\tR\acontent\"q\n" +
 	"\fLoadResponse\x12\x19\n" +

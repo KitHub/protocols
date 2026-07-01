@@ -23,8 +23,9 @@ service KMSAPI {
 }
 
 message StoreRequest {
-    string key = 1 [(validator.field) = {length_gt: 0, length_lt: 100}];
-    string content = 2 [(validator.field) = {length_gt: 0, length_lt: 1000}];
+    int64 project_id = 1 [(validator.field) = {int_gt: -1}];
+    string key = 2 [(validator.field) = {length_gt: 0, length_lt: 100}];
+    string content = 3 [(validator.field) = {length_gt: 0, length_lt: 1000}];
 }
 
 message StoreResponseData {}
@@ -36,7 +37,8 @@ message StoreResponse {
 }
 
 message LoadRequest {
-    string key = 1 [(validator.field) = {length_gt: 0, length_lt: 100}];
+    int64 project_id = 1 [(validator.field) = {int_gt: -1}];
+    string key = 2 [(validator.field) = {length_gt: 0, length_lt: 100}];
 }
 
 message LoadResponseData{

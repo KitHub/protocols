@@ -7,8 +7,8 @@ import (
 	fmt "fmt"
 	math "math"
 	proto "github.com/golang/protobuf/proto"
-	_ "google.golang.org/genproto/googleapis/api/annotations"
 	_ "github.com/mwitkow/go-proto-validators"
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 )
 
@@ -18,6 +18,9 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *StoreRequest) Validate() error {
+	if !(this.ProjectId > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectId", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ProjectId))
+	}
 	if !(len(this.Key) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Key", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Key))
 	}
@@ -44,6 +47,9 @@ func (this *StoreResponse) Validate() error {
 	return nil
 }
 func (this *LoadRequest) Validate() error {
+	if !(this.ProjectId > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectId", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ProjectId))
+	}
 	if !(len(this.Key) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Key", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Key))
 	}
