@@ -37,14 +37,9 @@ func (this *ReloadPackageResponse) Validate() error {
 	return nil
 }
 func (this *ComputePackageComboRequest) Validate() error {
-	if len(this.Rules) < 1 {
-		return github_com_mwitkow_go_proto_validators.FieldError("Rules", fmt.Errorf(`value '%v' must contain at least 1 elements`, this.Rules))
-	}
-	for _, item := range this.Rules {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Rules", err)
-			}
+	if this.Combo != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Combo); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Combo", err)
 		}
 	}
 	return nil

@@ -82,7 +82,7 @@ message ReloadPackageResponse {
 }
 
 message ComputePackageComboRequest {
-    repeated compute_operation.SetCompute.Node rules = 1 [(validator.field) = {repeated_count_min: 1}];
+    compute_operation.SetCompute.Node combo = 1;
 }
 
 message ComputePackageComboResponseData {

@@ -209,8 +209,8 @@ func (x *ReloadPackageResponse) GetErrMsg() string {
 }
 
 type ComputePackageComboRequest struct {
-	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Rules         []*compute_operation.SetCompute_Node `protobuf:"bytes,1,rep,name=rules,proto3" json:"rules,omitempty"`
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Combo         *compute_operation.SetCompute_Node `protobuf:"bytes,1,opt,name=combo,proto3" json:"combo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -245,9 +245,9 @@ func (*ComputePackageComboRequest) Descriptor() ([]byte, []int) {
 	return file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *ComputePackageComboRequest) GetRules() []*compute_operation.SetCompute_Node {
+func (x *ComputePackageComboRequest) GetCombo() *compute_operation.SetCompute_Node {
 	if x != nil {
-		return x.Rules
+		return x.Combo
 	}
 	return nil
 }
@@ -1281,9 +1281,9 @@ const file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_Comput
 	"\torigin_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\boriginId\"K\n" +
 	"\x15ReloadPackageResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
-	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\"^\n" +
-	"\x1aComputePackageComboRequest\x12@\n" +
-	"\x05rules\x18\x01 \x03(\v2\".compute_operation.SetCompute.NodeB\x06\xe2\xdf\x1f\x02`\x01R\x05rules\"M\n" +
+	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\"V\n" +
+	"\x1aComputePackageComboRequest\x128\n" +
+	"\x05combo\x18\x01 \x01(\v2\".compute_operation.SetCompute.NodeR\x05combo\"M\n" +
 	"\x1fComputePackageComboResponseData\x12*\n" +
 	"\x11package_origin_id\x18\x01 \x01(\tR\x0fpackageOriginId\"\xaf\x01\n" +
 	"\x1bComputePackageComboResponse\x12\x19\n" +
@@ -1402,7 +1402,7 @@ var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeE
 	(*compute_operation.SetCompute_Node)(nil),     // 23: compute_operation.SetCompute.Node
 }
 var file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_ComputeEngineAPI_proto_depIdxs = []int32{
-	23, // 0: DataManagementPlatform_ComputeEngineAPI.ComputePackageComboRequest.rules:type_name -> compute_operation.SetCompute.Node
+	23, // 0: DataManagementPlatform_ComputeEngineAPI.ComputePackageComboRequest.combo:type_name -> compute_operation.SetCompute.Node
 	5,  // 1: DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponseData
 	13, // 2: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseData.package_info:type_name -> DataManagementPlatform_ComputeEngineAPI.BasicPackageInfo
 	8,  // 3: DataManagementPlatform_ComputeEngineAPI.UploadPackageResponse.data:type_name -> DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseData
