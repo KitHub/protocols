@@ -359,11 +359,12 @@ func (x *ComputePackageComboResponse) GetData() *ComputePackageComboResponseData
 type UploadPackageRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OriginId      string                 `protobuf:"bytes,1,opt,name=origin_id,json=originId,proto3" json:"origin_id,omitempty"`
-	Comment       string                 `protobuf:"bytes,2,opt,name=comment,proto3" json:"comment,omitempty"`
-	Platform      string                 `protobuf:"bytes,3,opt,name=platform,proto3" json:"platform,omitempty"`
-	BucketName    string                 `protobuf:"bytes,4,opt,name=bucket_name,json=bucketName,proto3" json:"bucket_name,omitempty"`
-	KeyName       string                 `protobuf:"bytes,5,opt,name=key_name,json=keyName,proto3" json:"key_name,omitempty"`
-	PackageFile   []byte                 `protobuf:"bytes,6,opt,name=package_file,json=packageFile,proto3" json:"package_file,omitempty"`
+	DisplayName   string                 `protobuf:"bytes,2,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	Comment       string                 `protobuf:"bytes,3,opt,name=comment,proto3" json:"comment,omitempty"`
+	Platform      string                 `protobuf:"bytes,4,opt,name=platform,proto3" json:"platform,omitempty"`
+	BucketName    string                 `protobuf:"bytes,5,opt,name=bucket_name,json=bucketName,proto3" json:"bucket_name,omitempty"`
+	KeyName       string                 `protobuf:"bytes,6,opt,name=key_name,json=keyName,proto3" json:"key_name,omitempty"`
+	PackageFile   []byte                 `protobuf:"bytes,7,opt,name=package_file,json=packageFile,proto3" json:"package_file,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -401,6 +402,13 @@ func (*UploadPackageRequest) Descriptor() ([]byte, []int) {
 func (x *UploadPackageRequest) GetOriginId() string {
 	if x != nil {
 		return x.OriginId
+	}
+	return ""
+}
+
+func (x *UploadPackageRequest) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
 	}
 	return ""
 }
@@ -547,10 +555,11 @@ func (x *UploadPackageResponse) GetData() *UploadPackageResponseData {
 type RegisterPackageRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OriginId      string                 `protobuf:"bytes,1,opt,name=origin_id,json=originId,proto3" json:"origin_id,omitempty"`
-	Comment       string                 `protobuf:"bytes,2,opt,name=comment,proto3" json:"comment,omitempty"`
-	Platform      string                 `protobuf:"bytes,3,opt,name=platform,proto3" json:"platform,omitempty"`
-	BucketName    string                 `protobuf:"bytes,4,opt,name=bucket_name,json=bucketName,proto3" json:"bucket_name,omitempty"`
-	KeyName       string                 `protobuf:"bytes,5,opt,name=key_name,json=keyName,proto3" json:"key_name,omitempty"`
+	DisplayName   string                 `protobuf:"bytes,2,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	Comment       string                 `protobuf:"bytes,3,opt,name=comment,proto3" json:"comment,omitempty"`
+	Platform      string                 `protobuf:"bytes,4,opt,name=platform,proto3" json:"platform,omitempty"`
+	BucketName    string                 `protobuf:"bytes,5,opt,name=bucket_name,json=bucketName,proto3" json:"bucket_name,omitempty"`
+	KeyName       string                 `protobuf:"bytes,6,opt,name=key_name,json=keyName,proto3" json:"key_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -588,6 +597,13 @@ func (*RegisterPackageRequest) Descriptor() ([]byte, []int) {
 func (x *RegisterPackageRequest) GetOriginId() string {
 	if x != nil {
 		return x.OriginId
+	}
+	return ""
+}
+
+func (x *RegisterPackageRequest) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
 	}
 	return ""
 }
@@ -1289,28 +1305,30 @@ const file_DataManagementPlatform_ComputeEngineAPI_DataManagementPlatform_Comput
 	"\x1bComputePackageComboResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12\\\n" +
-	"\x04data\x18\x03 \x01(\v2H.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponseDataR\x04data\"\xf9\x01\n" +
+	"\x04data\x18\x03 \x01(\v2H.DataManagementPlatform_ComputeEngineAPI.ComputePackageComboResponseDataR\x04data\"\xb3\x02\n" +
 	"\x14UploadPackageRequest\x12%\n" +
-	"\torigin_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\boriginId\x12!\n" +
-	"\acomment\x18\x02 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\acomment\x12$\n" +
-	"\bplatform\x18\x03 \x01(\tB\b\xe2\xdf\x1f\x04p\x15x\x00R\bplatform\x12)\n" +
-	"\vbucket_name\x18\x04 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\n" +
+	"\torigin_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\boriginId\x12+\n" +
+	"\fdisplay_name\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04pdx\x00R\vdisplayName\x12!\n" +
+	"\acomment\x18\x03 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\acomment\x12$\n" +
+	"\bplatform\x18\x04 \x01(\tB\b\xe2\xdf\x1f\x04p\x15x\x00R\bplatform\x12)\n" +
+	"\vbucket_name\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\n" +
 	"bucketName\x12#\n" +
-	"\bkey_name\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\akeyName\x12!\n" +
-	"\fpackage_file\x18\x06 \x01(\fR\vpackageFile\"y\n" +
+	"\bkey_name\x18\x06 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\akeyName\x12.\n" +
+	"\fpackage_file\x18\a \x01(\fB\v\xe2\xdf\x1f\ap\x81\x80\x802x\x00R\vpackageFile\"y\n" +
 	"\x19UploadPackageResponseData\x12\\\n" +
 	"\fpackage_info\x18\x01 \x01(\v29.DataManagementPlatform_ComputeEngineAPI.BasicPackageInfoR\vpackageInfo\"\xa3\x01\n" +
 	"\x15UploadPackageResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12V\n" +
-	"\x04data\x18\x03 \x01(\v2B.DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseDataR\x04data\"\xd8\x01\n" +
+	"\x04data\x18\x03 \x01(\v2B.DataManagementPlatform_ComputeEngineAPI.UploadPackageResponseDataR\x04data\"\x85\x02\n" +
 	"\x16RegisterPackageRequest\x12%\n" +
-	"\torigin_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\boriginId\x12!\n" +
-	"\acomment\x18\x02 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\acomment\x12$\n" +
-	"\bplatform\x18\x03 \x01(\tB\b\xe2\xdf\x1f\x04p\x15x\x00R\bplatform\x12)\n" +
-	"\vbucket_name\x18\x04 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\n" +
+	"\torigin_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\boriginId\x12+\n" +
+	"\fdisplay_name\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04pdx\x00R\vdisplayName\x12!\n" +
+	"\acomment\x18\x03 \x01(\tB\a\xe2\xdf\x1f\x03p\xad\x02R\acomment\x12$\n" +
+	"\bplatform\x18\x04 \x01(\tB\b\xe2\xdf\x1f\x04p\x15x\x00R\bplatform\x12)\n" +
+	"\vbucket_name\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\n" +
 	"bucketName\x12#\n" +
-	"\bkey_name\x18\x05 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\akeyName\"{\n" +
+	"\bkey_name\x18\x06 \x01(\tB\b\xe2\xdf\x1f\x04p3x\x00R\akeyName\"{\n" +
 	"\x1bRegisterPackageResponseData\x12\\\n" +
 	"\fpackage_info\x18\x01 \x01(\v29.DataManagementPlatform_ComputeEngineAPI.BasicPackageInfoR\vpackageInfo\"\xa7\x01\n" +
 	"\x17RegisterPackageResponse\x12\x19\n" +
