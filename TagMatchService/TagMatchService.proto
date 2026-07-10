@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package TagMatchService;
+
+import "mwitkow/go-proto-validators/validator.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/KitHub/protocols/TagMatchService;TagMatchService";
+
+service TagMatchServiceAPI {
+    rpc Match(TagMatchServiceRequest) returns (TagMatchServiceResponse) {
+    option (google.api.http) = {
+      get: "/v1/tagmatch/conditions/match"
+    };
+  }
+}
+
+message TagMatchServiceRequest {
+
+}
+
+message TagMatchServiceResponseData {
+
+}
+
+message TagMatchServiceResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    TagMatchServiceResponseData data = 3;
+}
