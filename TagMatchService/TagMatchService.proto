@@ -8,23 +8,56 @@ import "google/api/annotations.proto";
 option go_package = "github.com/KitHub/protocols/TagMatchService;TagMatchService";
 
 service TagMatchServiceAPI {
-    rpc Match(TagMatchServiceRequest) returns (TagMatchServiceResponse) {
+  rpc MatchEntites(MatchEntitesRequest) returns (MatchEntitesResponse) {
     option (google.api.http) = {
-      get: "/v1/tagmatch/conditions/match"
+      get: "/v1/tagmatch/entites/match"
+    };
+  }
+
+  rpc AddEntities(AddEntitiesRequest) returns (AddEntitiesResponse) {
+    option (google.api.http) = {
+        post: "/v1/tagmatch/entites/add"
+        body: "*"
     };
   }
 }
 
-message TagMatchServiceRequest {
-
+message AddEntitesRequestEntityTuple {
+    string entity_id = 1 [(validator.field) = {length_gt: 1, length_lt: 64}];
+    repeated string tags = 2 [(validator.field) = {length_gt: 1, length_lt: 64, repeated_count_min: 1, repeated_count_max: 10}];
 }
 
-message TagMatchServiceResponseData {
-
+message AddEntitiesRequest {
+    int64 project_id = 1 [(validator.field) = {int_gt: 0}];
+    int64 data_version = 2 [(validator.field) = {int_gt: 0}];
+    repeated AddEntitesRequestEntityTuple data = 3 [(validator.field) = {repeated_count_min: 1, repeated_count_max: 50}];
 }
 
-message TagMatchServiceResponse {
+message AddEntitiesResponseData {
+    repeated string entity_ids = 1;
+}
+
+message AddEntitiesResponse {
     int32 err_code = 1;
     string err_msg = 2;
-    TagMatchServiceResponseData data = 3;
+    AddEntitiesResponseData data = 3;
+}
+
+message MatchEntitesRequestCondition {
+    string tag = 1 [(validator.field) = {length_gt: 1, length_lt: 64}];
+    string value = 2 [(validator.field) = {length_gt: 1, length_lt: 64}];
+}
+
+message MatchEntitesRequest {
+    repeated MatchEntitesRequestCondition conditions = 1;
+}
+
+message MatchEntitesResponseData {
+    repeated string entity_ids = 1;
+}
+
+message MatchEntitesResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    MatchEntitesResponseData data = 3;
 }

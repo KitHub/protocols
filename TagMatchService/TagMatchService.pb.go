@@ -23,26 +23,28 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type TagMatchServiceRequest struct {
+type AddEntitesRequestEntityTuple struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	EntityId      string                 `protobuf:"bytes,1,opt,name=entity_id,json=entityId,proto3" json:"entity_id,omitempty"`
+	Tags          []string               `protobuf:"bytes,2,rep,name=tags,proto3" json:"tags,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *TagMatchServiceRequest) Reset() {
-	*x = TagMatchServiceRequest{}
+func (x *AddEntitesRequestEntityTuple) Reset() {
+	*x = AddEntitesRequestEntityTuple{}
 	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *TagMatchServiceRequest) String() string {
+func (x *AddEntitesRequestEntityTuple) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*TagMatchServiceRequest) ProtoMessage() {}
+func (*AddEntitesRequestEntityTuple) ProtoMessage() {}
 
-func (x *TagMatchServiceRequest) ProtoReflect() protoreflect.Message {
+func (x *AddEntitesRequestEntityTuple) ProtoReflect() protoreflect.Message {
 	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -54,31 +56,48 @@ func (x *TagMatchServiceRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use TagMatchServiceRequest.ProtoReflect.Descriptor instead.
-func (*TagMatchServiceRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AddEntitesRequestEntityTuple.ProtoReflect.Descriptor instead.
+func (*AddEntitesRequestEntityTuple) Descriptor() ([]byte, []int) {
 	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{0}
 }
 
-type TagMatchServiceResponseData struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
+func (x *AddEntitesRequestEntityTuple) GetEntityId() string {
+	if x != nil {
+		return x.EntityId
+	}
+	return ""
+}
+
+func (x *AddEntitesRequestEntityTuple) GetTags() []string {
+	if x != nil {
+		return x.Tags
+	}
+	return nil
+}
+
+type AddEntitiesRequest struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	ProjectId     int64                           `protobuf:"varint,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	DataVersion   int64                           `protobuf:"varint,2,opt,name=data_version,json=dataVersion,proto3" json:"data_version,omitempty"`
+	Data          []*AddEntitesRequestEntityTuple `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *TagMatchServiceResponseData) Reset() {
-	*x = TagMatchServiceResponseData{}
+func (x *AddEntitiesRequest) Reset() {
+	*x = AddEntitiesRequest{}
 	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *TagMatchServiceResponseData) String() string {
+func (x *AddEntitiesRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*TagMatchServiceResponseData) ProtoMessage() {}
+func (*AddEntitiesRequest) ProtoMessage() {}
 
-func (x *TagMatchServiceResponseData) ProtoReflect() protoreflect.Message {
+func (x *AddEntitiesRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -90,34 +109,53 @@ func (x *TagMatchServiceResponseData) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use TagMatchServiceResponseData.ProtoReflect.Descriptor instead.
-func (*TagMatchServiceResponseData) Descriptor() ([]byte, []int) {
+// Deprecated: Use AddEntitiesRequest.ProtoReflect.Descriptor instead.
+func (*AddEntitiesRequest) Descriptor() ([]byte, []int) {
 	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{1}
 }
 
-type TagMatchServiceResponse struct {
-	state         protoimpl.MessageState       `protogen:"open.v1"`
-	ErrCode       int32                        `protobuf:"varint,1,opt,name=err_code,json=errCode,proto3" json:"err_code,omitempty"`
-	ErrMsg        string                       `protobuf:"bytes,2,opt,name=err_msg,json=errMsg,proto3" json:"err_msg,omitempty"`
-	Data          *TagMatchServiceResponseData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+func (x *AddEntitiesRequest) GetProjectId() int64 {
+	if x != nil {
+		return x.ProjectId
+	}
+	return 0
+}
+
+func (x *AddEntitiesRequest) GetDataVersion() int64 {
+	if x != nil {
+		return x.DataVersion
+	}
+	return 0
+}
+
+func (x *AddEntitiesRequest) GetData() []*AddEntitesRequestEntityTuple {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+type AddEntitiesResponseData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EntityIds     []string               `protobuf:"bytes,1,rep,name=entity_ids,json=entityIds,proto3" json:"entity_ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *TagMatchServiceResponse) Reset() {
-	*x = TagMatchServiceResponse{}
+func (x *AddEntitiesResponseData) Reset() {
+	*x = AddEntitiesResponseData{}
 	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *TagMatchServiceResponse) String() string {
+func (x *AddEntitiesResponseData) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*TagMatchServiceResponse) ProtoMessage() {}
+func (*AddEntitiesResponseData) ProtoMessage() {}
 
-func (x *TagMatchServiceResponse) ProtoReflect() protoreflect.Message {
+func (x *AddEntitiesResponseData) ProtoReflect() protoreflect.Message {
 	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -129,26 +167,272 @@ func (x *TagMatchServiceResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use TagMatchServiceResponse.ProtoReflect.Descriptor instead.
-func (*TagMatchServiceResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use AddEntitiesResponseData.ProtoReflect.Descriptor instead.
+func (*AddEntitiesResponseData) Descriptor() ([]byte, []int) {
 	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *TagMatchServiceResponse) GetErrCode() int32 {
+func (x *AddEntitiesResponseData) GetEntityIds() []string {
+	if x != nil {
+		return x.EntityIds
+	}
+	return nil
+}
+
+type AddEntitiesResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	ErrCode       int32                    `protobuf:"varint,1,opt,name=err_code,json=errCode,proto3" json:"err_code,omitempty"`
+	ErrMsg        string                   `protobuf:"bytes,2,opt,name=err_msg,json=errMsg,proto3" json:"err_msg,omitempty"`
+	Data          *AddEntitiesResponseData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddEntitiesResponse) Reset() {
+	*x = AddEntitiesResponse{}
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddEntitiesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddEntitiesResponse) ProtoMessage() {}
+
+func (x *AddEntitiesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddEntitiesResponse.ProtoReflect.Descriptor instead.
+func (*AddEntitiesResponse) Descriptor() ([]byte, []int) {
+	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *AddEntitiesResponse) GetErrCode() int32 {
 	if x != nil {
 		return x.ErrCode
 	}
 	return 0
 }
 
-func (x *TagMatchServiceResponse) GetErrMsg() string {
+func (x *AddEntitiesResponse) GetErrMsg() string {
 	if x != nil {
 		return x.ErrMsg
 	}
 	return ""
 }
 
-func (x *TagMatchServiceResponse) GetData() *TagMatchServiceResponseData {
+func (x *AddEntitiesResponse) GetData() *AddEntitiesResponseData {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+type MatchEntitesRequestCondition struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Tag           string                 `protobuf:"bytes,1,opt,name=tag,proto3" json:"tag,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatchEntitesRequestCondition) Reset() {
+	*x = MatchEntitesRequestCondition{}
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatchEntitesRequestCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatchEntitesRequestCondition) ProtoMessage() {}
+
+func (x *MatchEntitesRequestCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatchEntitesRequestCondition.ProtoReflect.Descriptor instead.
+func (*MatchEntitesRequestCondition) Descriptor() ([]byte, []int) {
+	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *MatchEntitesRequestCondition) GetTag() string {
+	if x != nil {
+		return x.Tag
+	}
+	return ""
+}
+
+func (x *MatchEntitesRequestCondition) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+type MatchEntitesRequest struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Conditions    []*MatchEntitesRequestCondition `protobuf:"bytes,1,rep,name=conditions,proto3" json:"conditions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatchEntitesRequest) Reset() {
+	*x = MatchEntitesRequest{}
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatchEntitesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatchEntitesRequest) ProtoMessage() {}
+
+func (x *MatchEntitesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatchEntitesRequest.ProtoReflect.Descriptor instead.
+func (*MatchEntitesRequest) Descriptor() ([]byte, []int) {
+	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *MatchEntitesRequest) GetConditions() []*MatchEntitesRequestCondition {
+	if x != nil {
+		return x.Conditions
+	}
+	return nil
+}
+
+type MatchEntitesResponseData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EntityIds     []string               `protobuf:"bytes,1,rep,name=entity_ids,json=entityIds,proto3" json:"entity_ids,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatchEntitesResponseData) Reset() {
+	*x = MatchEntitesResponseData{}
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatchEntitesResponseData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatchEntitesResponseData) ProtoMessage() {}
+
+func (x *MatchEntitesResponseData) ProtoReflect() protoreflect.Message {
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatchEntitesResponseData.ProtoReflect.Descriptor instead.
+func (*MatchEntitesResponseData) Descriptor() ([]byte, []int) {
+	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *MatchEntitesResponseData) GetEntityIds() []string {
+	if x != nil {
+		return x.EntityIds
+	}
+	return nil
+}
+
+type MatchEntitesResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	ErrCode       int32                     `protobuf:"varint,1,opt,name=err_code,json=errCode,proto3" json:"err_code,omitempty"`
+	ErrMsg        string                    `protobuf:"bytes,2,opt,name=err_msg,json=errMsg,proto3" json:"err_msg,omitempty"`
+	Data          *MatchEntitesResponseData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatchEntitesResponse) Reset() {
+	*x = MatchEntitesResponse{}
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatchEntitesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatchEntitesResponse) ProtoMessage() {}
+
+func (x *MatchEntitesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_TagMatchService_TagMatchService_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatchEntitesResponse.ProtoReflect.Descriptor instead.
+func (*MatchEntitesResponse) Descriptor() ([]byte, []int) {
+	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *MatchEntitesResponse) GetErrCode() int32 {
+	if x != nil {
+		return x.ErrCode
+	}
+	return 0
+}
+
+func (x *MatchEntitesResponse) GetErrMsg() string {
+	if x != nil {
+		return x.ErrMsg
+	}
+	return ""
+}
+
+func (x *MatchEntitesResponse) GetData() *MatchEntitesResponseData {
 	if x != nil {
 		return x.Data
 	}
@@ -159,15 +443,40 @@ var File_TagMatchService_TagMatchService_proto protoreflect.FileDescriptor
 
 const file_TagMatchService_TagMatchService_proto_rawDesc = "" +
 	"\n" +
-	"%TagMatchService/TagMatchService.proto\x12\x0fTagMatchService\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"\x18\n" +
-	"\x16TagMatchServiceRequest\"\x1d\n" +
-	"\x1bTagMatchServiceResponseData\"\x8f\x01\n" +
-	"\x17TagMatchServiceResponse\x12\x19\n" +
+	"%TagMatchService/TagMatchService.proto\x12\x0fTagMatchService\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"g\n" +
+	"\x1cAddEntitesRequestEntityTuple\x12%\n" +
+	"\tentity_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x01x@R\bentityId\x12 \n" +
+	"\x04tags\x18\x02 \x03(\tB\f\xe2\xdf\x1f\b`\x01h\n" +
+	"p\x01x@R\x04tags\"\xb3\x01\n" +
+	"\x12AddEntitiesRequest\x12%\n" +
+	"\n" +
+	"project_id\x18\x01 \x01(\x03B\x06\xe2\xdf\x1f\x02\x10\x00R\tprojectId\x12)\n" +
+	"\fdata_version\x18\x02 \x01(\x03B\x06\xe2\xdf\x1f\x02\x10\x00R\vdataVersion\x12K\n" +
+	"\x04data\x18\x03 \x03(\v2-.TagMatchService.AddEntitesRequestEntityTupleB\b\xe2\xdf\x1f\x04`\x01h2R\x04data\"8\n" +
+	"\x17AddEntitiesResponseData\x12\x1d\n" +
+	"\n" +
+	"entity_ids\x18\x01 \x03(\tR\tentityIds\"\x87\x01\n" +
+	"\x13AddEntitiesResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
-	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12@\n" +
-	"\x04data\x18\x03 \x01(\v2,.TagMatchService.TagMatchServiceResponseDataR\x04data2\x98\x01\n" +
-	"\x12TagMatchServiceAPI\x12\x81\x01\n" +
-	"\x05Match\x12'.TagMatchService.TagMatchServiceRequest\x1a(.TagMatchService.TagMatchServiceResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/tagmatch/conditions/matchB=Z;github.com/KitHub/protocols/TagMatchService;TagMatchServiceb\x06proto3"
+	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12<\n" +
+	"\x04data\x18\x03 \x01(\v2(.TagMatchService.AddEntitiesResponseDataR\x04data\"Z\n" +
+	"\x1cMatchEntitesRequestCondition\x12\x1a\n" +
+	"\x03tag\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x01x@R\x03tag\x12\x1e\n" +
+	"\x05value\x18\x02 \x01(\tB\b\xe2\xdf\x1f\x04p\x01x@R\x05value\"d\n" +
+	"\x13MatchEntitesRequest\x12M\n" +
+	"\n" +
+	"conditions\x18\x01 \x03(\v2-.TagMatchService.MatchEntitesRequestConditionR\n" +
+	"conditions\"9\n" +
+	"\x18MatchEntitesResponseData\x12\x1d\n" +
+	"\n" +
+	"entity_ids\x18\x01 \x03(\tR\tentityIds\"\x89\x01\n" +
+	"\x14MatchEntitesResponse\x12\x19\n" +
+	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
+	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12=\n" +
+	"\x04data\x18\x03 \x01(\v2).TagMatchService.MatchEntitesResponseDataR\x04data2\x94\x02\n" +
+	"\x12TagMatchServiceAPI\x12\x7f\n" +
+	"\fMatchEntites\x12$.TagMatchService.MatchEntitesRequest\x1a%.TagMatchService.MatchEntitesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/tagmatch/entites/match\x12}\n" +
+	"\vAddEntities\x12#.TagMatchService.AddEntitiesRequest\x1a$.TagMatchService.AddEntitiesResponse\"#\x82\xd3\xe4\x93\x02\x1d:\x01*\"\x18/v1/tagmatch/entites/addB=Z;github.com/KitHub/protocols/TagMatchService;TagMatchServiceb\x06proto3"
 
 var (
 	file_TagMatchService_TagMatchService_proto_rawDescOnce sync.Once
@@ -181,21 +490,31 @@ func file_TagMatchService_TagMatchService_proto_rawDescGZIP() []byte {
 	return file_TagMatchService_TagMatchService_proto_rawDescData
 }
 
-var file_TagMatchService_TagMatchService_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_TagMatchService_TagMatchService_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_TagMatchService_TagMatchService_proto_goTypes = []any{
-	(*TagMatchServiceRequest)(nil),      // 0: TagMatchService.TagMatchServiceRequest
-	(*TagMatchServiceResponseData)(nil), // 1: TagMatchService.TagMatchServiceResponseData
-	(*TagMatchServiceResponse)(nil),     // 2: TagMatchService.TagMatchServiceResponse
+	(*AddEntitesRequestEntityTuple)(nil), // 0: TagMatchService.AddEntitesRequestEntityTuple
+	(*AddEntitiesRequest)(nil),           // 1: TagMatchService.AddEntitiesRequest
+	(*AddEntitiesResponseData)(nil),      // 2: TagMatchService.AddEntitiesResponseData
+	(*AddEntitiesResponse)(nil),          // 3: TagMatchService.AddEntitiesResponse
+	(*MatchEntitesRequestCondition)(nil), // 4: TagMatchService.MatchEntitesRequestCondition
+	(*MatchEntitesRequest)(nil),          // 5: TagMatchService.MatchEntitesRequest
+	(*MatchEntitesResponseData)(nil),     // 6: TagMatchService.MatchEntitesResponseData
+	(*MatchEntitesResponse)(nil),         // 7: TagMatchService.MatchEntitesResponse
 }
 var file_TagMatchService_TagMatchService_proto_depIdxs = []int32{
-	1, // 0: TagMatchService.TagMatchServiceResponse.data:type_name -> TagMatchService.TagMatchServiceResponseData
-	0, // 1: TagMatchService.TagMatchServiceAPI.Match:input_type -> TagMatchService.TagMatchServiceRequest
-	2, // 2: TagMatchService.TagMatchServiceAPI.Match:output_type -> TagMatchService.TagMatchServiceResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 0: TagMatchService.AddEntitiesRequest.data:type_name -> TagMatchService.AddEntitesRequestEntityTuple
+	2, // 1: TagMatchService.AddEntitiesResponse.data:type_name -> TagMatchService.AddEntitiesResponseData
+	4, // 2: TagMatchService.MatchEntitesRequest.conditions:type_name -> TagMatchService.MatchEntitesRequestCondition
+	6, // 3: TagMatchService.MatchEntitesResponse.data:type_name -> TagMatchService.MatchEntitesResponseData
+	5, // 4: TagMatchService.TagMatchServiceAPI.MatchEntites:input_type -> TagMatchService.MatchEntitesRequest
+	1, // 5: TagMatchService.TagMatchServiceAPI.AddEntities:input_type -> TagMatchService.AddEntitiesRequest
+	7, // 6: TagMatchService.TagMatchServiceAPI.MatchEntites:output_type -> TagMatchService.MatchEntitesResponse
+	3, // 7: TagMatchService.TagMatchServiceAPI.AddEntities:output_type -> TagMatchService.AddEntitiesResponse
+	6, // [6:8] is the sub-list for method output_type
+	4, // [4:6] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_TagMatchService_TagMatchService_proto_init() }
@@ -209,7 +528,7 @@ func file_TagMatchService_TagMatchService_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_TagMatchService_TagMatchService_proto_rawDesc), len(file_TagMatchService_TagMatchService_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

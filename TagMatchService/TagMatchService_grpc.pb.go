@@ -19,14 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	TagMatchServiceAPI_Match_FullMethodName = "/TagMatchService.TagMatchServiceAPI/Match"
+	TagMatchServiceAPI_MatchEntites_FullMethodName = "/TagMatchService.TagMatchServiceAPI/MatchEntites"
+	TagMatchServiceAPI_AddEntities_FullMethodName  = "/TagMatchService.TagMatchServiceAPI/AddEntities"
 )
 
 // TagMatchServiceAPIClient is the client API for TagMatchServiceAPI service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TagMatchServiceAPIClient interface {
-	Match(ctx context.Context, in *TagMatchServiceRequest, opts ...grpc.CallOption) (*TagMatchServiceResponse, error)
+	MatchEntites(ctx context.Context, in *MatchEntitesRequest, opts ...grpc.CallOption) (*MatchEntitesResponse, error)
+	AddEntities(ctx context.Context, in *AddEntitiesRequest, opts ...grpc.CallOption) (*AddEntitiesResponse, error)
 }
 
 type tagMatchServiceAPIClient struct {
@@ -37,10 +39,20 @@ func NewTagMatchServiceAPIClient(cc grpc.ClientConnInterface) TagMatchServiceAPI
 	return &tagMatchServiceAPIClient{cc}
 }
 
-func (c *tagMatchServiceAPIClient) Match(ctx context.Context, in *TagMatchServiceRequest, opts ...grpc.CallOption) (*TagMatchServiceResponse, error) {
+func (c *tagMatchServiceAPIClient) MatchEntites(ctx context.Context, in *MatchEntitesRequest, opts ...grpc.CallOption) (*MatchEntitesResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(TagMatchServiceResponse)
-	err := c.cc.Invoke(ctx, TagMatchServiceAPI_Match_FullMethodName, in, out, cOpts...)
+	out := new(MatchEntitesResponse)
+	err := c.cc.Invoke(ctx, TagMatchServiceAPI_MatchEntites_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tagMatchServiceAPIClient) AddEntities(ctx context.Context, in *AddEntitiesRequest, opts ...grpc.CallOption) (*AddEntitiesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddEntitiesResponse)
+	err := c.cc.Invoke(ctx, TagMatchServiceAPI_AddEntities_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +63,8 @@ func (c *tagMatchServiceAPIClient) Match(ctx context.Context, in *TagMatchServic
 // All implementations must embed UnimplementedTagMatchServiceAPIServer
 // for forward compatibility.
 type TagMatchServiceAPIServer interface {
-	Match(context.Context, *TagMatchServiceRequest) (*TagMatchServiceResponse, error)
+	MatchEntites(context.Context, *MatchEntitesRequest) (*MatchEntitesResponse, error)
+	AddEntities(context.Context, *AddEntitiesRequest) (*AddEntitiesResponse, error)
 	mustEmbedUnimplementedTagMatchServiceAPIServer()
 }
 
@@ -62,8 +75,11 @@ type TagMatchServiceAPIServer interface {
 // pointer dereference when methods are called.
 type UnimplementedTagMatchServiceAPIServer struct{}
 
-func (UnimplementedTagMatchServiceAPIServer) Match(context.Context, *TagMatchServiceRequest) (*TagMatchServiceResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method Match not implemented")
+func (UnimplementedTagMatchServiceAPIServer) MatchEntites(context.Context, *MatchEntitesRequest) (*MatchEntitesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MatchEntites not implemented")
+}
+func (UnimplementedTagMatchServiceAPIServer) AddEntities(context.Context, *AddEntitiesRequest) (*AddEntitiesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddEntities not implemented")
 }
 func (UnimplementedTagMatchServiceAPIServer) mustEmbedUnimplementedTagMatchServiceAPIServer() {}
 func (UnimplementedTagMatchServiceAPIServer) testEmbeddedByValue()                            {}
@@ -86,20 +102,38 @@ func RegisterTagMatchServiceAPIServer(s grpc.ServiceRegistrar, srv TagMatchServi
 	s.RegisterService(&TagMatchServiceAPI_ServiceDesc, srv)
 }
 
-func _TagMatchServiceAPI_Match_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TagMatchServiceRequest)
+func _TagMatchServiceAPI_MatchEntites_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MatchEntitesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TagMatchServiceAPIServer).Match(ctx, in)
+		return srv.(TagMatchServiceAPIServer).MatchEntites(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: TagMatchServiceAPI_Match_FullMethodName,
+		FullMethod: TagMatchServiceAPI_MatchEntites_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TagMatchServiceAPIServer).Match(ctx, req.(*TagMatchServiceRequest))
+		return srv.(TagMatchServiceAPIServer).MatchEntites(ctx, req.(*MatchEntitesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TagMatchServiceAPI_AddEntities_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddEntitiesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TagMatchServiceAPIServer).AddEntities(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TagMatchServiceAPI_AddEntities_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TagMatchServiceAPIServer).AddEntities(ctx, req.(*AddEntitiesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -112,8 +146,12 @@ var TagMatchServiceAPI_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*TagMatchServiceAPIServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Match",
-			Handler:    _TagMatchServiceAPI_Match_Handler,
+			MethodName: "MatchEntites",
+			Handler:    _TagMatchServiceAPI_MatchEntites_Handler,
+		},
+		{
+			MethodName: "AddEntities",
+			Handler:    _TagMatchServiceAPI_AddEntities_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
