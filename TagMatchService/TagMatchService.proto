@@ -23,7 +23,7 @@ service TagMatchServiceAPI {
 }
 
 message AddEntitesRequestEntityTuple {
-    string entity_id = 1 [(validator.field) = {length_gt: 1, length_lt: 64}];
+    int64 entity_id = 1 [(validator.field) = {int_gt: 0}];
     repeated string tags = 2 [(validator.field) = {length_gt: 1, length_lt: 64, repeated_count_min: 1, repeated_count_max: 10}];
 }
 
@@ -34,7 +34,7 @@ message AddEntitiesRequest {
 }
 
 message AddEntitiesResponseData {
-    repeated string entity_ids = 1;
+    repeated int64 entity_ids = 1;
 }
 
 message AddEntitiesResponse {

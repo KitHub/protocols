@@ -25,7 +25,7 @@ const (
 
 type AddEntitesRequestEntityTuple struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EntityId      string                 `protobuf:"bytes,1,opt,name=entity_id,json=entityId,proto3" json:"entity_id,omitempty"`
+	EntityId      int64                  `protobuf:"varint,1,opt,name=entity_id,json=entityId,proto3" json:"entity_id,omitempty"`
 	Tags          []string               `protobuf:"bytes,2,rep,name=tags,proto3" json:"tags,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -61,11 +61,11 @@ func (*AddEntitesRequestEntityTuple) Descriptor() ([]byte, []int) {
 	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *AddEntitesRequestEntityTuple) GetEntityId() string {
+func (x *AddEntitesRequestEntityTuple) GetEntityId() int64 {
 	if x != nil {
 		return x.EntityId
 	}
-	return ""
+	return 0
 }
 
 func (x *AddEntitesRequestEntityTuple) GetTags() []string {
@@ -137,7 +137,7 @@ func (x *AddEntitiesRequest) GetData() []*AddEntitesRequestEntityTuple {
 
 type AddEntitiesResponseData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EntityIds     []string               `protobuf:"bytes,1,rep,name=entity_ids,json=entityIds,proto3" json:"entity_ids,omitempty"`
+	EntityIds     []int64                `protobuf:"varint,1,rep,packed,name=entity_ids,json=entityIds,proto3" json:"entity_ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -172,7 +172,7 @@ func (*AddEntitiesResponseData) Descriptor() ([]byte, []int) {
 	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *AddEntitiesResponseData) GetEntityIds() []string {
+func (x *AddEntitiesResponseData) GetEntityIds() []int64 {
 	if x != nil {
 		return x.EntityIds
 	}
@@ -443,9 +443,9 @@ var File_TagMatchService_TagMatchService_proto protoreflect.FileDescriptor
 
 const file_TagMatchService_TagMatchService_proto_rawDesc = "" +
 	"\n" +
-	"%TagMatchService/TagMatchService.proto\x12\x0fTagMatchService\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"g\n" +
-	"\x1cAddEntitesRequestEntityTuple\x12%\n" +
-	"\tentity_id\x18\x01 \x01(\tB\b\xe2\xdf\x1f\x04p\x01x@R\bentityId\x12 \n" +
+	"%TagMatchService/TagMatchService.proto\x12\x0fTagMatchService\x1a+mwitkow/go-proto-validators/validator.proto\x1a\x1cgoogle/api/annotations.proto\"e\n" +
+	"\x1cAddEntitesRequestEntityTuple\x12#\n" +
+	"\tentity_id\x18\x01 \x01(\x03B\x06\xe2\xdf\x1f\x02\x10\x00R\bentityId\x12 \n" +
 	"\x04tags\x18\x02 \x03(\tB\f\xe2\xdf\x1f\b`\x01h\n" +
 	"p\x01x@R\x04tags\"\xb3\x01\n" +
 	"\x12AddEntitiesRequest\x12%\n" +
@@ -455,7 +455,7 @@ const file_TagMatchService_TagMatchService_proto_rawDesc = "" +
 	"\x04data\x18\x03 \x03(\v2-.TagMatchService.AddEntitesRequestEntityTupleB\b\xe2\xdf\x1f\x04`\x01h2R\x04data\"8\n" +
 	"\x17AddEntitiesResponseData\x12\x1d\n" +
 	"\n" +
-	"entity_ids\x18\x01 \x03(\tR\tentityIds\"\x87\x01\n" +
+	"entity_ids\x18\x01 \x03(\x03R\tentityIds\"\x87\x01\n" +
 	"\x13AddEntitiesResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12<\n" +

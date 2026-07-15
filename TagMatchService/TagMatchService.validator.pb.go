@@ -18,11 +18,8 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *AddEntitesRequestEntityTuple) Validate() error {
-	if !(len(this.EntityId) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("EntityId", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.EntityId))
-	}
-	if !(len(this.EntityId) < 64) {
-		return github_com_mwitkow_go_proto_validators.FieldError("EntityId", fmt.Errorf(`value '%v' must have a length smaller than '64'`, this.EntityId))
+	if !(this.EntityId > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("EntityId", fmt.Errorf(`value '%v' must be greater than '0'`, this.EntityId))
 	}
 	if len(this.Tags) < 1 {
 		return github_com_mwitkow_go_proto_validators.FieldError("Tags", fmt.Errorf(`value '%v' must contain at least 1 elements`, this.Tags))
