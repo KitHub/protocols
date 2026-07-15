@@ -7,8 +7,8 @@ import (
 	fmt "fmt"
 	math "math"
 	proto "github.com/golang/protobuf/proto"
-	_ "google.golang.org/genproto/googleapis/api/annotations"
 	_ "github.com/mwitkow/go-proto-validators"
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 )
 
@@ -82,6 +82,15 @@ func (this *AddEntitiesResponse) Validate() error {
 	return nil
 }
 func (this *MatchEntitesRequest) Validate() error {
+	if !(this.ProjectId > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProjectId", fmt.Errorf(`value '%v' must be greater than '0'`, this.ProjectId))
+	}
+	if len(this.Tags) < 1 {
+		return github_com_mwitkow_go_proto_validators.FieldError("Tags", fmt.Errorf(`value '%v' must contain at least 1 elements`, this.Tags))
+	}
+	if len(this.Tags) > 50 {
+		return github_com_mwitkow_go_proto_validators.FieldError("Tags", fmt.Errorf(`value '%v' must contain at most 50 elements`, this.Tags))
+	}
 	for _, item := range this.Tags {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {

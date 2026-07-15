@@ -47,7 +47,8 @@ message AddEntitiesResponse {
 }
 
 message MatchEntitesRequest {
-    repeated EntityTag tags = 1;
+    int64 project_id = 1 [(validator.field) = {int_gt: 0}];
+    repeated EntityTag tags = 2 [(validator.field) = {repeated_count_min: 1, repeated_count_max: 50}];
 }
 
 message MatchEntitesResponseData {

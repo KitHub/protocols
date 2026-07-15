@@ -277,7 +277,8 @@ func (x *AddEntitiesResponse) GetData() *AddEntitiesResponseData {
 
 type MatchEntitesRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Tags          []*EntityTag           `protobuf:"bytes,1,rep,name=tags,proto3" json:"tags,omitempty"`
+	ProjectId     int64                  `protobuf:"varint,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	Tags          []*EntityTag           `protobuf:"bytes,2,rep,name=tags,proto3" json:"tags,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -310,6 +311,13 @@ func (x *MatchEntitesRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use MatchEntitesRequest.ProtoReflect.Descriptor instead.
 func (*MatchEntitesRequest) Descriptor() ([]byte, []int) {
 	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *MatchEntitesRequest) GetProjectId() int64 {
+	if x != nil {
+		return x.ProjectId
+	}
+	return 0
 }
 
 func (x *MatchEntitesRequest) GetTags() []*EntityTag {
@@ -443,9 +451,11 @@ const file_TagMatchService_TagMatchService_proto_rawDesc = "" +
 	"\x13AddEntitiesResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12<\n" +
-	"\x04data\x18\x03 \x01(\v2(.TagMatchService.AddEntitiesResponseDataR\x04data\"E\n" +
-	"\x13MatchEntitesRequest\x12.\n" +
-	"\x04tags\x18\x01 \x03(\v2\x1a.TagMatchService.EntityTagR\x04tags\"9\n" +
+	"\x04data\x18\x03 \x01(\v2(.TagMatchService.AddEntitiesResponseDataR\x04data\"v\n" +
+	"\x13MatchEntitesRequest\x12%\n" +
+	"\n" +
+	"project_id\x18\x01 \x01(\x03B\x06\xe2\xdf\x1f\x02\x10\x00R\tprojectId\x128\n" +
+	"\x04tags\x18\x02 \x03(\v2\x1a.TagMatchService.EntityTagB\b\xe2\xdf\x1f\x04`\x01h2R\x04tags\"9\n" +
 	"\x18MatchEntitesResponseData\x12\x1d\n" +
 	"\n" +
 	"entity_ids\x18\x01 \x03(\tR\tentityIds\"\x89\x01\n" +
