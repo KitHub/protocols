@@ -329,7 +329,7 @@ func (x *MatchEntitesRequest) GetTags() []*EntityTag {
 
 type MatchEntitesResponseData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EntityIds     []string               `protobuf:"bytes,1,rep,name=entity_ids,json=entityIds,proto3" json:"entity_ids,omitempty"`
+	EntityIds     []int64                `protobuf:"varint,1,rep,packed,name=entity_ids,json=entityIds,proto3" json:"entity_ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -364,7 +364,7 @@ func (*MatchEntitesResponseData) Descriptor() ([]byte, []int) {
 	return file_TagMatchService_TagMatchService_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *MatchEntitesResponseData) GetEntityIds() []string {
+func (x *MatchEntitesResponseData) GetEntityIds() []int64 {
 	if x != nil {
 		return x.EntityIds
 	}
@@ -458,7 +458,7 @@ const file_TagMatchService_TagMatchService_proto_rawDesc = "" +
 	"\x04tags\x18\x02 \x03(\v2\x1a.TagMatchService.EntityTagB\b\xe2\xdf\x1f\x04`\x01h2R\x04tags\"9\n" +
 	"\x18MatchEntitesResponseData\x12\x1d\n" +
 	"\n" +
-	"entity_ids\x18\x01 \x03(\tR\tentityIds\"\x89\x01\n" +
+	"entity_ids\x18\x01 \x03(\x03R\tentityIds\"\x89\x01\n" +
 	"\x14MatchEntitesResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12=\n" +

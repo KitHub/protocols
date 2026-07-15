@@ -52,7 +52,7 @@ message MatchEntitesRequest {
 }
 
 message MatchEntitesResponseData {
-    repeated string entity_ids = 1;
+    repeated int64 entity_ids = 1;
 }
 
 message MatchEntitesResponse {
