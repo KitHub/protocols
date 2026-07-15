@@ -22,19 +22,22 @@ service TagMatchServiceAPI {
   }
 }
 
-message AddEntitesRequestEntityTuple {
+message EntityTag {
+    string tag = 1 [(validator.field) = {length_gt: 1, length_lt: 64}];
+    string value = 2 [(validator.field) = {length_gt: 1, length_lt: 64}];
+}
+
+message AddEntitesRequestEntity {
     int64 entity_id = 1 [(validator.field) = {int_gt: 0}];
-    repeated string tags = 2 [(validator.field) = {length_gt: 1, length_lt: 64, repeated_count_min: 1, repeated_count_max: 10}];
+    repeated EntityTag tags = 2 [(validator.field) = {length_gt: 1, length_lt: 64, repeated_count_min: 1, repeated_count_max: 10}];
 }
 
 message AddEntitiesRequest {
     int64 project_id = 1 [(validator.field) = {int_gt: 0}];
-    int64 data_version = 2 [(validator.field) = {int_gt: 0}];
-    repeated AddEntitesRequestEntityTuple data = 3 [(validator.field) = {repeated_count_min: 1, repeated_count_max: 50}];
+    repeated AddEntitesRequestEntity data = 2 [(validator.field) = {repeated_count_min: 1, repeated_count_max: 50}];
 }
 
 message AddEntitiesResponseData {
-    repeated int64 entity_ids = 1;
 }
 
 message AddEntitiesResponse {
@@ -43,13 +46,8 @@ message AddEntitiesResponse {
     AddEntitiesResponseData data = 3;
 }
 
-message MatchEntitesRequestCondition {
-    string tag = 1 [(validator.field) = {length_gt: 1, length_lt: 64}];
-    string value = 2 [(validator.field) = {length_gt: 1, length_lt: 64}];
-}
-
 message MatchEntitesRequest {
-    repeated MatchEntitesRequestCondition conditions = 1;
+    repeated EntityTag tags = 1;
 }
 
 message MatchEntitesResponseData {

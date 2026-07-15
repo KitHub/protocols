@@ -7,8 +7,8 @@ import (
 	fmt "fmt"
 	math "math"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
+	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 )
 
@@ -17,7 +17,22 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *AddEntitesRequestEntityTuple) Validate() error {
+func (this *EntityTag) Validate() error {
+	if !(len(this.Tag) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Tag", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Tag))
+	}
+	if !(len(this.Tag) < 64) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Tag", fmt.Errorf(`value '%v' must have a length smaller than '64'`, this.Tag))
+	}
+	if !(len(this.Value) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Value))
+	}
+	if !(len(this.Value) < 64) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length smaller than '64'`, this.Value))
+	}
+	return nil
+}
+func (this *AddEntitesRequestEntity) Validate() error {
 	if !(this.EntityId > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EntityId", fmt.Errorf(`value '%v' must be greater than '0'`, this.EntityId))
 	}
@@ -28,11 +43,10 @@ func (this *AddEntitesRequestEntityTuple) Validate() error {
 		return github_com_mwitkow_go_proto_validators.FieldError("Tags", fmt.Errorf(`value '%v' must contain at most 10 elements`, this.Tags))
 	}
 	for _, item := range this.Tags {
-		if !(len(item) > 1) {
-			return github_com_mwitkow_go_proto_validators.FieldError("Tags", fmt.Errorf(`value '%v' must have a length greater than '1'`, item))
-		}
-		if !(len(item) < 64) {
-			return github_com_mwitkow_go_proto_validators.FieldError("Tags", fmt.Errorf(`value '%v' must have a length smaller than '64'`, item))
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Tags", err)
+			}
 		}
 	}
 	return nil
@@ -40,9 +54,6 @@ func (this *AddEntitesRequestEntityTuple) Validate() error {
 func (this *AddEntitiesRequest) Validate() error {
 	if !(this.ProjectId > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ProjectId", fmt.Errorf(`value '%v' must be greater than '0'`, this.ProjectId))
-	}
-	if !(this.DataVersion > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DataVersion", fmt.Errorf(`value '%v' must be greater than '0'`, this.DataVersion))
 	}
 	if len(this.Data) < 1 {
 		return github_com_mwitkow_go_proto_validators.FieldError("Data", fmt.Errorf(`value '%v' must contain at least 1 elements`, this.Data))
@@ -70,26 +81,11 @@ func (this *AddEntitiesResponse) Validate() error {
 	}
 	return nil
 }
-func (this *MatchEntitesRequestCondition) Validate() error {
-	if !(len(this.Tag) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Tag", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Tag))
-	}
-	if !(len(this.Tag) < 64) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Tag", fmt.Errorf(`value '%v' must have a length smaller than '64'`, this.Tag))
-	}
-	if !(len(this.Value) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Value))
-	}
-	if !(len(this.Value) < 64) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length smaller than '64'`, this.Value))
-	}
-	return nil
-}
 func (this *MatchEntitesRequest) Validate() error {
-	for _, item := range this.Conditions {
+	for _, item := range this.Tags {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Conditions", err)
+				return github_com_mwitkow_go_proto_validators.FieldError("Tags", err)
 			}
 		}
 	}
