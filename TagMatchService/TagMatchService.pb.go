@@ -462,9 +462,9 @@ const file_TagMatchService_TagMatchService_proto_rawDesc = "" +
 	"\x14MatchEntitesResponse\x12\x19\n" +
 	"\berr_code\x18\x01 \x01(\x05R\aerrCode\x12\x17\n" +
 	"\aerr_msg\x18\x02 \x01(\tR\x06errMsg\x12=\n" +
-	"\x04data\x18\x03 \x01(\v2).TagMatchService.MatchEntitesResponseDataR\x04data2\x94\x02\n" +
-	"\x12TagMatchServiceAPI\x12\x7f\n" +
-	"\fMatchEntites\x12$.TagMatchService.MatchEntitesRequest\x1a%.TagMatchService.MatchEntitesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/tagmatch/entites/match\x12}\n" +
+	"\x04data\x18\x03 \x01(\v2).TagMatchService.MatchEntitesResponseDataR\x04data2\x98\x02\n" +
+	"\x12TagMatchServiceAPI\x12\x82\x01\n" +
+	"\fMatchEntites\x12$.TagMatchService.MatchEntitesRequest\x1a%.TagMatchService.MatchEntitesResponse\"%\x82\xd3\xe4\x93\x02\x1f:\x01*\"\x1a/v1/tagmatch/entites/match\x12}\n" +
 	"\vAddEntities\x12#.TagMatchService.AddEntitiesRequest\x1a$.TagMatchService.AddEntitiesResponse\"#\x82\xd3\xe4\x93\x02\x1d:\x01*\"\x18/v1/tagmatch/entites/addB=Z;github.com/KitHub/protocols/TagMatchService;TagMatchServiceb\x06proto3"
 
 var (

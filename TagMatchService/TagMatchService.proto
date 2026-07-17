@@ -10,7 +10,8 @@ option go_package = "github.com/KitHub/protocols/TagMatchService;TagMatchService
 service TagMatchServiceAPI {
   rpc MatchEntites(MatchEntitesRequest) returns (MatchEntitesResponse) {
     option (google.api.http) = {
-      get: "/v1/tagmatch/entites/match"
+      post: "/v1/tagmatch/entites/match"
+      body: "*"
     };
   }
 

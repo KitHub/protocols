@@ -35,21 +35,16 @@ var (
 	_ = metadata.Join
 )
 
-var filter_TagMatchServiceAPI_MatchEntites_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-
 func request_TagMatchServiceAPI_MatchEntites_0(ctx context.Context, marshaler runtime.Marshaler, client TagMatchServiceAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq MatchEntitesRequest
 		metadata runtime.ServerMetadata
 	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 	if req.Body != nil {
 		_, _ = io.Copy(io.Discard, req.Body)
-	}
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_TagMatchServiceAPI_MatchEntites_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.MatchEntites(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
@@ -60,10 +55,7 @@ func local_request_TagMatchServiceAPI_MatchEntites_0(ctx context.Context, marsha
 		protoReq MatchEntitesRequest
 		metadata runtime.ServerMetadata
 	)
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_TagMatchServiceAPI_MatchEntites_0); err != nil {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.MatchEntites(ctx, &protoReq)
@@ -103,7 +95,7 @@ func local_request_TagMatchServiceAPI_AddEntities_0(ctx context.Context, marshal
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterTagMatchServiceAPIHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
 func RegisterTagMatchServiceAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, server TagMatchServiceAPIServer) error {
-	mux.Handle(http.MethodGet, pattern_TagMatchServiceAPI_MatchEntites_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_TagMatchServiceAPI_MatchEntites_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -183,7 +175,7 @@ func RegisterTagMatchServiceAPIHandler(ctx context.Context, mux *runtime.ServeMu
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "TagMatchServiceAPIClient" to call the correct interceptors. This client ignores the HTTP middlewares.
 func RegisterTagMatchServiceAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, client TagMatchServiceAPIClient) error {
-	mux.Handle(http.MethodGet, pattern_TagMatchServiceAPI_MatchEntites_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_TagMatchServiceAPI_MatchEntites_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
