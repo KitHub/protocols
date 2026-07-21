@@ -7,9 +7,9 @@ import (
 	fmt "fmt"
 	math "math"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/KitHub/protocols/compute_operation"
 	_ "github.com/mwitkow/go-proto-validators"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
+	_ "github.com/KitHub/protocols/compute_operation"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 )
 
@@ -25,11 +25,11 @@ func (this *ReloadAllPackagesResponse) Validate() error {
 	return nil
 }
 func (this *ReloadPackageRequest) Validate() error {
-	if !(len(this.OriginId) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))
+	if !(len(this.OriginId) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.OriginId))
 	}
-	if !(len(this.OriginId) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.OriginId))
+	if !(len(this.OriginId) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.OriginId))
 	}
 	return nil
 }
@@ -56,44 +56,44 @@ func (this *ComputePackageComboResponse) Validate() error {
 	return nil
 }
 func (this *UploadPackageRequest) Validate() error {
-	if !(len(this.OriginId) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))
+	if !(len(this.OriginId) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.OriginId))
 	}
-	if !(len(this.OriginId) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.OriginId))
+	if !(len(this.OriginId) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.OriginId))
 	}
-	if !(len(this.DisplayName) > 100) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DisplayName", fmt.Errorf(`value '%v' must have a length greater than '100'`, this.DisplayName))
+	if !(len(this.DisplayName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DisplayName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.DisplayName))
 	}
-	if !(len(this.DisplayName) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DisplayName", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.DisplayName))
+	if !(len(this.DisplayName) < 100) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DisplayName", fmt.Errorf(`value '%v' must have a length smaller than '100'`, this.DisplayName))
 	}
-	if !(len(this.Comment) > 301) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length greater than '301'`, this.Comment))
+	if !(len(this.Comment) < 301) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '301'`, this.Comment))
 	}
-	if !(len(this.Platform) > 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length greater than '21'`, this.Platform))
+	if !(len(this.Platform) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Platform))
 	}
-	if !(len(this.Platform) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.Platform))
+	if !(len(this.Platform) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Platform))
 	}
-	if !(len(this.BucketName) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.BucketName))
+	if !(len(this.BucketName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.BucketName))
 	}
-	if !(len(this.BucketName) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.BucketName))
+	if !(len(this.BucketName) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.BucketName))
 	}
-	if !(len(this.KeyName) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.KeyName))
+	if !(len(this.KeyName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.KeyName))
 	}
-	if !(len(this.KeyName) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.KeyName))
+	if !(len(this.KeyName) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.KeyName))
 	}
-	if !(len(this.PackageFile) > 104857601) {
-		return github_com_mwitkow_go_proto_validators.FieldError("PackageFile", fmt.Errorf(`value '%v' must have a length greater than '104857601'`, this.PackageFile))
+	if !(len(this.PackageFile) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PackageFile", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.PackageFile))
 	}
-	if !(len(this.PackageFile) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("PackageFile", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.PackageFile))
+	if !(len(this.PackageFile) < 104857601) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PackageFile", fmt.Errorf(`value '%v' must have a length smaller than '104857601'`, this.PackageFile))
 	}
 	return nil
 }
@@ -114,38 +114,38 @@ func (this *UploadPackageResponse) Validate() error {
 	return nil
 }
 func (this *RegisterPackageRequest) Validate() error {
-	if !(len(this.OriginId) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))
+	if !(len(this.OriginId) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.OriginId))
 	}
-	if !(len(this.OriginId) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.OriginId))
+	if !(len(this.OriginId) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.OriginId))
 	}
-	if !(len(this.DisplayName) > 100) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DisplayName", fmt.Errorf(`value '%v' must have a length greater than '100'`, this.DisplayName))
+	if !(len(this.DisplayName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DisplayName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.DisplayName))
 	}
-	if !(len(this.DisplayName) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DisplayName", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.DisplayName))
+	if !(len(this.DisplayName) < 100) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DisplayName", fmt.Errorf(`value '%v' must have a length smaller than '100'`, this.DisplayName))
 	}
 	if !(len(this.Comment) > 301) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length greater than '301'`, this.Comment))
 	}
-	if !(len(this.Platform) > 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length greater than '21'`, this.Platform))
+	if !(len(this.Platform) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Platform))
 	}
-	if !(len(this.Platform) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.Platform))
+	if !(len(this.Platform) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Platform", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Platform))
 	}
-	if !(len(this.BucketName) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.BucketName))
+	if !(len(this.BucketName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.BucketName))
 	}
-	if !(len(this.BucketName) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.BucketName))
+	if !(len(this.BucketName) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("BucketName", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.BucketName))
 	}
-	if !(len(this.KeyName) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.KeyName))
+	if !(len(this.KeyName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.KeyName))
 	}
-	if !(len(this.KeyName) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.KeyName))
+	if !(len(this.KeyName) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("KeyName", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.KeyName))
 	}
 	return nil
 }
@@ -191,11 +191,11 @@ func (this *GetPackageByIdResponse) Validate() error {
 	return nil
 }
 func (this *GetPackageByOriginIdRequest) Validate() error {
-	if !(len(this.OriginId) > 51) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '51'`, this.OriginId))
+	if !(len(this.OriginId) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.OriginId))
 	}
-	if !(len(this.OriginId) < 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '0'`, this.OriginId))
+	if !(len(this.OriginId) < 51) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OriginId", fmt.Errorf(`value '%v' must have a length smaller than '51'`, this.OriginId))
 	}
 	return nil
 }

@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package kitkv;
+
+import "mwitkow/go-proto-validators/validator.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/KitHub/protocols/kitkv;kitkv";
+
+service StoreServiceAPI {
+  rpc Store(StoreRequest) returns (StoreResponse) {
+    option (google.api.http) = {
+      post: "/v1/storeservice/store"
+      body: "*"
+    };
+  }
+
+  rpc Load(LoadRequest) returns (LoadResponse) {
+    option (google.api.http) = {
+      get: "/v1/storeservice/load"
+    };
+  }
+
+}
+
+message StoreRequest {
+    string key = 1 [(validator.field) = {length_lt: 64, length_gt: 0}];
+    bytes value = 2 [(validator.field) = {length_lt: 512, length_gt: 0}];
+}
+
+message StoreResponseData {}
+
+message StoreResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    StoreResponseData data = 3;
+}
+
+message LoadRequest {
+    string key = 1  [(validator.field) = {length_lt: 64, length_gt: 0}];
+}
+
+message LoadResponseData {
+    bytes content = 1;
+}
+
+message LoadResponse {
+    int32 err_code = 1;
+    string err_msg = 2;
+    LoadResponseData data = 3;
+}

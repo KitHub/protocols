@@ -24,29 +24,29 @@ service ProjectGeneratorAPI {
 }
 
 message DownloadGeneratedProjectRequest {
-    string seq = 1 [(validator.field) = {length_gt: 0, length_lt: 51, regex: "^[a-zA-Z0-9_]*$"}];
+    string seq = 1 [(validator.field) = {length_lt: 51, length_gt: 0, regex: "^[a-zA-Z0-9_]*$"}];
 }
 
 message GenerateProjectRequestComponent {
-    string name = 1 [(validator.field) = {length_gt: 0, length_lt: 51}];
-    string version = 2 [(validator.field) = {length_gt: 0, length_lt: 21}];
+    string name = 1 [(validator.field) = {length_lt: 51, length_gt: 0}];
+    string version = 2 [(validator.field) = {length_lt: 21, length_gt: 0}];
 }
 
 message GenerateProjectRequestDependency {
-    string name = 1 [(validator.field) = {length_gt: 0, length_lt: 51}];
-    string version = 2 [(validator.field) = {length_gt: 0, length_lt: 21}];
+    string name = 1 [(validator.field) = {length_lt: 51, length_gt: 0}];
+    string version = 2 [(validator.field) = {length_lt: 21, length_gt: 0}];
 }
 
 message GenerateProjectRequest {
-    string project_name = 1 [(validator.field) = {length_gt: 0, length_lt: 31, regex: "^[a-zA-Z0-9_]*$"}];
-    string project_description = 2 [(validator.field) = {length_gt: 0, length_lt: 501}];
-    string project_app_name = 3 [(validator.field) = {length_gt: 0, length_lt: 31, regex: "^[a-zA-Z0-9_]*$"}];
-    string project_server_name = 4 [(validator.field) = {length_gt: 0, length_lt: 31, regex: "^[a-zA-Z0-9_]*$"}];
-    string project_language = 5 [(validator.field) = {length_gt: 0, length_lt: 31, regex: "^[a-zA-Z0-9_]*$"}];
-    string project_language_version = 6 [(validator.field) = {length_gt: 0, length_lt: 31, regex: "^[a-zA-Z0-9_.]*$"}];
+    string project_name = 1 [(validator.field) = {length_lt: 31, length_gt: 0, regex: "^[a-zA-Z0-9_]*$"}];
+    string project_description = 2 [(validator.field) = {length_lt: 501, length_gt: 0}];
+    string project_app_name = 3 [(validator.field) = {length_lt: 31, length_gt: 0, regex: "^[a-zA-Z0-9_]*$"}];
+    string project_server_name = 4 [(validator.field) = {length_lt: 31, length_gt: 0, regex: "^[a-zA-Z0-9_]*$"}];
+    string project_language = 5 [(validator.field) = {length_lt: 31, length_gt: 0, regex: "^[a-zA-Z0-9_]*$"}];
+    string project_language_version = 6 [(validator.field) = {length_lt: 31, length_gt: 0, regex: "^[a-zA-Z0-9_.]*$"}];
     repeated GenerateProjectRequestDependency project_dependencies = 7;
     repeated GenerateProjectRequestComponent project_components = 8;
-    string project_cvs_url = 9 [(validator.field) = {length_gt: 0, length_lt: 201}];
+    string project_cvs_url = 9 [(validator.field) = {length_lt: 201, length_gt: 0}];
 }
 
 message GenerateProjectResponseData {
