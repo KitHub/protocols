@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package kitdb;
+
+import "mwitkow/go-proto-validators/validator.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/KitHub/protocols/kitdb;kitdb";
+
+service DemoAPI {
+  rpc Demo(DemoRequest) returns (DemoResponse) {
+    option (google.api.http) = {
+      post: "/v1/demo"
+      body: "*"
+    };
+  }
+}
+
+message DemoRequest {
+
+}
+
+message DemoResponse {
+    
+}
